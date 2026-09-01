@@ -1,0 +1,51 @@
+searching until 13:15 local (58 min)
+[I 2026-09-01 12:16:29,580] A new study created in RDB with name: s6e9-lgbm
+  trial   0  3f-auc 0.941307  lr 0.0254 leaves 328 minleaf 210
+  trial   1  3f-auc 0.941817  lr 0.0581 leaves 17 minleaf 454
+  trial   2  3f-auc 0.942067  lr 0.0293 leaves 39 minleaf 142
+  trial   3  3f-auc 0.941677  lr 0.0359 leaves 104 minleaf 23
+  trial   4  3f-auc 0.941946  lr 0.0213 leaves 21 minleaf 180
+  trial   5  3f-auc 0.941873  lr 0.0519 leaves 42 minleaf 105
+  trial   6  3f-auc 0.941630  lr 0.0442 leaves 299 minleaf 26
+  trial   7  3f-auc 0.942162  lr 0.0243 leaves 38 minleaf 113
+  trial   8  3f-auc 0.941305  lr 0.0101 leaves 213 minleaf 193
+  trial   9  3f-auc 0.941939  lr 0.0471 leaves 45 minleaf 24
+  trial  10  3f-auc 0.942044  lr 0.1064 leaves 101 minleaf 61
+  trial  11  3f-auc 0.942137  lr 0.0155 leaves 38 minleaf 73
+  trial  12  3f-auc 0.942097  lr 0.0146 leaves 69 minleaf 58
+  trial  13  3f-auc 0.942080  lr 0.0176 leaves 27 minleaf 70
+  trial  14  3f-auc 0.941629  lr 0.0115 leaves 69 minleaf 38
+  trial  15  3f-auc 0.942162  lr 0.0186 leaves 29 minleaf 95
+  trial  16  3f-auc 0.942104  lr 0.0221 leaves 26 minleaf 353
+  trial  17  3f-auc 0.942065  lr 0.0320 leaves 63 minleaf 112
+  trial  18  3f-auc 0.942086  lr 0.0878 leaves 30 minleaf 42
+  trial  19  3f-auc 0.942107  lr 0.0183 leaves 16 minleaf 279
+  trial  20  3f-auc 0.941921  lr 0.0124 leaves 118 minleaf 95
+  trial  21  3f-auc 0.942119  lr 0.0158 leaves 35 minleaf 76
+  trial  22  3f-auc 0.942049  lr 0.0228 leaves 57 minleaf 135
+  trial  23  3f-auc 0.942138  lr 0.0139 leaves 23 minleaf 47
+  trial  24  3f-auc 0.942151  lr 0.0136 leaves 23 minleaf 45
+  trial  25  3f-auc 0.942153  lr 0.0285 leaves 20 minleaf 29
+  trial  26  3f-auc 0.942057  lr 0.0359 leaves 20 minleaf 34
+  trial  27  3f-auc 0.942002  lr 0.0277 leaves 53 minleaf 20
+  trial  28  3f-auc 0.942089  lr 0.0193 leaves 30 minleaf 31
+  trial  29  3f-auc 0.942147  lr 0.0259 leaves 32 minleaf 273
+  trial  30  3f-auc 0.942167  lr 0.0379 leaves 19 minleaf 149
+  trial  31  3f-auc 0.942173  lr 0.0370 leaves 18 minleaf 152
+  trial  32  3f-auc 0.942139  lr 0.0692 leaves 16 minleaf 147
+  trial  33  3f-auc 0.942039  lr 0.0399 leaves 20 minleaf 235
+  trial  34  3f-auc 0.942119  lr 0.0626 leaves 25 minleaf 153
+  trial  35  3f-auc 0.942021  lr 0.0319 leaves 47 minleaf 88
+  trial  36  3f-auc 0.942114  lr 0.0242 leaves 19 minleaf 124
+  trial  37  3f-auc 0.941949  lr 0.0382 leaves 37 minleaf 183
+  trial  38  3f-auc 0.942149  lr 0.0318 leaves 18 minleaf 450
+
+39 trials completed. best 3-fold 0.942173
+best params: {'learning_rate': 0.03701365270520455, 'num_leaves': 18, 'min_data_in_leaf': 152, 'feature_fraction': 0.46320934680205134, 'bagging_fraction': 0.9565061248414342, 'lambda_l1': 0.00340850658565715, 'lambda_l2': 0.002186407940936268, 'min_gain_to_split': 0.32946982072726655, 'max_cat_threshold': 37}
+
+confirming on the baseline's 5-fold split...
+tuned OOF AUC 0.942287   baseline 0.941833   delta +0.000454
+best_iters [3818, 2042, 1946, 2002, 3051]
+wrote /Users/lionelweng/Developer/s6e9-ev-purchases/submissions/tuned.csv
+BEATS BASELINE
+finished 13:18:43

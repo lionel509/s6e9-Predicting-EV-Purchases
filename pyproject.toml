@@ -1,0 +1,25 @@
+[project]
+name = "s6e9-ev-purchases"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "lionel509", email = "lionelweng@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "kaggle>=2.2",
+    "lightgbm>=4.7.0",
+    "numpy>=2.5.2",
+    "optuna>=4.9.0",
+    "pandas>=3.0.5",
+    "pyarrow>=25.0.1",
+    "scikit-learn>=1.9.0",
+]
+
+[project.scripts]
+s6e9-ev-purchases = "s6e9_ev_purchases:main"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
