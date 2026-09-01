@@ -1,4 +1,4 @@
-"""Diagnostics on the generator: id order, income-join column agreement with the original, 12-feature combo key, and public-leaderboard noise from OOF slices."""
+"""Diagnostics on the generator: id order, income-join column agreement with the original, 11-feature combo key, and public-leaderboard noise from OOF slices."""
 import pandas as pd, numpy as np, glob
 from sklearn.metrics import roc_auc_score
 S="."
@@ -30,7 +30,7 @@ oi = o.groupby("Annual_Income_USD")["Will_Buy_EV"].apply(lambda s:(s=="Yes").mea
 print(f"  AUC(target ~ orig rate by income)  = {roc_auc_score(y, tr.Annual_Income_USD.map(oi).fillna(0.175)):.4f}")
 
 # (e) high-order combo key: all low-card features (+Age), 2-fold holdout target rate
-print("\n== 12-feature combo key (everything but income & commute) ==")
+print("\n== 11-feature combo key (everything but income & commute) ==")
 lowc = [c for c in feats if c not in ("Annual_Income_USD","Daily_Commute_km")]
 k = tr[lowc].astype(str).agg("|".join, axis=1); kt = te[lowc].astype(str).agg("|".join, axis=1)
 print(f"  unique keys train {k.nunique():,}; test rows with key seen in train {kt.isin(set(k)).mean():.1%}")
