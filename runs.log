@@ -175,3 +175,7 @@ v22_pseudo_clean_naji_m1 OOF 0.945915  Δ vs v6b +0.000169  Δ vs clean +0.00004
   seed 101 done 57s
   seed 202 done 86s
 v13_refit_v22_pseudo_clean_naji_m1_r2290_m1_naji_s3 written; corr with source test preds 0.99975  mean 0.1747
+=== v24_smooth 0.1 0.3 start 19:16:20
+v23 (clean naji m1) ref OOF 0.945871
+v24_smooth_a0.1 OOF 0.945764  Δ vs v23 -0.000107  iters [1537, 1686, 1897, 783, 1508]  134s
+v24_smooth_a0.3 OOF 0.945221  Δ vs v23 -0.000651  iters [577, 638, 617, 576, 576]  68s
