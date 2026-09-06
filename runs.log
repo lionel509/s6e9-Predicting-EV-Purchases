@@ -1,0 +1,22 @@
+=== v6_te_variants start 03:00:32
+v5 ref OOF 0.945605
+v6a_pairs    OOF 0.945372  iters [556, 664, 560, 619, 595]  53s
+   Δ vs v5 -0.000233
+v6b_round    OOF 0.945746  iters [729, 702, 904, 538, 629]  52s
+   Δ vs v5 +0.000141
+v6c_both     OOF 0.945564  iters [558, 805, 655, 566, 450]  56s
+   Δ vs v5 -0.000041
+=== v6_te_variants exit 03:03:23
+=== v7_xgb start 03:03:23
+v7_xgb       OOF 0.945522  iters [539, 518, 471, 586, 469]  89s
+   Δ vs v5 -0.000084
+=== v7_xgb exit 03:04:57
+=== v8_catboost start 03:04:57
+=== v9_pseudo start 03:06:14
+source v6b_round OOF 0.945746
+v9_pseudo_v6b_round OOF 0.945952  Δ vs source +0.000206  iters [1977, 2006, 1885, 1515, 2755]  367s
+=== v9_pseudo exit 03:12:26
+v8_catboost  OOF 0.945544  iters [1534, 1169, 1171, 860, 1045]  946s
+   Δ vs v5 -0.000062
+=== v8_catboost exit 03:20:47
+=== chain done
