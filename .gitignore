@@ -18,3 +18,6 @@ submissions/
 
 # Original dataset the episode was generated from — redownload with:
 #   uv run kaggle datasets download itzzomkar/ev-adoption-behavior-and-range-anxiety -p data/orig --unzip
+
+# Transient per-run console captures — everything is appended to runs.log
+*.out

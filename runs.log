@@ -20,3 +20,158 @@ v8_catboost  OOF 0.945544  iters [1534, 1169, 1171, 860, 1045]  946s
    Δ vs v5 -0.000062
 === v8_catboost exit 03:20:47
 === chain done
+=== v10_recipe start 18:03:30
+v6b ref OOF 0.945746
+recipe alone (buy_score, no training) AUC 0.9377   # Deotte reports ~0.938
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+v10_recipe   OOF 0.945693  iters [645, 495, 961, 490, 483]  47s
+   Δ vs v6b -0.000053
+=== v11_margin start 18:05:27
+v6b ref OOF 0.945746
+v11a_margin  OOF 0.945681  iters [543, 496, 261, 471, 620]  49s
+   Δ vs v6b -0.000065
+  sig = lambda z: 1 / (1 + np.exp(-z))
+  sig = lambda z: 1 / (1 + np.exp(-z))
+v11b_margin_recipe OOF 0.945709  iters [398, 410, 675, 469, 526]  49s
+   Δ vs v6b -0.000037
+=== v12_nn start 18:10:50
+v6b ref OOF 0.945746  device mps
+  fold 0 best 0.944360 at epoch 11  [0.94254, 0.94342, 0.94287, 0.94374, 0.94396, 0.94393, 0.94417, 0.94413, 0.94431, 0.94431, 0.94436, 0.94435]  17s
+  fold 1 best 0.944892 at epoch 12  [0.94316, 0.94335, 0.94396, 0.94421, 0.94439, 0.94455, 0.94455, 0.94473, 0.94482, 0.94486, 0.94488, 0.94489]  26s
+=== v13_refit start 18:11:37
+  fold 2 best 0.946145 at epoch 10  [0.94423, 0.94485, 0.94534, 0.94533, 0.94535, 0.94585, 0.94597, 0.94603, 0.94612, 0.94615, 0.94612, 0.94614]  33s
+  fold 3 best 0.945848 at epoch 11  [0.94238, 0.94404, 0.945, 0.94507, 0.94513, 0.94529, 0.94549, 0.94554, 0.94566, 0.9458, 0.94585, 0.94584]  42s
+  fold 4 best 0.945250 at epoch 11  [0.94359, 0.94393, 0.94407, 0.94447, 0.94476, 0.94492, 0.94479, 0.94501, 0.94512, 0.94519, 0.94525, 0.94525]  58s
+v12_nn_s42   OOF 0.945297  58s
+   Δ vs v6b -0.000449
+=== v14_ablate start 18:12:31
+v6b ref OOF 0.945746
+  seed 42 done 43s
+=== v12_nn 20ep s101 start 18:13:21
+  seed 101 done 76s
+  seed 202 done 120s
+v13_refit_v9_pseudo_v6b_round_r2330_s3 written; corr with source test preds 0.99930  mean 0.1747
+v6b ref OOF 0.945746  device mps
+  fold 0 best 0.944495 at epoch 16  [0.94234, 0.94291, 0.94314, 0.94364, 0.94368, 0.94371, 0.94392, 0.94397, 0.94406, 0.94426, 0.94437, 0.9443, 0.94428, 0.94446, 0.94447, 0.94449, 0.94445, 0.94448, 0.94449, 0.94449]  22s
+v14a_te_all  OOF 0.945695  iters [638, 537, 866, 780, 956]  101s
+  fold 1 best 0.945108 at epoch 17  [0.94292, 0.94372, 0.94419, 0.94408, 0.94418, 0.94452, 0.944, 0.94446, 0.94471, 0.94474, 0.94481, 0.94498, 0.94486, 0.94498, 0.945, 0.94497, 0.94511, 0.9451, 0.94508, 0.94509]  38s
+   Δ vs v6b -0.000051
+  fold 2 best 0.946331 at epoch 18  [0.94395, 0.94495, 0.945, 0.9452, 0.94559, 0.9458, 0.94561, 0.94595, 0.94608, 0.94592, 0.94602, 0.94607, 0.94608, 0.94615, 0.94617, 0.94628, 0.94627, 0.94633, 0.94632, 0.94632]  59s
+  fold 3 best 0.945969 at epoch 18  [0.94376, 0.94425, 0.94447, 0.94441, 0.94521, 0.94528, 0.94508, 0.94542, 0.94549, 0.94565, 0.94574, 0.94581, 0.94575, 0.94586, 0.94589, 0.94588, 0.94591, 0.94597, 0.94596, 0.94597]  82s
+  fold 4 best 0.945408 at epoch 17  [0.94351, 0.94386, 0.94351, 0.94418, 0.94456, 0.94467, 0.94465, 0.94496, 0.945, 0.94509, 0.94516, 0.94526, 0.94532, 0.94529, 0.94529, 0.94536, 0.94541, 0.9454, 0.9454, 0.9454]  102s
+v12_nn_s101  OOF 0.945440  102s
+   Δ vs v6b -0.000307
+v14b_bin1024 OOF 0.945742  iters [584, 574, 962, 473, 684]  67s
+   Δ vs v6b -0.000005
+v14c_nocars  OOF 0.945739  iters [638, 670, 718, 421, 687]  50s
+   Δ vs v6b -0.000007
+v14d_origall OOF 0.945707  iters [663, 690, 512, 593, 584]  54s
+   Δ vs v6b -0.000039
+=== v15_te_m start 18:17:21
+=== v18_nn_emb start 18:19:03
+v6b ref OOF 0.945746  device mps
+  fold 0 best 0.941290 at epoch 10  [0.94073, 0.94055, 0.94042, 0.94049, 0.94045, 0.94045]  23s
+  fold 1 best 0.941922 at epoch 8  [0.94129, 0.94114, 0.94096, 0.94099, 0.94092, 0.94092]  43s
+v6b ref OOF 0.945746
+v15_m5       OOF 0.945790  iters [579, 595, 847, 467, 649]  47s
+   Δ vs v6b +0.000043
+v15_m50      OOF 0.945614  iters [702, 864, 917, 605, 630]  53s
+   Δ vs v6b -0.000133
+v15_mdual    OOF 0.945770  iters [781, 761, 685, 486, 623]  86s
+   Δ vs v6b +0.000024
+=== v15_te_m exit 18:20:37
+=== v16_resid_te start 18:20:37
+  fold 2 best 0.942851 at epoch 9  [0.94213, 0.94225, 0.94209, 0.94201, 0.942, 0.94201]  65s
+v6b ref OOF 0.945746
+Traceback (most recent call last):
+  File "/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/v16_resid_te.py", line 37, in <module>
+    Xa, Xb, Xt = plain.fold(a, b, y, Btr, Bte); Ra, Rb, Rt, c = resid.fold(a, b, y, s, Btr, Bte)
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/v16_resid_te.py", line 25, in fold
+    col[ib] = ka.iloc[ib].map(_fit(ka.iloc[ia], ra[ia], 0.0, self.m)).fillna(0.0).values
+                              ^^^^
+NameError: name '_fit' is not defined
+=== v16_resid_te exit 18:20:47
+=== chain2 done
+=== v17_params start 18:20:53
+  fold 3 best 0.942580 at epoch 9  [0.94148, 0.94125, 0.941, 0.94089, 0.94097, 0.94097]  90s
+  fold 4 best 0.941744 at epoch 9  [0.94093, 0.94057, 0.94056, 0.94051, 0.94049, 0.94048]  109s
+v18_nn_emb_s42 OOF 0.941638  109s
+   Δ vs v6b -0.004108
+=== v16_resid_te rerun start 18:20:59
+v6b ref OOF 0.945746
+  fold c=5.672 auc 0.944787
+  fold c=5.671 auc 0.945304
+  fold c=5.673 auc 0.946573
+  fold c=5.672 auc 0.946009
+  fold c=5.672 auc 0.945727
+v16_resid_te OOF 0.945674  iters [550, 803, 552, 508, 683]  83s
+   Δ vs v6b -0.000072
+=== v15_te_m 1 2 start 18:23:02
+v6b ref OOF 0.945746
+v15_m1       OOF 0.945832  iters [657, 580, 770, 370, 611]  69s
+   Δ vs v6b +0.000086
+v15_m2       OOF 0.945809  iters [429, 683, 662, 370, 446]  60s
+   Δ vs v6b +0.000063
+=== v15_te_m 0 start 18:25:40
+v6b ref OOF 0.945746
+v15_m0       OOF 0.945775  iters [535, 681, 685, 385, 615]  70s
+   Δ vs v6b +0.000029
+=== v19_pseudo2 m1 base start 18:27:06
+v6b ref OOF 0.945746
+v17_slow     OOF 0.945784  iters [1838, 1857, 2256, 1524, 1819]  169s
+   Δ vs v6b +0.000038
+v17_leaves32 OOF 0.945702  iters [534, 454, 683, 406, 488]  96s
+   Δ vs v6b -0.000044
+v17_naji     OOF 0.945787  iters [1540, 1682, 1709, 1497, 1719]  182s
+   Δ vs v6b +0.000041
+=== chain3 done
+v6b ref OOF 0.945746   source v9_pseudo_v6b_round
+v19_pseudo2_m1_base OOF 0.946128  Δ vs v6b +0.000381  iters [2062, 3208, 2612, 1185, 3101]  219s
+=== v19_pseudo2.py v9_pseudo_v6b_round 1 naji start 18:31:59
+v6b ref OOF 0.945746   source v9_pseudo_v6b_round
+=== v13_refit m1 r2800 start 18:32:05
+  seed 42 done 42s
+  seed 101 done 83s
+  seed 202 done 133s
+Traceback (most recent call last):
+  File "/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/v13_refit.py", line 19, in <module>
+    name = f"v13_refit_{src}_r{rounds}_m{m:g}_s{len(seeds)}"
+                                        ^^^^^
+TypeError: unsupported format string passed to Booster.__format__
+v19_pseudo2_m1_naji OOF 0.946236  Δ vs v6b +0.000489  iters [5066, 3623, 6282, 2692, 4407]  435s
+=== exit 18:39:18
+=== v19_pseudo2.py v9_pseudo_v6b_round 1 slow start 18:39:18
+v6b ref OOF 0.945746   source v9_pseudo_v6b_round
+=== v13_refit m1 naji r5080 start 18:43:08
+  seed 42 done 159s
+v19_pseudo2_m1_slow OOF 0.946175  Δ vs v6b +0.000429  iters [4880, 7444, 4794, 2867, 6242]  594s
+=== exit 18:49:17
+=== v20_pseudo_xgb.py v9_pseudo_v6b_round 1 start 18:49:17
+v6b ref OOF 0.945746   source v9_pseudo_v6b_round
+  seed 101 done 308s
+  seed 202 done 417s
+v13_refit_v9_pseudo_v6b_round_r5080_m1_naji_s3 written; corr with source test preds 0.99901  mean 0.1747
+v20_pseudo_xgb_m1 OOF 0.946073  Δ vs v6b +0.000327  iters [1073, 1008, 1119, 901, 1435]  290s
+=== exit 18:54:13
+=== v21_pseudo_cat.py v9_pseudo_v6b_round start 18:54:13
+v6b ref OOF 0.945746   source v9_pseudo_v6b_round
+=== v21 killed 18:55:42 — same leaky soft labels as v9/v19; replaced by v22
+=== v22_pseudo_clean naji m1 start 18:55:42
+v6b ref OOF 0.945746   params naji  m 1
+  fold 0: clean 0.944911 (1540)  pseudo 0.944900 (1548)  107s
+  fold 1: clean 0.945454 (1282)  pseudo 0.945495 (2675)  178s
+  fold 2: clean 0.946841 (1716)  pseudo 0.946899 (2122)  298s
+  fold 3: clean 0.946307 (778)  pseudo 0.946328 (1644)  394s
+  fold 4: clean 0.945986 (1319)  pseudo 0.945999 (1969)  453s
+v23_naji_m1 OOF 0.945871  Δ vs v6b +0.000125  (no pseudo, leak-free)
+v22_pseudo_clean_naji_m1 OOF 0.945915  Δ vs v6b +0.000169  Δ vs clean +0.000044  453s
+=== v13_refit clean-source m1 naji r2290 start 19:04:05
+  seed 42 done 29s
+  seed 101 done 57s
+  seed 202 done 86s
+v13_refit_v22_pseudo_clean_naji_m1_r2290_m1_naji_s3 written; corr with source test preds 0.99975  mean 0.1747
