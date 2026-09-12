@@ -11,7 +11,7 @@ out = sys.argv[1] if len(sys.argv) > 1 else "blend_v2"
 GROUPS = {
   # name: (oof names to rank-average, test csvs to average (name, weight) — None = the same names' own test columns)
   "hybrid":   (["v27_hybrid_k5_s42"], [("v27_hybrid_k10_s42", 2), ("v27_hybrid_k5_s42", 1)]),
-  "hybrid10": (["v27_hybrid_k10_s42", "v27_hybrid_k10_s7", "v27_hybrid_k10_s2026", "v27_hybrid_k10_s101", "v27_hybrid_k10_s202"], None),   # 10-fold OOFs (like-for-like with pub_megayak10), three fold seeds   # megayak recipe on our split, OOF 0.946153; test column leans on the 10-fold run
+  "hybrid10": (["v27_hybrid_k10_s42", "v27_hybrid_k10_s7", "v27_hybrid_k10_s2026", "v27_hybrid_k10_s101", "v27_hybrid_k10_s202", "v27_hybrid_k10_s303", "v27_hybrid_k10_s404", "v27_hybrid_k10_s505"], None),   # 10-fold OOFs (like-for-like with pub_megayak10), three fold seeds   # megayak recipe on our split, OOF 0.946153; test column leans on the 10-fold run
   "hybrid_pseudo": (["v28_hybrid_pseudo_k5_s42"], None),   # leak-free two-stage pseudo on the hybrid frame
   "hybrid_m1": (["v28_hybrid_m1_k5_s42"], None), "hybrid_m1_pseudo": (["v28_hybrid_pseudo_m1_k5_s42"], None),
   "hybrid_cat": (["v29_hybrid_cat_s42_k10"], None), "hybrid_xgb": (["v30_hybrid_xgb_s42_k10"], None), "hybrid_nn": (["v31_hybrid_nn_s42"], None),

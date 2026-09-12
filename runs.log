@@ -407,3 +407,76 @@ blend OOF 0.946415  weights {'hybrid': np.float64(0.0), 'hybrid10': np.float64(0
 wrote submissions/blend_v6.csv
   fold 2: auc 0.945310  iters 258  231s
   fold 3: auc 0.945927  iters 248  298s
+  fold 4: auc 0.946597  iters 262  367s
+  fold 5: auc 0.946985  iters 325  461s
+  fold 6: auc 0.945934  iters 262  533s
+  fold 7: auc 0.946725  iters 264  606s
+  fold 8: auc 0.946934  iters 307  687s
+  fold 9: auc 0.944971  iters 370  778s
+v29_hybrid_cat_s42_k10 OOF 0.945967  Δ vs v27 -0.000186  iters [249, 316, 258, 248, 262, 325, 262, 264, 307, 370]  778s
+=== exit 06:43:55
+=== v30_hybrid_xgb.py 42 10 start 06:43:55
+v30_hybrid_xgb_s42_k10: v27 ref OOF 0.946153  features 65
+  fold 0: auc 0.945117  iters 561  30s
+  fold 1: auc 0.945266  iters 587  55s
+  fold 2: auc 0.945566  iters 641  82s
+  fold 3: auc 0.946240  iters 707  110s
+  fold 4: auc 0.946635  iters 853  141s
+  fold 5: auc 0.947163  iters 627  168s
+  fold 6: auc 0.945985  iters 492  191s
+  fold 7: auc 0.946897  iters 613  216s
+  fold 8: auc 0.947225  iters 595  242s
+  fold 9: auc 0.945192  iters 626  268s
+v30_hybrid_xgb_s42_k10 OOF 0.946125  Δ vs v27 -0.000028  iters [561, 587, 641, 707, 853, 627, 492, 613, 595, 626]  269s
+=== exit 06:48:26
+=== chain9 done
+=== v27_hybrid.py 10 101 start 06:48:33
+v27_hybrid_k10_s101: features 65 | TE keys 15 x 3 smoothings  (4s)
+  fold 0: auc 0.945195  trees 1768  48s
+groups: ['hybrid10', 'naji_pc', 'hybrid_xgb', 'hybrid_cat', 'catboost', 'nn', 'pub_megayak10', 'pub_naji_01blend', 'pub_naji_v3', 'pub_realmlp', 'pub_sergey'] | lin-blend reference OOF (equal weights): 0.946328
+LR ranks only        nested OOF 0.946331
+LR ranks + side      nested OOF 0.946355
+LGBM ranks only      nested OOF 0.946313  iters [387, 233, 324, 548, 455]
+LGBM ranks + side    nested OOF 0.946314  iters [182, 178, 235, 209, 280]
+  gain importance: [('hybrid10', np.float64(2418278.0)), ('pub_naji_01blend', np.float64(672894.0)), ('pub_megayak10', np.float64(437753.0)), ('naji_pc', np.float64(429416.0)), ('hybrid_xgb', np.float64(255186.0)), ('pub_naji_v3', np.float64(94964.0)), ('pub_realmlp', np.float64(70592.0)), ('pub_sergey', np.float64(36738.0))]
+  wrote submissions/stack_lgbm.csv
+  fold 1: auc 0.947455  trees 2532  117s
+  fold 2: auc 0.946061  trees 1635  160s
+  fold 3: auc 0.944766  trees 1230  196s
+  fold 4: auc 0.945339  trees 1296  233s
+  fold 5: auc 0.946028  trees 1456  273s
+  fold 6: auc 0.947763  trees 1594  315s
+  fold 7: auc 0.946801  trees 1583  356s
+  fold 8: auc 0.946094  trees 1609  399s
+  fold 9: auc 0.947037  trees 1508  440s
+v27_hybrid_k10_s101 OOF 0.946243  (fold-ranked 0.946254)  iters [1768, 2532, 1635, 1230, 1296, 1456, 1594, 1583, 1609, 1508]  440s
+=== exit 06:55:54
+=== v27_hybrid.py 10 202 start 06:55:54
+v27_hybrid_k10_s202: features 65 | TE keys 15 x 3 smoothings  (4s)
+  fold 0: auc 0.946394  trees 1333  42s
+  fold 1: auc 0.945230  trees 1403  81s
+  fold 2: auc 0.945914  trees 1112  115s
+  fold 3: auc 0.946724  trees 1430  156s
+  fold 4: auc 0.946135  trees 1457  198s
+  fold 5: auc 0.947402  trees 1726  242s
+  fold 6: auc 0.946475  trees 1058  275s
+  fold 7: auc 0.945547  trees 1283  314s
+  fold 8: auc 0.946536  trees 1716  359s
+  fold 9: auc 0.946297  trees 1393  399s
+v27_hybrid_k10_s202 OOF 0.946254  (fold-ranked 0.946265)  iters [1333, 1403, 1112, 1430, 1457, 1726, 1058, 1283, 1716, 1393]  399s
+=== exit 07:02:35
+=== chain11 done
+=== v29_hybrid_cat.py 42 10 0.03 400 start 07:02:36
+v29_hybrid_cat_s42_k10_lr0.03_od400: v27 ref OOF 0.946153  features 68
+  pass 0: 0.946418
+  fold 0: auc 0.945091  iters 507  151s
+  pass 1: 0.946429
+  pass 2: 0.946430
+  pass 3: 0.946430
+blend OOF 0.946430  weights {'hybrid': np.float64(0.0), 'hybrid10': np.float64(0.63), 'hybrid_pseudo': np.float64(0.0), 'hybrid_m1': np.float64(0.0), 'hybrid_m1_pseudo': np.float64(0.0), 'hybrid_cat': np.float64(0.0), 'hybrid_xgb': np.float64(0.0), 'hybrid_nn': np.float64(0.0), 'naji_pc': np.float64(0.056), 'naji_clean': np.float64(0.0), 'catboost': np.float64(0.0), 'nn': np.float64(0.0), 'pub_megayak10': np.float64(0.0), 'pub_naji_v3': np.float64(0.0), 'pub_sergey': np.float64(0.0), 'pub_realmlp': np.float64(0.072), 'pub_naji_01blend': np.float64(0.242), 'm1': np.float64(0.0), 'slow': np.float64(0.0), 'v6b': np.float64(0.0), 'xgb': np.float64(0.0)}  best group 0.946378
+wrote submissions/blend_v7.csv
+=== killed 07:10 UTC — fold 0 0.945091 at 507 iters, identical to the lr 0.06 run's 0.945099; abandoned for three more hybrid seeds
+=== v27_hybrid.py 10 303 start 07:06:49
+v27_hybrid_k10_s303: features 65 | TE keys 15 x 3 smoothings  (4s)
+  fold 0: auc 0.944420  trees 1285  41s
+  fold 1: auc 0.946871  trees 1543  81s
