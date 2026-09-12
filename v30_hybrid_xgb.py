@@ -1,12 +1,12 @@
 """v30: XGBoost (hist, depth 5) on the v27 hybrid frame, v7's params. Family diversity on the stronger frame.
-Usage: python v30_hybrid_xgb.py [seed]"""
+Usage: python v30_hybrid_xgb.py [seed] [folds=5]"""
 import sys, time, numpy as np, pandas as pd, xgboost as xgb
 from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics import roc_auc_score
 from scipy.stats import rankdata
 from features import load
 from v27_hybrid import build, fold_frames, TARGET
-SEED = int(sys.argv[1]) if len(sys.argv) > 1 else 42; N = 5; name = f"v30_hybrid_xgb_s{SEED}"; rk = lambda v: rankdata(v) / len(v)
+SEED = int(sys.argv[1]) if len(sys.argv) > 1 else 42; N = int(sys.argv[2]) if len(sys.argv) > 2 else 5; name = f"v30_hybrid_xgb_s{SEED}" + ("" if N == 5 else f"_k{N}"); rk = lambda v: rankdata(v) / len(v)
 t = time.time(); tr, te, o, y, feats = load(); X, Xte, K, Kte = build(tr, te, o)
 ref = roc_auc_score(y, np.load("submissions/oof_v27_hybrid_k5_s42.npy")); print(f"{name}: v27 ref OOF {ref:.6f}  features {X.shape[1]}", flush=True)
 cv = StratifiedKFold(N, shuffle=True, random_state=SEED); oof = np.zeros(len(X)); pte = np.zeros(len(Xte)); its = []

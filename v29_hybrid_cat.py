@@ -1,6 +1,6 @@
 """v29: CatBoost on the v27 hybrid frame (build + triple TE per fold). The six string cats as CatBoost categoricals,
 plus income / commute / age as categorical copies (its own ordered target statistics next to the sklearn TE).
-v8's params. The blend's one genuinely different estimator, now on the stronger frame. Usage: python v29_hybrid_cat.py [seed]"""
+v8's params. The blend's one genuinely different estimator, now on the stronger frame. Usage: python v29_hybrid_cat.py [seed] [folds=5]"""
 import sys, time, numpy as np, pandas as pd
 from catboost import CatBoostClassifier
 from sklearn.model_selection import StratifiedKFold
@@ -8,7 +8,7 @@ from sklearn.metrics import roc_auc_score
 from scipy.stats import rankdata
 from features import load
 from v27_hybrid import build, fold_frames, CATS, TARGET
-SEED = int(sys.argv[1]) if len(sys.argv) > 1 else 42; N = 5; name = f"v29_hybrid_cat_s{SEED}"; rk = lambda v: rankdata(v) / len(v)
+SEED = int(sys.argv[1]) if len(sys.argv) > 1 else 42; N = int(sys.argv[2]) if len(sys.argv) > 2 else 5; name = f"v29_hybrid_cat_s{SEED}" + ("" if N == 5 else f"_k{N}"); rk = lambda v: rankdata(v) / len(v)
 t = time.time(); tr, te, o, y, feats = load(); X, Xte, K, Kte = build(tr, te, o)
 HI = ["Annual_Income_USD", "Daily_Commute_km", "Age"]
 for df, src in ((X, tr), (Xte, te)):

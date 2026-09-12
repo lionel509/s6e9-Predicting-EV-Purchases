@@ -305,3 +305,57 @@ v27_hybrid_k10_s42 OOF 0.946240  (fold-ranked 0.946245)  iters [1387, 1184, 1402
 === exit 05:52:43
 === v28_hybrid_plus.py --pseudo start 05:52:43
 v28_hybrid_k5_s42: v27 ref OOF 0.946153  m1 False  pseudo True  (7s)
+  fold 1 best 0.945251 at epoch 10  [0.94387, 0.94449, 0.94463, 0.94448, 0.94456, 0.94487, 0.94509, 0.94503, 0.94521, 0.94525, 0.94514, 0.94525, 0.94519, 0.94518, 0.9452, 0.94517, 0.94514, 0.94511, 0.94511, 0.94511]  106s
+  fold 2 best 0.946332 at epoch 12  [0.94488, 0.94514, 0.94464, 0.94548, 0.94592, 0.94592, 0.94569, 0.9461, 0.94616, 0.94619, 0.94616, 0.94633, 0.94633, 0.94625, 0.94622, 0.94628, 0.94629, 0.94627, 0.94627, 0.94627]  145s
+  fold 3 best 0.945891 at epoch 15  [0.94443, 0.94501, 0.94471, 0.94502, 0.94546, 0.94561, 0.94577, 0.94578, 0.94578, 0.9456, 0.9457, 0.94586, 0.94582, 0.9457, 0.94589, 0.94583, 0.94578, 0.94579, 0.94578, 0.94577]  195s
+  fold 4 best 0.945433 at epoch 10  [0.94402, 0.9441, 0.94444, 0.94498, 0.94497, 0.94527, 0.94528, 0.94516, 0.94534, 0.94543, 0.94524, 0.94535, 0.94538, 0.94538, 0.94535, 0.94531, 0.94534, 0.94531, 0.9453, 0.9453]  244s
+v31_hybrid_nn_s42 OOF 0.945353  Δ vs v27 -0.000800  244s
+=== exit 05:55:39
+=== chain9b done
+  fold 0: stage1 0.945205 (1731)  pseudo 0.945218 (2590)  180s
+  fold 1: stage1 0.945852 (1276)  pseudo 0.945879 (2617)  320s
+  fold 2: stage1 0.947066 (1525)  pseudo 0.947066 (2853)  435s
+  fold 3: stage1 0.946458 (1285)  pseudo 0.946465 (1971)  568s
+  fold 4: stage1 0.946204 (1550)  pseudo 0.946241 (2302)  672s
+v28_hybrid_k5_s42 OOF 0.946153  Δ vs v27 +0.000000  iters [1731, 1276, 1525, 1285, 1550]  672s
+v28_hybrid_pseudo_k5_s42 OOF 0.946169  Δ vs v27 +0.000016  Δ vs stage1 +0.000016  iters [2590, 2617, 2853, 1971, 2302]
+=== exit 06:03:58
+=== chain7 done
+=== v28_hybrid_plus.py --m1 --pseudo start 06:03:58
+v28_hybrid_m1_k5_s42: v27 ref OOF 0.946153  m1 True  pseudo True  (5s)
+  fold 0: stage1 0.945180 (1416)  pseudo 0.945196 (2877)  123s
+  hybrid      1 seed(s)  OOF 0.946153
+  hybrid_pseudo 1 seed(s)  OOF 0.946169
+  hybrid_m1: no OOF files yet, skipped
+  hybrid_m1_pseudo: no OOF files yet, skipped
+  hybrid_cat: no OOF files yet, skipped
+  hybrid_xgb: no OOF files yet, skipped
+  hybrid_nn   1 seed(s)  OOF 0.945353
+  naji_pc     3 seed(s)  OOF 0.946085
+  naji_clean  3 seed(s)  OOF 0.946068
+  catboost    1 seed(s)  OOF 0.945544
+  nn          3 seed(s)  OOF 0.945476
+  pub_megayak10 1 seed(s)  OOF 0.946264
+  pub_naji_v3 1 seed(s)  OOF 0.946064
+  pub_sergey  1 seed(s)  OOF 0.945329
+  pub_realmlp 1 seed(s)  OOF 0.945871
+  pub_naji_01blend 1 seed(s)  OOF 0.946185
+  m1          1 seed(s)  OOF 0.945832
+  slow        1 seed(s)  OOF 0.945784
+  v6b         1 seed(s)  OOF 0.945746
+  xgb         1 seed(s)  OOF 0.945522
+blend OOF 0.946346  weights {'hybrid': np.float64(0.059), 'hybrid_pseudo': np.float64(0.062), 'hybrid_nn': np.float64(0.026), 'naji_pc': np.float64(0.076), 'naji_clean': np.float64(0.064), 'catboost': np.float64(0.061), 'nn': np.float64(0.005), 'pub_megayak10': np.float64(0.229), 'pub_naji_v3': np.float64(0.081), 'pub_sergey': np.float64(0.063), 'pub_realmlp': np.float64(0.087), 'pub_naji_01blend': np.float64(0.186), 'm1': np.float64(0.0), 'slow': np.float64(0.0), 'v6b': np.float64(0.0), 'xgb': np.float64(0.0)}  best group 0.946264
+wrote submissions/blend_v5.csv
+  hybrid_m1: no OOF files yet, skipped
+  hybrid_m1_pseudo: no OOF files yet, skipped
+  hybrid_cat: no OOF files yet, skipped
+  hybrid_xgb: no OOF files yet, skipped
+  fold 1: stage1 0.945830 (1417)  pseudo 0.945839 (3327)  291s
+  pass 0: 0.946372
+  pass 1: 0.946380
+  pass 2: 0.946381
+  pass 3: 0.946381
+blend OOF 0.946381  weights {'hybrid': np.float64(0.0), 'hybrid_pseudo': np.float64(0.0), 'hybrid_nn': np.float64(0.0), 'naji_pc': np.float64(0.17), 'naji_clean': np.float64(0.0), 'catboost': np.float64(0.0), 'nn': np.float64(0.0), 'pub_megayak10': np.float64(0.469), 'pub_naji_v3': np.float64(0.0), 'pub_sergey': np.float64(0.011), 'pub_realmlp': np.float64(0.071), 'pub_naji_01blend': np.float64(0.279), 'm1': np.float64(0.0), 'slow': np.float64(0.0), 'v6b': np.float64(0.0), 'xgb': np.float64(0.0)}  best group 0.946264
+wrote submissions/blend_v5.csv
+  fold 2: stage1 0.947044 (1533)  pseudo 0.947100 (2344)  446s
+  fold 3: stage1 0.946476 (1180)  pseudo 0.946490 (2384)  575s
