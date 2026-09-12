@@ -10,11 +10,13 @@ from features import load
 out = sys.argv[1] if len(sys.argv) > 1 else "blend_v2"
 GROUPS = {
   # name: (oof names to rank-average, test csvs to average (name, weight) — None = the same names' own test columns)
+  "hybrid":   (["v27_hybrid_k5_s42"], None),   # megayak recipe on our split, OOF 0.946153
   "naji_pc":  (["v22_pseudo_clean_naji_m1", "v22_pseudo_clean_naji_m1_f7_t0", "v22_pseudo_clean_naji_m1_f2026_t0"],
                [("v13_refit_v22_pseudo_clean_naji_m1_r2290_m1_naji_s3", 3), ("v22_pseudo_clean_naji_m1", 1), ("v22_pseudo_clean_naji_m1_f7_t0", 1), ("v22_pseudo_clean_naji_m1_f2026_t0", 1)]),   # test: half full-data refit, half the 15-model fold bag
   "naji_clean": (["v23_naji_m1", "v23_naji_m1_f7_t0", "v23_naji_m1_f2026_t0"], None),
   "catboost": (["v8_catboost"], [("v26_cat_refit_r1330_s3", 1), ("v8_catboost", 1)]),   # same hedge
   "nn":       (["v12_nn_s101", "v12_nn_s202", "v12_nn_s303"], None),
+  "pub_megayak10": (["pub_megayak10"], None), "pub_naji_v3": (["pub_naji_v3"], None), "pub_sergey": (["pub_sergey"], None), "pub_realmlp": (["pub_realmlp"], None),   # public OOF sources (import_public.py)
   "m1":       (["v15_m1"], None), "slow": (["v17_slow"], None), "v6b": (["v6b_round"], None), "xgb": (["v7_xgb"], None),
 }
 tr, te, o, y, feats = load(); r = lambda a: rankdata(a) / len(a)
