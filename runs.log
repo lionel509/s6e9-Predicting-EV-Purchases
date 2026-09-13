@@ -639,3 +639,100 @@ v32_extra_k10_s42: v27 ref OOF 0.946240  features 65  (4s)
   fold 2: auc 0.945523  trees 1973  184s
   fold 3: auc 0.946151  trees 2649  252s
   fold 4: auc 0.946800  trees 2818  323s
+  fold 5: auc 0.947148  trees 2521  385s
+  fold 6: auc 0.945935  trees 1879  438s
+  fold 7: auc 0.946973  trees 2118  497s
+  fold 8: auc 0.947171  trees 2635  566s
+  fold 9: auc 0.945184  trees 2230  625s
+v32_extra_k10_s42 OOF 0.946109  (fold-ranked 0.946132)  Δ vs v27 -0.000131  iters [2311, 2337, 1973, 2649, 2818, 2521, 1879, 2118, 2635, 2230]  626s
+=== exit 05:12:21
+=== chain18 done
+=== v33_hybrid_views.py D 10 7 start 05:12:29
+v33_viewD_k10_s7: base features 67 | TE keys 17 x ('auto', 20.0, 200.0) | windows 11  (5s)
+  fold 0: auc 0.946395  trees 1504  ncol 129  55s
+  fold 1: auc 0.946170  trees 1127  ncol 129  97s
+  fold 2: auc 0.945833  trees 1502  ncol 129  147s
+  fold 3: auc 0.944821  trees 1356  ncol 129  202s
+  fold 4: auc 0.946361  trees 975  ncol 129  244s
+  fold 5: auc 0.947993  trees 1140  ncol 129  288s
+  fold 6: auc 0.944798  trees 1280  ncol 129  338s
+  fold 7: auc 0.946275  trees 1149  ncol 129  381s
+  fold 8: auc 0.945699  trees 1325  ncol 129  426s
+  fold 9: auc 0.946277  trees 1446  ncol 129  474s
+v33_viewD_k10_s7 OOF 0.946055  (fold-ranked 0.946062)  iters [1504, 1127, 1502, 1356, 975, 1140, 1280, 1149, 1325, 1446]  474s
+=== exit 05:20:25
+=== v33_hybrid_views.py D 10 2026 start 05:20:25
+v33_viewD_k10_s2026: base features 67 | TE keys 17 x ('auto', 20.0, 200.0) | windows 11  (4s)
+  fold 0: auc 0.945871  trees 1875  ncol 129  67s
+  fold 1: auc 0.945208  trees 1784  ncol 129  121s
+  fold 2: auc 0.945874  trees 1176  ncol 129  163s
+  fold 3: auc 0.944692  trees 1691  ncol 129  216s
+  fold 4: auc 0.947339  trees 1023  ncol 129  256s
+  fold 5: auc 0.947426  trees 1262  ncol 129  300s
+  fold 6: auc 0.946904  trees 1359  ncol 129  345s
+  fold 7: auc 0.945548  trees 1562  ncol 129  395s
+  fold 8: auc 0.945507  trees 1633  ncol 129  446s
+  fold 9: auc 0.946355  trees 1231  ncol 129  490s
+v33_viewD_k10_s2026 OOF 0.946063  (fold-ranked 0.946072)  iters [1875, 1784, 1176, 1691, 1023, 1262, 1359, 1562, 1633, 1231]  490s
+=== exit 05:28:38
+=== chain19 done
+=== v33_hybrid_views.py F 10 42 start 05:28:51
+v33_viewF_k10_s42: base features 59 | TE keys 17 x (2.0, 30.0, 300.0) | windows 11  (4s)
+  fold 0: auc 0.944954  trees 1177  ncol 121  45s
+  fold 1: auc 0.945316  trees 1539  ncol 121  91s
+  fold 2: auc 0.945409  trees 1851  ncol 121  142s
+  fold 3: auc 0.946069  trees 1262  ncol 121  184s
+  fold 4: auc 0.946705  trees 2176  ncol 121  245s
+  fold 5: auc 0.947069  trees 1512  ncol 121  292s
+  fold 6: auc 0.945936  trees 1036  ncol 121  331s
+  fold 7: auc 0.946891  trees 1424  ncol 121  384s
+  fold 8: auc 0.947099  trees 1599  ncol 121  438s
+  fold 9: auc 0.945154  trees 1640  ncol 121  490s
+v33_viewF_k10_s42 OOF 0.946052  (fold-ranked 0.946060)  iters [1177, 1539, 1851, 1262, 2176, 1512, 1036, 1424, 1599, 1640]  491s
+=== exit 05:37:04
+=== chain20 done
+=== v33_hybrid_views.py D 10 42 xgb start 05:37:14
+v33_viewD_xgb_k10_s42: base features 67 | TE keys 17 x ('auto', 20.0, 200.0) | windows 11  (5s)
+  fold 0: auc 0.944908  trees 1086  ncol 129  67s
+  fold 1: auc 0.945383  trees 1659  ncol 129  143s
+  fold 2: auc 0.945433  trees 1528  ncol 129  215s
+  fold 3: auc 0.946058  trees 1925  ncol 129  294s
+  fold 4: auc 0.946653  trees 1734  ncol 129  371s
+  fold 5: auc 0.947047  trees 1212  ncol 129  433s
+  fold 6: auc 0.945998  trees 909  ncol 129  487s
+  fold 7: auc 0.946858  trees 1411  ncol 129  555s
+  fold 8: auc 0.947106  trees 1660  ncol 129  628s
+  fold 9: auc 0.945210  trees 1969  ncol 129  708s
+v33_viewD_xgb_k10_s42 OOF 0.946058  (fold-ranked 0.946065)  iters [1086, 1659, 1528, 1925, 1734, 1212, 909, 1411, 1660, 1969]  709s
+=== exit 05:49:06
+=== v33_hybrid_views.py C 10 42 xgb start 05:49:06
+v33_viewC_xgb_k10_s42: base features 57 | TE keys 15 x (2.0, 30.0, 300.0) | windows 11  (4s)
+  fold 0: auc 0.945248  trees 1288  ncol 113  64s
+  fold 1: auc 0.945446  trees 1528  ncol 113  133s
+  fold 2: auc 0.945649  trees 1538  ncol 113  197s
+  fold 3: auc 0.946246  trees 1452  ncol 113  263s
+  fold 4: auc 0.946803  trees 1456  ncol 113  327s
+  fold 5: auc 0.947239  trees 1302  ncol 113  390s
+  fold 6: auc 0.946109  trees 1042  ncol 113  442s
+  fold 7: auc 0.946969  trees 1488  ncol 113  506s
+  fold 8: auc 0.947233  trees 1744  ncol 113  586s
+  fold 9: auc 0.945354  trees 1447  ncol 113  654s
+v33_viewC_xgb_k10_s42 OOF 0.946224  (fold-ranked 0.946229)  iters [1288, 1528, 1538, 1452, 1456, 1302, 1042, 1488, 1744, 1447]  654s
+=== exit 06:00:02
+=== chain21 done
+=== v34_init_score.py 10 7 k_inc_exact start 06:00:14
+v34_init_inc_exact_k10_s7: v27 ref OOF 0.946219  features 65  init from k_inc_exact_teauto
+  fold 0: auc 0.946366  (init alone 0.710737)  trees 1840  69s
+  fold 1: auc 0.946380  (init alone 0.712660)  trees 1058  111s
+  fold 2: auc 0.945949  (init alone 0.708526)  trees 1701  171s
+  fold 3: auc 0.944963  (init alone 0.712669)  trees 1930  229s
+  fold 4: auc 0.946466  (init alone 0.718325)  trees 1477  277s
+  fold 5: auc 0.948090  (init alone 0.713505)  trees 950  315s
+  fold 6: auc 0.944824  (init alone 0.712606)  trees 1272  357s
+  fold 7: auc 0.946220  (init alone 0.706047)  trees 1297  404s
+  fold 8: auc 0.945699  (init alone 0.710069)  trees 1430  452s
+  fold 9: auc 0.946588  (init alone 0.712979)  trees 1324  505s
+v34_init_inc_exact_k10_s7 OOF 0.946146  (fold-ranked 0.946154)  Δ vs v27 -0.000073  iters [1840, 1058, 1701, 1930, 1477, 950, 1272, 1297, 1430, 1324]  506s
+=== exit 06:08:42
+=== v34_init_score.py 10 2026 k_inc_exact start 06:08:42
+v34_init_inc_exact_k10_s2026: v27 ref OOF 0.946249  features 65  init from k_inc_exact_teauto
