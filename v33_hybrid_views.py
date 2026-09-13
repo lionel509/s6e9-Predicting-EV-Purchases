@@ -118,7 +118,8 @@ if __name__ == "__main__":
                                   random_state=SEED, n_jobs=-1, verbosity=0)
             m.fit(A, y[a], eval_set=[(B, y[b])], verbose=False); it = int(m.best_iteration)
         elif INIT:
-            ini = [logit(np.clip(D[f"{INIT}_teauto"].to_numpy(float), 1e-4, 1 - 1e-4)) for D in (A, B, C)]
+            tag0 = "auto" if CFG["smooth"][0] == "auto" else str(int(CFG["smooth"][0]))   # the view's first smoothing (C has no "auto")
+            ini = [logit(np.clip(D[f"{INIT}_te{tag0}"].to_numpy(float), 1e-4, 1 - 1e-4)) for D in (A, B, C)]
             m = lgb.LGBMClassifier(random_state=SEED, **PARAMS)
             m.fit(A, y[a], init_score=ini[0], eval_set=[(B, y[b])], eval_init_score=[ini[1]], eval_metric="auc", callbacks=[lgb.early_stopping(500, verbose=False)]); it = int(m.best_iteration_)
         else:

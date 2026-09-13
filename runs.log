@@ -924,3 +924,112 @@ v33_viewD_initinc500_k10_s42 OOF 0.946095  (fold-ranked 0.946100)  iters [1170, 
 === chain27 done
 === v33_hybrid_views.py D 10 7 lgb k_inc50 start 07:57:54
 v33_viewD_initinc50_k10_s7: base features 67 | TE keys 17 x ('auto', 20.0, 200.0) | windows 11  (4s)
+  fold 0: auc 0.946505  trees 1465  ncol 129  51s
+  fold 1: auc 0.946236  trees 1315  ncol 129  95s
+  fold 2: auc 0.945859  trees 1389  ncol 129  140s
+  fold 3: auc 0.944872  trees 1826  ncol 129  194s
+  fold 4: auc 0.946323  trees 1016  ncol 129  232s
+  fold 5: auc 0.947976  trees 990  ncol 129  271s
+  fold 6: auc 0.944788  trees 1382  ncol 129  316s
+  fold 7: auc 0.946334  trees 1355  ncol 129  366s
+  fold 8: auc 0.945625  trees 1214  ncol 129  409s
+  fold 9: auc 0.946348  trees 1379  ncol 129  454s
+v33_viewD_initinc50_k10_s7 OOF 0.946078  (fold-ranked 0.946087)  iters [1465, 1315, 1389, 1826, 1016, 990, 1382, 1355, 1214, 1379]  454s
+=== exit 08:05:30
+=== v33_hybrid_views.py D 10 2026 lgb k_inc50 start 08:05:30
+v33_viewD_initinc50_k10_s2026: base features 67 | TE keys 17 x ('auto', 20.0, 200.0) | windows 11  (4s)
+  fold 0: auc 0.945868  trees 1752  ncol 129  56s
+  fold 1: auc 0.945196  trees 1474  ncol 129  103s
+  fold 2: auc 0.945860  trees 1212  ncol 129  145s
+  fold 3: auc 0.944632  trees 1305  ncol 129  189s
+  fold 4: auc 0.947415  trees 1506  ncol 129  235s
+  fold 5: auc 0.947454  trees 1359  ncol 129  280s
+  fold 6: auc 0.946942  trees 1583  ncol 129  328s
+  fold 7: auc 0.945550  trees 1583  ncol 129  376s
+  fold 8: auc 0.945499  trees 2134  ncol 129  435s
+  fold 9: auc 0.946516  trees 1356  ncol 129  479s
+v33_viewD_initinc50_k10_s2026 OOF 0.946089  (fold-ranked 0.946093)  iters [1752, 1474, 1212, 1305, 1506, 1359, 1583, 1583, 2134, 1356]  479s
+=== exit 08:13:31
+=== v33_hybrid_views.py C 10 42 lgb k_inc100 start 08:13:31
+v33_viewC_initinc100_k10_s42: base features 57 | TE keys 15 x (2.0, 30.0, 300.0) | windows 11  (4s)
+Traceback (most recent call last):
+  File "/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3641, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 168, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 197, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7668, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7676, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'k_inc100_teauto'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/v33_hybrid_views.py", line 121, in <module>
+    ini = [logit(np.clip(D[f"{INIT}_teauto"].to_numpy(float), 1e-4, 1 - 1e-4)) for D in (A, B, C)]
+                         ~^^^^^^^^^^^^^^^^^^
+  File "/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4378, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3648, in get_loc
+    raise KeyError(key) from err
+KeyError: 'k_inc100_teauto'
+=== exit 08:13:44
+=== v34_init_score.py 10 303 k_inc100 start 08:13:44
+v34_init_inc100_k10_s303: v27 ref OOF 0.946225  features 65  init from k_inc100_teauto
+  fold 0: auc 0.944401  (init alone 0.700864)  trees 1267  42s
+  fold 1: auc 0.946848  (init alone 0.703413)  trees 1203  79s
+  fold 2: auc 0.946269  (init alone 0.706776)  trees 1273  117s
+  fold 3: auc 0.947077  (init alone 0.706043)  trees 1475  159s
+  fold 4: auc 0.945333  (init alone 0.699281)  trees 1154  195s
+  fold 5: auc 0.946390  (init alone 0.706914)  trees 1032  230s
+  fold 6: auc 0.947891  (init alone 0.707660)  trees 1425  271s
+  fold 7: auc 0.946265  (init alone 0.703895)  trees 1104  307s
+  fold 8: auc 0.947229  (init alone 0.705214)  trees 1501  348s
+  fold 9: auc 0.944921  (init alone 0.699331)  trees 1279  387s
+v34_init_inc100_k10_s303 OOF 0.946253  (fold-ranked 0.946262)  Δ vs v27 +0.000028  iters [1267, 1203, 1273, 1475, 1154, 1032, 1425, 1104, 1501, 1279]  387s
+=== exit 08:20:13
+=== v34_init_score.py 10 404 k_inc100 start 08:20:13
+v34_init_inc100_k10_s404: v27 ref OOF 0.946203  features 65  init from k_inc100_teauto
+  fold 0: auc 0.946094  (init alone 0.706044)  trees 1712  50s
+  fold 1: auc 0.946346  (init alone 0.704717)  trees 1391  90s
+  fold 2: auc 0.946429  (init alone 0.701578)  trees 1133  126s
+  fold 3: auc 0.944824  (init alone 0.702793)  trees 1527  170s
+  fold 4: auc 0.947177  (init alone 0.705401)  trees 1196  208s
+  fold 5: auc 0.946004  (init alone 0.703970)  trees 1360  249s
+  fold 6: auc 0.946376  (init alone 0.703731)  trees 1632  294s
+  fold 7: auc 0.946073  (init alone 0.703990)  trees 1424  335s
+  fold 8: auc 0.946503  (init alone 0.702569)  trees 1227  372s
+  fold 9: auc 0.946615  (init alone 0.704063)  trees 1482  414s
+v34_init_inc100_k10_s404 OOF 0.946239  (fold-ranked 0.946244)  Δ vs v27 +0.000036  iters [1712, 1391, 1133, 1527, 1196, 1360, 1632, 1424, 1227, 1482]  414s
+=== exit 08:27:09
+=== v34_init_score.py 10 505 k_inc100 start 08:27:09
+v34_init_inc100_k10_s505: v27 ref OOF 0.946207  features 65  init from k_inc100_teauto
+  fold 0: auc 0.945234  (init alone 0.704803)  trees 1026  38s
+  fold 1: auc 0.947565  (init alone 0.703705)  trees 1429  78s
+  fold 2: auc 0.947850  (init alone 0.704786)  trees 1671  123s
+  fold 3: auc 0.945003  (init alone 0.703649)  trees 1383  164s
+  fold 4: auc 0.947128  (init alone 0.708046)  trees 1523  207s
+  fold 5: auc 0.944929  (init alone 0.701628)  trees 1755  253s
+  fold 6: auc 0.946409  (init alone 0.699976)  trees 1583  297s
+  fold 7: auc 0.945632  (init alone 0.704985)  trees 1231  335s
+  fold 8: auc 0.946950  (init alone 0.704637)  trees 1263  373s
+  fold 9: auc 0.945570  (init alone 0.702509)  trees 1306  412s
+v34_init_inc100_k10_s505 OOF 0.946217  (fold-ranked 0.946227)  Δ vs v27 +0.000011  iters [1026, 1429, 1671, 1383, 1523, 1755, 1583, 1231, 1263, 1306]  412s
+=== exit 08:34:03
+=== chain28 done
+=== v33_hybrid_views.py C 10 42 lgb k_inc100 start 08:34:09
+v33_viewC_initinc100_k10_s42: base features 57 | TE keys 15 x (2.0, 30.0, 300.0) | windows 11  (4s)
+  fold 0: auc 0.945293  trees 1260  ncol 113  43s
+  fold 1: auc 0.945440  trees 1158  ncol 113  81s
+  fold 2: auc 0.945754  trees 1428  ncol 113  124s
+  fold 3: auc 0.946261  trees 1024  ncol 113  160s
+  fold 4: auc 0.946823  trees 1324  ncol 113  201s
+  fold 5: auc 0.947287  trees 1367  ncol 113  243s
+  fold 6: auc 0.946166  trees 884  ncol 113  277s
+  fold 7: auc 0.947094  trees 1357  ncol 113  318s
+  fold 8: auc 0.947245  trees 1755  ncol 113  366s
+  fold 9: auc 0.945368  trees 1104  ncol 113  402s
+v33_viewC_initinc100_k10_s42 OOF 0.946270  (fold-ranked 0.946273)  iters [1260, 1158, 1428, 1024, 1324, 1367, 884, 1357, 1755, 1104]  402s
+=== exit 08:40:53
+=== chain29 done

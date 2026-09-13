@@ -292,3 +292,49 @@ X      prep shape: (668665, 35)
 X_test prep shape: (286571, 35) 
 
 v35_realmlp_k10_s303: 668665 rows, 35 features, device mps
+  fold 0: auc 0.944294  126s
+  fold 1: auc 0.946675  250s
+  fold 2: auc 0.946034  372s
+  fold 3: auc 0.947099  495s
+  fold 4: auc 0.945443  621s
+  fold 5: auc 0.946237  747s
+  fold 6: auc 0.947627  875s
+  fold 7: auc 0.946062  999s
+  fold 8: auc 0.947024  1122s
+  fold 9: auc 0.944812  1246s
+v35_realmlp_k10_s303 OOF 0.946120  folds [0.94429, 0.94667, 0.94603, 0.9471, 0.94544, 0.94624, 0.94763, 0.94606, 0.94702, 0.94481]  1246s
+=== exit 08:18:46
+=== v35_realmlp.py 10 404 start 08:18:46
+PyTorch  version: 2.14.0
+Train shape: (668665, 15)
+Test shape : (286571, 14)
+Orig shape : (10000, 15)
+X      init shape: (668665, 13)
+X_test init shape: (286571, 13) 
+
+init len(cat_cols): 6
+init len(num_cols): 7 
+
+len(new_cat_cols): 18
+len(new_num_cols): 4 
+
+prep len(cat_cols): 24
+prep len(num_cols): 11 
+
+X      prep shape: (668665, 35)
+X_test prep shape: (286571, 35) 
+
+v35_realmlp_k10_s404: 668665 rows, 35 features, device mps
+  fold 0: auc 0.945918  123s
+  fold 1: auc 0.946302  247s
+  fold 2: auc 0.946250  374s
+  fold 3: auc 0.944733  497s
+  fold 4: auc 0.947062  620s
+  fold 5: auc 0.945855  747s
+  fold 6: auc 0.946239  872s
+  fold 7: auc 0.946096  995s
+  fold 8: auc 0.946355  1118s
+  fold 9: auc 0.946560  1242s
+v35_realmlp_k10_s404 OOF 0.946129  folds [0.94592, 0.9463, 0.94625, 0.94473, 0.94706, 0.94585, 0.94624, 0.9461, 0.94635, 0.94656]  1242s
+=== exit 08:39:35
+=== nn4 done
