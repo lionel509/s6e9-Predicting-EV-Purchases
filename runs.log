@@ -922,3 +922,5 @@ v33_viewD_initinc500_k10_s42: base features 67 | TE keys 17 x ('auto', 20.0, 200
 v33_viewD_initinc500_k10_s42 OOF 0.946095  (fold-ranked 0.946100)  iters [1170, 1323, 1448, 1266, 1513, 1215, 851, 1578, 1775, 1081]  431s
 === exit 07:51:17
 === chain27 done
+=== v33_hybrid_views.py D 10 7 lgb k_inc50 start 07:57:54
+v33_viewD_initinc50_k10_s7: base features 67 | TE keys 17 x ('auto', 20.0, 200.0) | windows 11  (4s)
