@@ -736,3 +736,37 @@ v34_init_inc_exact_k10_s7 OOF 0.946146  (fold-ranked 0.946154)  Δ vs v27 -0.000
 === exit 06:08:42
 === v34_init_score.py 10 2026 k_inc_exact start 06:08:42
 v34_init_inc_exact_k10_s2026: v27 ref OOF 0.946249  features 65  init from k_inc_exact_teauto
+  fold 0: auc 0.945742  (init alone 0.710008)  trees 1524  67s
+  fold 1: auc 0.945266  (init alone 0.709572)  trees 1729  130s
+  fold 2: auc 0.945872  (init alone 0.712821)  trees 1633  192s
+  fold 3: auc 0.944911  (init alone 0.712015)  trees 1473  255s
+  fold 4: auc 0.947081  (init alone 0.714363)  trees 1603  317s
+  fold 5: auc 0.947789  (init alone 0.713818)  trees 1329  360s
+  fold 6: auc 0.946866  (init alone 0.715086)  trees 1433  404s
+  fold 7: auc 0.945477  (init alone 0.709569)  trees 1839  456s
+  fold 8: auc 0.945553  (init alone 0.709868)  trees 1661  505s
+  fold 9: auc 0.946504  (init alone 0.711868)  trees 1042  543s
+v34_init_inc_exact_k10_s2026 OOF 0.946100  (fold-ranked 0.946106)  Δ vs v27 -0.000148  iters [1524, 1729, 1633, 1473, 1603, 1329, 1433, 1839, 1661, 1042]  543s
+=== exit 06:17:47
+=== chain22 done
+=== v33_hybrid_views.py D 10 101 start 06:17:56
+v33_viewD_k10_s101: base features 67 | TE keys 17 x ('auto', 20.0, 200.0) | windows 11  (5s)
+  fold 0: auc 0.945063  trees 1790  ncol 129  66s
+  fold 1: auc 0.947257  trees 1966  ncol 129  134s
+  fold 2: auc 0.945849  trees 1713  ncol 129  192s
+  fold 3: auc 0.944670  trees 1255  ncol 129  245s
+  fold 4: auc 0.945337  trees 1607  ncol 129  300s
+  fold 5: auc 0.945608  trees 1932  ncol 129  364s
+  fold 6: auc 0.947748  trees 1198  ncol 129  412s
+  fold 7: auc 0.946649  trees 1229  ncol 129  456s
+  fold 8: auc 0.945882  trees 1782  ncol 129  517s
+  fold 9: auc 0.946881  trees 1131  ncol 129  563s
+v33_viewD_k10_s101 OOF 0.946081  (fold-ranked 0.946094)  iters [1790, 1966, 1713, 1255, 1607, 1932, 1198, 1229, 1782, 1131]  564s
+=== exit 06:27:22
+=== v33_hybrid_views.py D 10 202 start 06:27:22
+v33_viewD_k10_s202: base features 67 | TE keys 17 x ('auto', 20.0, 200.0) | windows 11  (4s)
+  fold 0: auc 0.946005  trees 1876  ncol 129  70s
+  fold 1: auc 0.945266  trees 1459  ncol 129  124s
+  fold 2: auc 0.945731  trees 1258  ncol 129  180s
+  fold 3: auc 0.946589  trees 1611  ncol 129  233s
+  fold 4: auc 0.945959  trees 1236  ncol 129  279s
