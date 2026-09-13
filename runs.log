@@ -883,3 +883,42 @@ v34_init_inc100_k10_s202: v27 ref OOF 0.946254  features 65  init from k_inc100_
   fold 0: auc 0.946349  (init alone 0.703477)  trees 1694  48s
   fold 1: auc 0.945278  (init alone 0.705672)  trees 1347  85s
   fold 2: auc 0.945904  (init alone 0.706718)  trees 1071  118s
+  fold 3: auc 0.946783  (init alone 0.699725)  trees 1996  165s
+  fold 4: auc 0.946261  (init alone 0.704808)  trees 1402  205s
+  fold 5: auc 0.947456  (init alone 0.702704)  trees 1885  253s
+  fold 6: auc 0.946525  (init alone 0.703765)  trees 1203  289s
+  fold 7: auc 0.945535  (init alone 0.703889)  trees 1233  326s
+  fold 8: auc 0.946505  (init alone 0.702089)  trees 1293  364s
+  fold 9: auc 0.946380  (init alone 0.706061)  trees 1393  404s
+v34_init_inc100_k10_s202 OOF 0.946285  (fold-ranked 0.946298)  Δ vs v27 +0.000032  iters [1694, 1347, 1071, 1996, 1402, 1885, 1203, 1233, 1293, 1393]  404s
+=== exit 07:36:52
+=== chain26 done
+=== v33_hybrid_views.py D 10 42 lgb k_inc50 start 07:36:57
+v33_viewD_initinc50_k10_s42: base features 67 | TE keys 17 x ('auto', 20.0, 200.0) | windows 11  (4s)
+  fold 0: auc 0.944997  trees 1185  ncol 129  44s
+  fold 1: auc 0.945405  trees 1302  ncol 129  85s
+  fold 2: auc 0.945460  trees 1377  ncol 129  128s
+  fold 3: auc 0.946125  trees 1461  ncol 129  173s
+  fold 4: auc 0.946791  trees 1474  ncol 129  218s
+  fold 5: auc 0.947163  trees 1366  ncol 129  261s
+  fold 6: auc 0.945951  trees 833  ncol 129  295s
+  fold 7: auc 0.946873  trees 1619  ncol 129  342s
+  fold 8: auc 0.947091  trees 1329  ncol 129  383s
+  fold 9: auc 0.945179  trees 1281  ncol 129  425s
+v33_viewD_initinc50_k10_s42 OOF 0.946099  (fold-ranked 0.946103)  iters [1185, 1302, 1377, 1461, 1474, 1366, 833, 1619, 1329, 1281]  425s
+=== exit 07:44:05
+=== v33_hybrid_views.py D 10 42 lgb k_inc500 start 07:44:05
+v33_viewD_initinc500_k10_s42: base features 67 | TE keys 17 x ('auto', 20.0, 200.0) | windows 11  (4s)
+  fold 0: auc 0.944996  trees 1170  ncol 129  44s
+  fold 1: auc 0.945407  trees 1323  ncol 129  86s
+  fold 2: auc 0.945461  trees 1448  ncol 129  132s
+  fold 3: auc 0.946062  trees 1266  ncol 129  173s
+  fold 4: auc 0.946706  trees 1513  ncol 129  219s
+  fold 5: auc 0.947134  trees 1215  ncol 129  260s
+  fold 6: auc 0.945932  trees 851  ncol 129  295s
+  fold 7: auc 0.946956  trees 1578  ncol 129  341s
+  fold 8: auc 0.947098  trees 1775  ncol 129  393s
+  fold 9: auc 0.945243  trees 1081  ncol 129  431s
+v33_viewD_initinc500_k10_s42 OOF 0.946095  (fold-ranked 0.946100)  iters [1170, 1323, 1448, 1266, 1513, 1215, 851, 1578, 1775, 1081]  431s
+=== exit 07:51:17
+=== chain27 done
