@@ -3,6 +3,7 @@
   wobble  sample weight ALPHA (default 2) on rows inside the generator's undecided band 4.5 < buy score < 6.5
   rank    XGBoost rank:pairwise (RankNet loss, PAIRS random pairs per row over the whole fit set) — a direct AUC surrogate
   linear  LightGBM linear_tree=True: a linear model in every leaf (the recipe is linear in income inside each band)
+  extra   LightGBM extra_trees=True: random split thresholds — a cheap decorrelation lever on the same frame
 Everything else — frame, split, TE seed, Naji-shaped params, ES 500 — is v27's, so the OOF compares like-for-like.
 Usage: python v32_hybrid_variants.py MODE [n_folds=5] [seed=42] [param]
        param = INNER (tecv) | ALPHA (wobble) | PAIRS (rank) | LINEAR_LAMBDA (linear).  SMOKE=1 env: 30k rows, 60 trees."""
@@ -20,7 +21,7 @@ INNER = int(P) if MODE == "tecv" and P else 10
 ALPHA = float(P) if MODE == "wobble" and P else 2.0
 PAIRS = int(P) if MODE == "rank" and P else 8
 LLAM = float(P) if MODE == "linear" and P else 0.0
-suffix = {"tecv": f"_cv{INNER}", "wobble": f"_a{ALPHA:g}", "rank": f"_p{PAIRS}", "linear": f"_l{LLAM:g}"}[MODE]
+suffix = {"tecv": f"_cv{INNER}", "wobble": f"_a{ALPHA:g}", "rank": f"_p{PAIRS}", "linear": f"_l{LLAM:g}", "extra": ""}[MODE]
 SMOKE = os.environ.get("SMOKE") == "1"
 name = f"v32_{MODE}{suffix}_k{N}_s{SEED}" + ("_smoke" if SMOKE else "")
 
@@ -53,17 +54,21 @@ if __name__ == "__main__":
     for f, (a, b) in enumerate(cv.split(X, y)):
         A, B, C = frames(X, Xte, K, Kte, y, a, b, inner=INNER if MODE == "tecv" else 5)
         if MODE == "rank":
-            da = xgb.DMatrix(A, label=y[a], qid=np.zeros(len(a), dtype=np.uint32), enable_categorical=True)
-            db = xgb.DMatrix(B, label=y[b], qid=np.zeros(len(b), dtype=np.uint32), enable_categorical=True)
+            # random query groups of GSIZE rows: XGBoost parallelises the pairwise gradients over queries, so one 535k-row
+            # query runs on a single core (killed after 12 min without a fold); random groups keep the pairs random overall
+            GSIZE = 1000; rng = np.random.RandomState(SEED); pa, pbm = rng.permutation(len(a)), rng.permutation(len(b))
+            da = xgb.DMatrix(A.iloc[pa], label=y[a][pa], qid=(np.arange(len(a)) // GSIZE).astype(np.uint32), enable_categorical=True)
+            db = xgb.DMatrix(B.iloc[pbm], label=y[b][pbm], qid=(np.arange(len(b)) // GSIZE).astype(np.uint32), enable_categorical=True)
             dc = xgb.DMatrix(C, enable_categorical=True)
             prm = dict(objective="rank:pairwise", lambdarank_pair_method="mean", lambdarank_num_pair_per_sample=PAIRS, tree_method="hist",
                        max_depth=5, eta=0.05, subsample=0.9, colsample_bytree=0.6, min_child_weight=50, reg_lambda=2.0, max_cat_to_onehot=1,
                        eval_metric="auc", nthread=12, seed=SEED)
             bst = xgb.train(prm, da, 60 if SMOKE else 6000, evals=[(db, "val")], early_stopping_rounds=200, verbose_eval=False)
-            rng = (0, bst.best_iteration + 1); pb = bst.predict(db, iteration_range=rng); pc = bst.predict(dc, iteration_range=rng); its.append(bst.best_iteration)
+            ir = (0, bst.best_iteration + 1); pb = np.empty(len(b)); pb[pbm] = bst.predict(db, iteration_range=ir); pc = bst.predict(dc, iteration_range=ir); its.append(bst.best_iteration)
         else:
             prm = dict(PARAMS)
             if MODE == "linear": prm.update(linear_tree=True, linear_lambda=LLAM)
+            if MODE == "extra": prm.update(extra_trees=True)
             if SMOKE: prm.update(n_estimators=60)
             m = lgb.LGBMClassifier(random_state=SEED, **prm)
             m.fit(A, y[a], sample_weight=w[a] if MODE == "wobble" else None, eval_set=[(B, y[b])], eval_metric="auc", callbacks=[lgb.early_stopping(500, verbose=False)])

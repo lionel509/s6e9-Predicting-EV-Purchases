@@ -23,6 +23,9 @@ GROUPS = {
   "pub_megayak10": (["pub_megayak10"], None), "pub_naji_v3": (["pub_naji_v3"], None), "pub_sergey": (["pub_sergey"], None), "pub_realmlp": (["pub_realmlp"], None), "pub_naji_01blend": (["pub_naji_01blend"], None),   # public OOF sources (import_public.py)
   "pub_mega_A": (["pub_mega_A"], None), "pub_mega_B": (["pub_mega_B"], None), "pub_mega_C": (["pub_mega_C"], None), "pub_mega_D": (["pub_mega_D"], None),   # megayak four views, 10-fold s42
   "pub_realmlp2": (["pub_realmlp2"], None), "pub_naji_xgb": (["pub_naji_xgb"], None),   # yekenot RealMLP (2026-09-13 version), Naji XGB 10-fold
+  "viewC": (["v33_viewC_k10_s42"], None), "viewD": (["v33_viewD_k10_s42", "v33_viewD_k10_s7", "v33_viewD_k10_s2026"], None), "viewE": (["v33_viewE_k10_s42"], None), "viewF": (["v33_viewF_k10_s42"], None), "viewD_xgb": (["v33_viewD_xgb_k10_s42"], None), "viewC_xgb": (["v33_viewC_xgb_k10_s42"], None),   # megayak views C / D and our //25 ladder E, on our pipeline (v33)
+  "init": (["v34_init_inc_exact_k10_s42"], None), "realmlp_own": (["v35_realmlp_k5_s42"], None), "realmlp_own10": (["v35_realmlp_k10_s42", "v35_realmlp_k10_s7", "v35_realmlp_k10_s2026"], None),   # v35 RealMLP on MPS "init_drop": (["v34_init_inc_exact_drop_k10_s42"], None),   # init_score views (v34)
+  "rank": (["v32_rank_p8_k5_s42"], None), "linear": (["v32_linear_l0_k5_s42"], None), "extra": (["v32_extra_k10_s42"], None),   # v32 variants that survive
   "m1":       (["v15_m1"], None), "slow": (["v17_slow"], None), "v6b": (["v6b_round"], None), "xgb": (["v7_xgb"], None),
 }
 tr, te, o, y, feats = load(); r = lambda a: rankdata(a) / len(a)

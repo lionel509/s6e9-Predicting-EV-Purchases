@@ -3,11 +3,12 @@
      within city|car); TE smoothing 2/30/300
   D  digit block kept; NO exact-income key: //10, //50, //500, //5000 income keys + //5, //50 commute keys; windows; smoothing auto/20/200
   E  (ours) D with the //25, //250, //2500 ladder instead — the "obvious fifth member" from megayak's write-up
+  F  (ours) C × D: no digit block, no exact key, //10/50/500/5000 ladder, windows, lift; smoothing 2/30/300 — furthest from A
 Frozen partition StratifiedKFold(N, shuffle, seed) like v27; TE and window rates are nested (inner 5-fold for the fit rows, full fit
 set for validation and test). OOF saved as raw probabilities like every oof_*.npy here (megayak's files are fold-ranked).
 Reference on the same 10-fold s42 split: megayak C 0.946223, D 0.946077, A 0.946264.
-Usage: python v33_hybrid_views.py VIEW [n_folds=5] [seed=42]"""
-import sys, time, json, numpy as np, pandas as pd, lightgbm as lgb
+Usage: python v33_hybrid_views.py VIEW [n_folds=5] [seed=42] [xgb]   — "xgb" swaps in megayak's view-B XGBoost (hist, depth 5, colsample 0.3, max_bin 1024, ES 500)"""
+import sys, time, json, numpy as np, pandas as pd, lightgbm as lgb, xgboost as xgb
 from sklearn.model_selection import StratifiedKFold
 from sklearn.preprocessing import TargetEncoder
 from sklearn.metrics import roc_auc_score
@@ -16,10 +17,11 @@ from features import load
 from v27_hybrid import PARAMS, TARGET, CATS, NUMS
 rk = lambda v: rankdata(v) / len(v)
 VIEW = sys.argv[1]; N = int(sys.argv[2]) if len(sys.argv) > 2 else 5; SEED = int(sys.argv[3]) if len(sys.argv) > 3 else 42
-name = f"v33_view{VIEW}_k{N}_s{SEED}"
+XGB = len(sys.argv) > 4 and sys.argv[4] == "xgb"; name = f"v33_view{VIEW}{'_xgb' if XGB else ''}_k{N}_s{SEED}"
 CFG = {"C": dict(digits=False, lift=True, keys="default", smooth=(2.0, 30.0, 300.0)),
        "D": dict(digits=True, lift=False, keys="alt", smooth=("auto", 20.0, 200.0)),
-       "E": dict(digits=True, lift=False, keys="alt25", smooth=("auto", 20.0, 200.0))}[VIEW]
+       "E": dict(digits=True, lift=False, keys="alt25", smooth=("auto", 20.0, 200.0)),
+       "F": dict(digits=False, lift=True, keys="alt", smooth=(2.0, 30.0, 300.0))}[VIEW]
 
 def build(train, test, orig, digits=True, lift=False, keys="default"):
     n = len(train)
@@ -106,10 +108,16 @@ if __name__ == "__main__":
         wb = window_block(inc_tr[a], km_tr[a], y[a].astype(float), inc_tr[b], km_tr[b], g_tr[a], g_tr[b])
         wc = window_block(inc_tr[a], km_tr[a], y[a].astype(float), inc_te, km_te, g_tr[a], g_te)
         for i, c in enumerate(WIN_COLS): A[c] = wa[:, i]; B[c] = wb[:, i]; C[c] = wc[:, i]
-        m = lgb.LGBMClassifier(random_state=SEED, **PARAMS)
-        m.fit(A, y[a], eval_set=[(B, y[b])], eval_metric="auc", callbacks=[lgb.early_stopping(500, verbose=False)])
-        pb = m.predict_proba(B)[:, 1]; oof[b] = pb; oof_rk[b] = rk(pb); pte += rk(m.predict_proba(C)[:, 1]) / N; iters.append(m.best_iteration_)
-        print(f"  fold {f}: auc {roc_auc_score(y[b], pb):.6f}  trees {m.best_iteration_}  ncol {A.shape[1]}  {time.time()-t:.0f}s", flush=True)
+        if XGB:
+            m = xgb.XGBClassifier(n_estimators=20000, learning_rate=0.02, max_depth=5, min_child_weight=5, subsample=0.8, colsample_bytree=0.3, reg_alpha=0.071,
+                                  reg_lambda=2.0, max_bin=1024, tree_method="hist", enable_categorical=True, eval_metric="auc", early_stopping_rounds=500,
+                                  random_state=SEED, n_jobs=-1, verbosity=0)
+            m.fit(A, y[a], eval_set=[(B, y[b])], verbose=False); it = int(m.best_iteration)
+        else:
+            m = lgb.LGBMClassifier(random_state=SEED, **PARAMS)
+            m.fit(A, y[a], eval_set=[(B, y[b])], eval_metric="auc", callbacks=[lgb.early_stopping(500, verbose=False)]); it = int(m.best_iteration_)
+        pb = m.predict_proba(B)[:, 1]; oof[b] = pb; oof_rk[b] = rk(pb); pte += rk(m.predict_proba(C)[:, 1]) / N; iters.append(it)
+        print(f"  fold {f}: auc {roc_auc_score(y[b], pb):.6f}  trees {it}  ncol {A.shape[1]}  {time.time()-t:.0f}s", flush=True)
     auc, auc_rk = roc_auc_score(y, oof), roc_auc_score(y, oof_rk)
     print(f"{name} OOF {auc:.6f}  (fold-ranked {auc_rk:.6f})  iters {iters}  {time.time()-t:.0f}s", flush=True)
     np.save(f"submissions/oof_{name}.npy", oof); pd.DataFrame({"id": te.id, TARGET: pte}).to_csv(f"submissions/{name}.csv", index=False)

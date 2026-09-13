@@ -546,3 +546,96 @@ v32_wobble_a2_k5_s42 OOF 0.946138  (fold-ranked 0.946141)  Δ vs v27 -0.000015  
 === exit 04:10:36
 === v32_hybrid_variants.py rank 5 42 8 start 04:10:36
 v32_rank_p8_k5_s42: v27 ref OOF 0.946153  features 65  (4s)
+=== exit 04:22:43
+=== v32_hybrid_variants.py linear 5 42 0 start 04:22:43
+v32_linear_l0_k5_s42: v27 ref OOF 0.946153  features 65  (4s)
+  fold 0: auc 0.945021  trees 486  37s
+  fold 1: auc 0.945639  trees 517  73s
+  fold 2: auc 0.946564  trees 327  102s
+  fold 3: auc 0.946449  trees 842  147s
+  fold 4: auc 0.945937  trees 500  183s
+v32_linear_l0_k5_s42 OOF 0.945911  (fold-ranked 0.945922)  Δ vs v27 -0.000242  iters [486, 517, 327, 842, 500]  184s
+=== exit 04:25:49
+=== chain14 done
+=== v33_hybrid_views.py C 10 42 start 04:25:51
+v33_viewC_k10_s42: base features 57 | TE keys 15 x (2.0, 30.0, 300.0) | windows 11  (4s)
+  fold 0: auc 0.945196  trees 1422  ncol 113  55s
+  fold 1: auc 0.945352  trees 1321  ncol 113  95s
+  fold 2: auc 0.945680  trees 1651  ncol 113  141s
+  fold 3: auc 0.946195  trees 1422  ncol 113  182s
+  fold 4: auc 0.946839  trees 1198  ncol 113  219s
+  fold 5: auc 0.947261  trees 1374  ncol 113  259s
+  fold 6: auc 0.946120  trees 861  ncol 113  290s
+  fold 7: auc 0.947079  trees 1356  ncol 113  330s
+  fold 8: auc 0.947157  trees 1561  ncol 113  374s
+  fold 9: auc 0.945336  trees 1242  ncol 113  412s
+v33_viewC_k10_s42 OOF 0.946217  (fold-ranked 0.946222)  iters [1422, 1321, 1651, 1422, 1198, 1374, 861, 1356, 1561, 1242]  412s
+=== exit 04:32:45
+=== v33_hybrid_views.py D 10 42 start 04:32:45
+v33_viewD_k10_s42: base features 67 | TE keys 17 x ('auto', 20.0, 200.0) | windows 11  (4s)
+  fold 0: auc 0.945022  trees 1187  ncol 129  44s
+  fold 1: auc 0.945301  trees 1335  ncol 129  89s
+  fold 2: auc 0.945456  trees 1312  ncol 129  133s
+  fold 3: auc 0.946063  trees 1605  ncol 129  182s
+  fold 4: auc 0.946650  trees 1514  ncol 129  230s
+  fold 5: auc 0.947124  trees 1358  ncol 129  275s
+  fold 6: auc 0.945987  trees 984  ncol 129  314s
+  fold 7: auc 0.946886  trees 1674  ncol 129  364s
+  fold 8: auc 0.947113  trees 1817  ncol 129  413s
+  fold 9: auc 0.945228  trees 1637  ncol 129  461s
+v33_viewD_k10_s42 OOF 0.946077  (fold-ranked 0.946083)  iters [1187, 1335, 1312, 1605, 1514, 1358, 984, 1674, 1817, 1637]  461s
+=== exit 04:40:28
+=== v33_hybrid_views.py E 10 42 start 04:40:28
+v33_viewE_k10_s42: base features 66 | TE keys 16 x ('auto', 20.0, 200.0) | windows 11  (4s)
+  fold 0: auc 0.944928  trees 1487  ncol 125  48s
+  fold 1: auc 0.945291  trees 1387  ncol 125  92s
+  fold 2: auc 0.945437  trees 1364  ncol 125  135s
+  fold 3: auc 0.945969  trees 1635  ncol 125  183s
+  fold 4: auc 0.946592  trees 1458  ncol 125  229s
+  fold 5: auc 0.947034  trees 2008  ncol 125  283s
+  fold 6: auc 0.945908  trees 1024  ncol 125  319s
+  fold 7: auc 0.946818  trees 1541  ncol 125  365s
+  fold 8: auc 0.946933  trees 1371  ncol 125  406s
+  fold 9: auc 0.945202  trees 1935  ncol 125  458s
+v33_viewE_k10_s42 OOF 0.946007  (fold-ranked 0.946011)  iters [1487, 1387, 1364, 1635, 1458, 2008, 1024, 1541, 1371, 1935]  458s
+=== exit 04:48:07
+=== chain15 done
+=== v34_init_score.py 10 42 k_inc_exact start 04:48:09
+v34_init_inc_exact_k10_s42: v27 ref OOF 0.946240  features 65  init from k_inc_exact_teauto
+  fold 0: auc 0.945153  (init alone 0.713852)  trees 1401  44s
+  fold 1: auc 0.945347  (init alone 0.712905)  trees 1239  81s
+  fold 2: auc 0.945625  (init alone 0.713683)  trees 2162  134s
+  fold 3: auc 0.946260  (init alone 0.712200)  trees 1963  183s
+  fold 4: auc 0.946966  (init alone 0.711606)  trees 1516  224s
+  fold 5: auc 0.947158  (init alone 0.709111)  trees 1361  264s
+  fold 6: auc 0.945993  (init alone 0.711055)  trees 934  295s
+  fold 7: auc 0.946854  (init alone 0.715134)  trees 1757  338s
+  fold 8: auc 0.947204  (init alone 0.712916)  trees 1531  378s
+  fold 9: auc 0.945255  (init alone 0.705689)  trees 1447  417s
+v34_init_inc_exact_k10_s42 OOF 0.946177  (fold-ranked 0.946181)  Δ vs v27 -0.000063  iters [1401, 1239, 2162, 1963, 1516, 1361, 934, 1757, 1531, 1447]  417s
+=== exit 04:55:08
+=== v34_init_score.py 10 42 k_inc_exact drop start 04:55:08
+v34_init_inc_exact_drop_k10_s42: v27 ref OOF 0.946240  features 65  init from k_inc_exact_teauto (its TE columns dropped)
+  fold 0: auc 0.941520  (init alone 0.713852)  trees 851  33s
+  fold 1: auc 0.941727  (init alone 0.712905)  trees 1083  67s
+  fold 2: auc 0.941781  (init alone 0.713683)  trees 1102  100s
+  fold 3: auc 0.942072  (init alone 0.712200)  trees 1092  135s
+=== exit 04:57:27
+=== chain16 done
+=== v32_hybrid_variants.py rank 5 42 8 start 04:57:41
+v32_rank_p8_k5_s42: v27 ref OOF 0.946153  features 65  (4s)
+  fold 0: auc 0.945005  trees 518  51s
+  fold 1: auc 0.945441  trees 263  95s
+  fold 2: auc 0.946470  trees 248  131s
+  fold 3: auc 0.946248  trees 471  187s
+  fold 4: auc 0.946064  trees 596  246s
+v32_rank_p8_k5_s42 OOF 0.945846  (fold-ranked 0.945846)  Δ vs v27 -0.000307  iters [518, 263, 248, 471, 596]  246s
+=== exit 05:01:49
+=== chain17 done
+=== v32_hybrid_variants.py extra 10 42 start 05:01:53
+v32_extra_k10_s42: v27 ref OOF 0.946240  features 65  (4s)
+  fold 0: auc 0.945126  trees 2311  67s
+  fold 1: auc 0.945305  trees 2337  128s
+  fold 2: auc 0.945523  trees 1973  184s
+  fold 3: auc 0.946151  trees 2649  252s
+  fold 4: auc 0.946800  trees 2818  323s
