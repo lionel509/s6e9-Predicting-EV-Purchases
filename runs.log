@@ -525,3 +525,24 @@ v27_hybrid_k10_s505 OOF 0.946207  (fold-ranked 0.946221)  iters [1479, 1414, 127
   pass 3: 0.946430
 blend OOF 0.946430  weights {'hybrid': np.float64(0.0), 'hybrid10': np.float64(0.627), 'hybrid_pseudo': np.float64(0.0), 'hybrid_m1': np.float64(0.0), 'hybrid_m1_pseudo': np.float64(0.0), 'hybrid_cat': np.float64(0.0), 'hybrid_xgb': np.float64(0.0), 'hybrid_nn': np.float64(0.0), 'naji_pc': np.float64(0.054), 'naji_clean': np.float64(0.0), 'catboost': np.float64(0.0), 'nn': np.float64(0.0), 'pub_megayak10': np.float64(0.01), 'pub_naji_v3': np.float64(0.0), 'pub_sergey': np.float64(0.0), 'pub_realmlp': np.float64(0.069), 'pub_naji_01blend': np.float64(0.24), 'm1': np.float64(0.0), 'slow': np.float64(0.0), 'v6b': np.float64(0.0), 'xgb': np.float64(0.0)}  best group 0.946379
 wrote submissions/blend_v8.csv
+=== v32_hybrid_variants.py tecv 5 42 10 start 04:02:09
+v32_tecv_cv10_k5_s42: v27 ref OOF 0.946153  features 65  (4s)
+  fold 0: auc 0.945158  trees 1206  46s
+  fold 1: auc 0.945861  trees 1379  92s
+  fold 2: auc 0.946990  trees 1927  147s
+  fold 3: auc 0.946443  trees 1430  192s
+  fold 4: auc 0.946182  trees 1225  261s
+v32_tecv_cv10_k5_s42 OOF 0.946121  (fold-ranked 0.946127)  Δ vs v27 -0.000032  iters [1206, 1379, 1927, 1430, 1225]  261s
+=== exit 04:06:33
+=== v32_hybrid_variants.py wobble 5 42 2 start 04:06:33
+  wobble band: 0.342 of rows, buy rate inside 0.443 outside 0.035, weight 2.0
+v32_wobble_a2_k5_s42: v27 ref OOF 0.946153  features 65  (5s)
+  fold 0: auc 0.945155  trees 1229  62s
+  fold 1: auc 0.945845  trees 1317  105s
+  fold 2: auc 0.947041  trees 1491  151s
+  fold 3: auc 0.946463  trees 1273  193s
+  fold 4: auc 0.946203  trees 1497  241s
+v32_wobble_a2_k5_s42 OOF 0.946138  (fold-ranked 0.946141)  Δ vs v27 -0.000015  iters [1229, 1317, 1491, 1273, 1497]  241s
+=== exit 04:10:36
+=== v32_hybrid_variants.py rank 5 42 8 start 04:10:36
+v32_rank_p8_k5_s42: v27 ref OOF 0.946153  features 65  (4s)

@@ -21,6 +21,8 @@ GROUPS = {
   "catboost": (["v8_catboost"], [("v26_cat_refit_r1330_s3", 1), ("v8_catboost", 1)]),   # same hedge
   "nn":       (["v12_nn_s101", "v12_nn_s202", "v12_nn_s303"], None),
   "pub_megayak10": (["pub_megayak10"], None), "pub_naji_v3": (["pub_naji_v3"], None), "pub_sergey": (["pub_sergey"], None), "pub_realmlp": (["pub_realmlp"], None), "pub_naji_01blend": (["pub_naji_01blend"], None),   # public OOF sources (import_public.py)
+  "pub_mega_A": (["pub_mega_A"], None), "pub_mega_B": (["pub_mega_B"], None), "pub_mega_C": (["pub_mega_C"], None), "pub_mega_D": (["pub_mega_D"], None),   # megayak four views, 10-fold s42
+  "pub_realmlp2": (["pub_realmlp2"], None), "pub_naji_xgb": (["pub_naji_xgb"], None),   # yekenot RealMLP (2026-09-13 version), Naji XGB 10-fold
   "m1":       (["v15_m1"], None), "slow": (["v17_slow"], None), "v6b": (["v6b_round"], None), "xgb": (["v7_xgb"], None),
 }
 tr, te, o, y, feats = load(); r = lambda a: rankdata(a) / len(a)
