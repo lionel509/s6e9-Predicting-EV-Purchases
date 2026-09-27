@@ -1,4 +1,5 @@
-"""v32: single-change variants of the v27 hybrid recipe (brainstorm of 2026-09-13, ideas 1/3/4/8), one run each:
+"""v37: two new modes on the v27 hybrid recipe, with v32's modes copied along so they stay runnable from here (outputs
+are now named v37_*):
   tecv     inner TargetEncoder cv 5 -> INNER (default 10): fit rows get encodings closer to what validation/test get
   wobble   sample weight ALPHA (default 2) on rows inside the generator's undecided band 4.5 < buy score < 6.5
   rank     XGBoost rank:pairwise (RankNet loss, PAIRS random pairs per row over the whole fit set) — a direct AUC surrogate
@@ -6,11 +7,22 @@
   extra    LightGBM extra_trees=True: random split thresholds — a cheap decorrelation lever on the same frame
   additive interaction_constraints=[[i] for i in range(ncols)]: every tree uses exactly one feature, an additive booster
            matching the generator's additive label rule (a public notebook measured +0.0012 from this constraint alone);
-           n_estimators raised to 60000 (ES 500 stays). Optional 4th arg = an init key (v34's idea) so it can start from
-           that key's nested encoding instead of the base rate — name suffix _init<key> when given.
+           n_estimators raised to 60000 (ES 500 stays).
+  mono     additive's structure with the sign of the generator's effects instead of its additivity: monotone_constraints
+           (method 'advanced') — +1 on every _te column and _org_mean column (more leaked signal, more buy), +1 on
+           Environmental_Concern_Level and is_millionaire_cliff, -1 on is_30k_spike / is_dead_zone / is_env_hater, 0 on
+           everything else (categoricals, raw income and the inc_q* ladder must stay unconstrained). n_estimators stays
+           the normal 20000 — the trees still interact, they just cannot get a sign wrong.
+  agg      label-free income aggregates over the raw train+test rows: groupby income exact and income//100 of mean
+           Environmental_Concern_Level, share Subsidy_Available Yes, share Range_Anxiety_Level High / Low, mean
+           Daily_Commute_km, mean Age, share Home_Charging_Possible Yes — mapped on as agg_inc_* / agg_inc100_* float32
+           columns. No label touches them so nothing needs nesting inside the folds.
+additive / mono / agg all take the optional 4th arg = an init key (v34's idea) so boosting can start from that key's
+nested encoding instead of the base rate — name suffix _init<key without k_> when given.
 Everything else — frame, split, TE seed, Naji-shaped params, ES 500 — is v27's, so the OOF compares like-for-like.
-Usage: python v32_hybrid_variants.py MODE [n_folds=5] [seed=42] [param]
-       param = INNER (tecv) | ALPHA (wobble) | PAIRS (rank) | LINEAR_LAMBDA (linear) | init key (additive).  SMOKE=1 env: 30k rows, 60 trees."""
+Usage: python v37_hybrid_modes.py MODE [n_folds=5] [seed=42] [param]
+       param = INNER (tecv) | ALPHA (wobble) | PAIRS (rank) | LINEAR_LAMBDA (linear) | init key (additive, mono, agg).
+       SMOKE=1 env: 30k rows, 60 trees."""
 import os, sys, time, json, numpy as np, pandas as pd, lightgbm as lgb, xgboost as xgb
 from scipy.special import logit, expit
 from sklearn.model_selection import StratifiedKFold
@@ -26,11 +38,12 @@ INNER = int(P) if MODE == "tecv" and P else 10
 ALPHA = float(P) if MODE == "wobble" and P else 2.0
 PAIRS = int(P) if MODE == "rank" and P else 8
 LLAM = float(P) if MODE == "linear" and P else 0.0
-INIT = P if MODE == "additive" and P else None
+INIT = P if MODE in ("additive", "mono", "agg") and P else None
+isfx = f"_init{INIT.replace('k_', '')}" if INIT else ""
 suffix = {"tecv": f"_cv{INNER}", "wobble": f"_a{ALPHA:g}", "rank": f"_p{PAIRS}", "linear": f"_l{LLAM:g}", "extra": "",
-          "additive": f"_init{INIT.replace('k_', '')}" if INIT else ""}[MODE]
+          "additive": isfx, "mono": isfx, "agg": isfx}[MODE]
 SMOKE = os.environ.get("SMOKE") == "1"
-name = f"v32_{MODE}{suffix}_k{N}_s{SEED}" + ("_smoke" if SMOKE else "")
+name = f"v37_{MODE}{suffix}_k{N}_s{SEED}" + ("_smoke" if SMOKE else "")
 
 def frames(X, Xte, K, Kte, y, a, b, inner=5):
     """v27's fold_frames with the inner cv exposed. TE seed stays 42 like v27's main loop."""
@@ -47,10 +60,36 @@ def buy_score(df):
     return (1.2 * df.Annual_Income_USD.to_numpy(float) / 1e5 + 0.6 * df.Environmental_Concern_Level.to_numpy(float)
             + 2.0 * (df.Subsidy_Available.to_numpy() == "Yes") - 1.0 * (df.Range_Anxiety_Level.to_numpy() == "Medium") - 3.0 * (df.Range_Anxiety_Level.to_numpy() == "High"))
 
+MONO_UP = ["Environmental_Concern_Level", "is_millionaire_cliff"]; MONO_DOWN = ["is_30k_spike", "is_dead_zone", "is_env_hater"]
+def mono_vec(cols):
+    """Generator sign pattern as monotone_constraints: +1 on every target encoding and original mean (the leaked signal
+    and the millionaire cliff raise buy), -1 on the three spurious flags, 0 on everything else — categoricals, raw income
+    and the inc_q* ladders must stay unconstrained. Prints the +1/-1/0 counts and which named flags were found."""
+    s = set(cols); up = [c for c in MONO_UP if c in s]; down = [c for c in MONO_DOWN if c in s]
+    vec = [1 if ("_te" in c or c.endswith("_org_mean") or c in MONO_UP) else -1 if c in MONO_DOWN else 0 for c in cols]
+    print(f"  mono constraints: +1 {vec.count(1)}  -1 {vec.count(-1)}  0 {vec.count(0)}  named flags up {up} down {down}  missing {[c for c in MONO_UP + MONO_DOWN if c not in s]}", flush=True)
+    return vec
+
+def agg_frame(X, Xte, tr, te):
+    """Label-free income aggregates over the raw train+test rows, mapped on as agg_inc_* / agg_inc100_* float32 columns.
+    env/sub/rah/ral/km/age/home = mean concern, share subsidy Yes, share range High, share range Low, mean commute, mean
+    age, share home charging Yes. No labels used (the frame is built before any y enters), so no fold nesting needed."""
+    raw = pd.concat([tr, te], ignore_index=True)
+    d = pd.DataFrame({"env": raw.Environmental_Concern_Level, "km": raw.Daily_Commute_km, "age": raw.Age,
+                      "sub": (raw.Subsidy_Available == "Yes").astype("float64"), "rah": (raw.Range_Anxiety_Level == "High").astype("float64"),
+                      "ral": (raw.Range_Anxiety_Level == "Low").astype("float64"), "home": (raw.Home_Charging_Possible == "Yes").astype("float64")})
+    inc = raw.Annual_Income_USD.to_numpy(np.int64)
+    for suf, k in (("inc", inc), ("inc100", inc // 100)):
+        g = d.groupby(k).mean()
+        for df in (X, Xte):
+            xk = df.Annual_Income_USD.to_numpy(np.int64); xk = xk // 100 if suf == "inc100" else xk
+            for c in g.columns: df[f"agg_{suf}_{c}"] = pd.Series(xk).map(g[c]).astype("float32").to_numpy()
+
 if __name__ == "__main__":
     t = time.time(); tr, te, o, y, feats = load()
     if SMOKE: tr = tr.iloc[:30000].reset_index(drop=True); y = y[:30000]; te = te.iloc[:5000].reset_index(drop=True)
     X, Xte, K, Kte = build(tr, te, o)
+    if MODE == "agg": agg_frame(X, Xte, tr, te)
     refp = f"submissions/oof_v27_hybrid_k{N}_s{SEED}.npy"; ref = roc_auc_score(y, np.load(refp)) if os.path.exists(refp) and not SMOKE else float("nan")
     w = np.ones(len(X))
     if MODE == "wobble":
@@ -77,9 +116,12 @@ if __name__ == "__main__":
             if MODE == "linear": prm.update(linear_tree=True, linear_lambda=LLAM)
             if MODE == "extra": prm.update(extra_trees=True)
             if MODE == "additive": prm.update(n_estimators=60000, interaction_constraints=[[i] for i in range(A.shape[1])])
+            if MODE == "mono":
+                v = mono_vec(A.columns); assert len(v) == A.shape[1]
+                prm.update(monotone_constraints=v, monotone_constraints_method="advanced")
             if SMOKE: prm.update(n_estimators=60)
             m = lgb.LGBMClassifier(random_state=SEED, **prm)
-            if MODE == "additive" and INIT:
+            if MODE in ("additive", "mono", "agg") and INIT:
                 ini = [logit(np.clip(D[f"{INIT}_teauto"].to_numpy(float), 1e-4, 1 - 1e-4)) for D in (A, B, C)]
                 m.fit(A, y[a], init_score=ini[0], eval_set=[(B, y[b])], eval_init_score=[ini[1]], eval_metric="auc", callbacks=[lgb.early_stopping(500, verbose=False)])
                 pb = expit(m.predict(B, raw_score=True) + ini[1]); pc = expit(m.predict(C, raw_score=True) + ini[2])

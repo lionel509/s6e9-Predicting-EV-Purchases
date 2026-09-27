@@ -1,11 +1,16 @@
 """v35: yekenot's RealMLP (kernel ps-s6-e9-realmlp-pytorch, pure PyTorch re-implementation of pytabkit's RealMLP-TD) ported to
 Apple MPS, on our split, so the neural member can be seed-bagged and run 10-fold. Notebook code is verbatim except paths and device;
 the fold loop below is ours (raw-probability OOF, rank-averaged test column, our file names). Public reference: 5-fold s42 OOF 0.946010 (version of 2026-09-13: income x income//100 combo target-encoded; the first port, of the 09-05 version, gave 0.945875 = its public 0.945871).
-Usage: python v35_realmlp.py [n_folds=5] [seed=42] [epochs=2]     SMOKE=1: 40k rows, 1 epoch"""
+An optional 4th arg [init key] adds logit(nested {key}_teauto) (v27_hybrid.build + fold_frames, the v34 idea) as a fixed
+margin to the network's positive-class logit in both the training loss and prediction — LightGBM's init_score has no
+neural equivalent, so this is added by hand at the three places the model produces a logit (see RealMLP_TD_Classifier).
+Usage: python v35_realmlp.py [n_folds=5] [seed=42] [epochs=2] [init key]     SMOKE=1: 40k rows, 1 epoch"""
 import os, sys, time, json
 from scipy.stats import rankdata
+from scipy.special import logit
 SMOKE = os.environ.get("SMOKE") == "1"
 N_ = int(sys.argv[1]) if len(sys.argv) > 1 else 5; SEED_ = int(sys.argv[2]) if len(sys.argv) > 2 else 42; EPOCHS_ = int(sys.argv[3]) if len(sys.argv) > 3 else 2
+KEY_ = sys.argv[4] if len(sys.argv) > 4 else None
 import math
 import random
 import warnings
@@ -19,6 +24,9 @@ from sklearn.preprocessing import KBinsDiscretizer, TargetEncoder
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+# after torch: v27_hybrid pulls in LightGBM, whose libomp segfaults MPS training when it loads before torch's (2026-09-27, exit 139)
+from features import load as _load27
+from v27_hybrid import build as _build27, fold_frames as _fold_frames27
 
 warnings.filterwarnings('ignore')
 print("PyTorch  version:", torch.__version__)
@@ -567,7 +575,7 @@ class RealMLP_TD_Classifier(BaseEstimator):
         self.params = {**CONFIG, **kwargs}
 
     def fit(self, X_train: pd.DataFrame, y_train, X_val: pd.DataFrame, y_val,
-            cat_col_names=None, X_test: pd.DataFrame = None):
+            cat_col_names=None, X_test: pd.DataFrame = None, margin_train=None, margin_val=None):
         p   = self.params
         dev = torch.device(p["device"])
         verbose = p["verbosity"]
@@ -643,6 +651,10 @@ class RealMLP_TD_Classifier(BaseEstimator):
         ytt = torch.as_tensor(y_tr,      dtype=torch.float32, device=dev)
         Xvn = torch.as_tensor(X_val_num, dtype=torch.float32, device=dev)
         Xvc = torch.as_tensor(X_val_cat, dtype=torch.long,    device=dev)
+        # fixed init margin (v34's idea, ported to a neural net): added to the ensemble's logits before the
+        # sigmoid, both for the training loss and for validation, so the net learns/is scored on the residual
+        mtt = torch.as_tensor(np.asarray(margin_train), dtype=torch.float32, device=dev) if margin_train is not None else None
+        mvt = torch.as_tensor(np.asarray(margin_val),   dtype=torch.float32, device=dev) if margin_val   is not None else None
 
         n_ens       = p["n_ens"]
         train_bs    = p["train_bs"]
@@ -675,6 +687,8 @@ class RealMLP_TD_Classifier(BaseEstimator):
 
                 optimizer.zero_grad()
                 y_pred = self.model_(Xtn[idx_batch], Xtc[idx_batch])    # (bs, n_ens, C)
+                if mtt is not None:
+                    y_pred = y_pred + mtt[idx_batch].view(-1, 1, 1)
 
                 ls_val   = apply_schedule(p["ls_eps"],  progress, p["ls_eps_sched"],  flat_ratio)
                 drop_val = apply_schedule(p["dropout"], progress, p["p_drop_sched"],  flat_ratio)
@@ -712,7 +726,8 @@ class RealMLP_TD_Classifier(BaseEstimator):
             
             with torch.no_grad():
                 val_probs_pos = np.concatenate([
-                    torch.sigmoid(self.model_(Xvn[s : s + eval_bs], Xvc[s : s + eval_bs]))
+                    torch.sigmoid(self.model_(Xvn[s : s + eval_bs], Xvc[s : s + eval_bs])
+                                  + (mvt[s : s + eval_bs].view(-1, 1, 1) if mvt is not None else 0.0))
                         .mean(dim=1)
                         .squeeze(-1)
                         .cpu()
@@ -769,7 +784,7 @@ class RealMLP_TD_Classifier(BaseEstimator):
             print(f"  → best score: {best_score:.5f}  (epoch {best_epoch})")
         return self
 
-    def predict_proba(self, X: pd.DataFrame) -> np.ndarray:
+    def predict_proba(self, X: pd.DataFrame, margin=None) -> np.ndarray:
         eval_bs = self.params["eval_bs"]
         X_num = self.preprocessor_.transform(
             X[self.num_col_names_].values.astype(np.float32)
@@ -780,10 +795,12 @@ class RealMLP_TD_Classifier(BaseEstimator):
         X_cat = np.clip(X_cat, 0, np.array(self.cat_dims_) - 1)
         Xn = torch.as_tensor(X_num, dtype=torch.float32, device=self._dev)
         Xc = torch.as_tensor(X_cat, dtype=torch.long,    device=self._dev)
+        mt = torch.as_tensor(np.asarray(margin), dtype=torch.float32, device=self._dev) if margin is not None else None
         self.model_.eval()
         with torch.no_grad():
             probs_pos = np.concatenate([
-                torch.sigmoid(self.model_(Xn[s : s + eval_bs], Xc[s : s + eval_bs]))
+                torch.sigmoid(self.model_(Xn[s : s + eval_bs], Xc[s : s + eval_bs])
+                              + (mt[s : s + eval_bs].view(-1, 1, 1) if mt is not None else 0.0))
                     .mean(dim=1)
                     .squeeze(-1)
                     .cpu()
@@ -868,22 +885,32 @@ TE = True
 
 # ── our fold loop ─────────────────────────────────────────────────────────────
 rk = lambda v: rankdata(v) / len(v)
-name = f"v35_realmlp_k{N_}_s{SEED_}" + ("" if EPOCHS_ == 2 else f"_e{EPOCHS_}") + ("_smoke" if SMOKE else "")
+name = f"v35_realmlp_k{N_}_s{SEED_}" + ("" if EPOCHS_ == 2 else f"_e{EPOCHS_}") + (f"_init{KEY_.replace('k_', '')}" if KEY_ else "") + ("_smoke" if SMOKE else "")
 CONFIG["random_state"] = SEED_; CONFIG["epochs"] = 1 if SMOKE else EPOCHS_; CONFIG["verbosity"] = 2
 if SMOKE: X = X.iloc[:40000].reset_index(drop=True); y = y.iloc[:40000].reset_index(drop=True); X_test = X_test.iloc[:5000].reset_index(drop=True); test_id = test_id.iloc[:5000]
+if KEY_:
+    # v27's frame, built only to source the init key's nested encoding (v34's idea); same train/test rows in the
+    # same order as ours, so a StratifiedKFold(N_, SEED_) split lines up with our own fold's tr_idx/val_idx below
+    _tr27, _te27, _o27, _y27, _ = _load27()
+    if SMOKE: _tr27 = _tr27.iloc[:40000].reset_index(drop=True); _y27 = _y27[:40000]; _te27 = _te27.iloc[:5000].reset_index(drop=True)
+    _X27, _Xte27, _K27, _Kte27 = _build27(_tr27, _te27, _o27)
 seed_everything(SEED_); t0 = time.time()
 skf = StratifiedKFold(n_splits=N_, shuffle=True, random_state=SEED_)
 oof = np.zeros(len(X)); pte = np.zeros(len(X_test)); scores = []
-print(f"{name}: {len(X)} rows, {X.shape[1]} features, device {CONFIG['device']}", flush=True)
+print(f"{name}: {len(X)} rows, {X.shape[1]} features, device {CONFIG['device']}" + (f", init from {KEY_}_teauto" if KEY_ else ""), flush=True)
 for fold, (tr_idx, val_idx) in enumerate(skf.split(X, y)):
     X_tr, X_val, X_tst = X.iloc[tr_idx].copy(), X.iloc[val_idx].copy(), X_test.copy(); y_tr, y_val = y.iloc[tr_idx], y.iloc[val_idx]
     enc = TargetEncoder(cv=5, smooth="auto", shuffle=True, random_state=SEED_)
     te_names = [f"_{c}TE" for c in combo_names]
     X_tr[te_names] = enc.fit_transform(X_tr[combo_names], y_tr); X_val[te_names] = enc.transform(X_val[combo_names]); X_tst[te_names] = enc.transform(X_tst[combo_names])
-    model = RealMLP_TD_Classifier(**CONFIG); model.fit(X_tr, y_tr, X_val, y_val, cat_col_names=cat_cols, X_test=X_tst)
-    pv = model.best_val_probs_[:, 1]; oof[val_idx] = pv; pte += rk(model.predict_proba(X_tst)[:, 1]) / N_
+    m_tr = m_val = m_te = None
+    if KEY_:
+        A27, B27, C27 = _fold_frames27(_X27, _Xte27, _K27, _Kte27, _y27, tr_idx, val_idx)
+        m_tr, m_val, m_te = (logit(np.clip(D[f"{KEY_}_teauto"].to_numpy(float), 1e-4, 1 - 1e-4)) for D in (A27, B27, C27))
+    model = RealMLP_TD_Classifier(**CONFIG); model.fit(X_tr, y_tr, X_val, y_val, cat_col_names=cat_cols, X_test=X_tst, margin_train=m_tr, margin_val=m_val)
+    pv = model.best_val_probs_[:, 1]; oof[val_idx] = pv; pte += rk(model.predict_proba(X_tst, margin=m_te)[:, 1]) / N_
     scores.append(roc_auc_score(y_val, pv)); print(f"  fold {fold}: auc {scores[-1]:.6f}  {time.time()-t0:.0f}s", flush=True)
 auc = roc_auc_score(y, oof); print(f"{name} OOF {auc:.6f}  folds {[round(s, 5) for s in scores]}  {time.time()-t0:.0f}s", flush=True)
 if not SMOKE:
     np.save(f"submissions/oof_{name}.npy", oof); pd.DataFrame({ID: test_id, TARGET: pte}).to_csv(f"submissions/{name}.csv", index=False)
-    json.dump({"oof_auc": auc, "folds": scores, "n_splits": N_, "seed": SEED_, "epochs": EPOCHS_}, open(f"submissions/{name}.json", "w"), indent=2)
+    json.dump({"oof_auc": auc, "folds": scores, "n_splits": N_, "seed": SEED_, "epochs": EPOCHS_, "key": KEY_}, open(f"submissions/{name}.json", "w"), indent=2)

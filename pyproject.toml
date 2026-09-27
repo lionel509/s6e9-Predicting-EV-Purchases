@@ -18,6 +18,7 @@ dependencies = [
     "pytabkit>=1.7.3",
     "scikit-learn>=1.9.0",
     "scipy>=1.18.1",
+    "tabm>=0.0.3",
     "torch>=2.14.0",
     "xgboost>=3.4.1",
 ]

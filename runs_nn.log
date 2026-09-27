@@ -338,3 +338,76 @@ v35_realmlp_k10_s404: 668665 rows, 35 features, device mps
 v35_realmlp_k10_s404 OOF 0.946129  folds [0.94592, 0.9463, 0.94625, 0.94473, 0.94706, 0.94585, 0.94624, 0.9461, 0.94635, 0.94656]  1242s
 === exit 08:39:35
 === nn4 done
+=== v36_tabm.py 5 42 start 08:15:54
+  d_in 429 (14 num x 16 + cat dims [2, 2, 2, 2, 2, 2, 16, 14, 5, 5, 7, 10, 2, 5, 3, 2, 16, 16, 16, 16, 16, 16, 12, 16])  params 1.56M
+=== exit 09:26:06
+=== v36_tabm_k5_s42 oof_auc below 0.9459 gate, skipping 10-fold 09:26:06
+=== v35_realmlp.py 20 42 start 09:26:06
+PyTorch  version: 2.14.0
+Train shape: (668665, 15)
+Test shape : (286571, 14)
+Orig shape : (10000, 15)
+X      init shape: (668665, 13)
+X_test init shape: (286571, 13) 
+
+init len(cat_cols): 6
+init len(num_cols): 7 
+
+len(new_cat_cols): 18
+len(new_num_cols): 4 
+
+prep len(cat_cols): 24
+prep len(num_cols): 11 
+
+X      prep shape: (668665, 35)
+X_test prep shape: (286571, 35) 
+
+v35_realmlp_k20_s42: 668665 rows, 35 features, device mps
+=== exit 09:26:15
+=== nn5 done
+=== v35_realmlp.py 10 42 2 k_inc100 start 09:26:38
+PyTorch  version: 2.14.0
+Train shape: (668665, 15)
+Test shape : (286571, 14)
+Orig shape : (10000, 15)
+X      init shape: (668665, 13)
+X_test init shape: (286571, 13) 
+
+init len(cat_cols): 6
+init len(num_cols): 7 
+
+len(new_cat_cols): 18
+len(new_num_cols): 4 
+
+prep len(cat_cols): 24
+prep len(num_cols): 11 
+
+X      prep shape: (668665, 35)
+X_test prep shape: (286571, 35) 
+
+v35_realmlp_k10_s42_initinc100: 668665 rows, 35 features, device mps, init from k_inc100_teauto
+=== exit 09:26:59
+=== realmlp_init100 below gate
+=== tabm below gate / missing
+=== nn6 done
+=== v35_realmlp.py 10 42 2 k_inc100 start 16:34:38
+PyTorch  version: 2.14.0
+Train shape: (668665, 15)
+Test shape : (286571, 14)
+Orig shape : (10000, 15)
+X      init shape: (668665, 13)
+X_test init shape: (286571, 13) 
+
+init len(cat_cols): 6
+init len(num_cols): 7 
+
+len(new_cat_cols): 18
+len(new_num_cols): 4 
+
+prep len(cat_cols): 24
+prep len(num_cols): 11 
+
+X      prep shape: (668665, 35)
+X_test prep shape: (286571, 35) 
+
+v35_realmlp_k10_s42_initinc100: 668665 rows, 35 features, device mps, init from k_inc100_teauto

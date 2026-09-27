@@ -1,11 +1,11 @@
-"""v34: the "init_score view" — megayak's suggested sixth member (the forum's 'everything we measured' thread called it the most
-decorrelated member anyone built). Same hybrid frame and params as v27, but boosting starts from logit(smoothed per-value income
-target rate) — the nested k_inc_exact TargetEncoder(smooth=auto) value — instead of from the base rate, so the trees learn the
-correction to the encoding rather than re-deriving it. With DROP the key's own three TE columns are removed from the frame.
-KEY may be several keys joined by '+' (e.g. k_inc100+k_km_int): the init logit is the mean of the per-key logits.
-With XGB (same slot as drop) the learner is megayak's view-B XGBoost (hist, depth 5, colsample 0.3, max_bin 1024, ES 500)
-instead of LightGBM, and the init logits are fed as base_margin rather than init_score.
-Usage: python v34_init_score.py [n_folds=5] [seed=42] [key=k_inc_exact] [drop|xgb]     SMOKE=1: 30k rows, 60 trees"""
+"""v38: v34's init-score model with a LightGBM *shape* flag — single-lever parameter variants of the strongest own member, so the
+init view can be probed for capacity / learning-rate headroom without touching the frame, the init logits or the fold loop.
+FLAG (4th arg) selects the patch: slow = learning_rate 0.01 with the n_estimators cap doubled (same budget in smaller steps),
+wide = num_leaves 64 / max_depth 6 / min_child_samples 20, col5 = colsample_bytree 0.5. drop and xgb keep v34's exact meaning
+(the key's TE columns removed / megayak's view-B XGBoost learner, no shape patch); no FLAG runs plain v34 params. Output name
+v38_init_<key>_p<FLAG>_k<N>_s<SEED>, e.g. v38_init_inc100_pslow_k10_s42 (the _p<FLAG> part is omitted when FLAG is omitted).
+The JSON sidecar keeps the per-fold 'iters' list refit_full.py reads.
+Usage: python v38_init_shapes.py [n_folds=5] [seed=42] [key=k_inc_exact] [slow|wide|col5|drop|xgb]     SMOKE=1: 30k rows, 60 trees"""
 import os, sys, time, json, numpy as np, pandas as pd, lightgbm as lgb, xgboost as xgb
 from scipy.special import logit, expit
 from sklearn.model_selection import StratifiedKFold
@@ -16,9 +16,13 @@ from v27_hybrid import build, fold_frames, PARAMS, TARGET
 rk = lambda v: rankdata(v) / len(v)
 N = int(sys.argv[1]) if len(sys.argv) > 1 else 5; SEED = int(sys.argv[2]) if len(sys.argv) > 2 else 42
 KEY = sys.argv[3] if len(sys.argv) > 3 else "k_inc_exact"; FLAG = sys.argv[4] if len(sys.argv) > 4 else None
+FLAGS = ("slow", "wide", "col5", "drop", "xgb")
+if FLAG is not None and FLAG not in FLAGS: sys.exit(f"usage: v38_init_shapes.py [folds] [seed] [key] [{'|'.join(FLAGS)}]")
 DROP = FLAG == "drop"; XGB = FLAG == "xgb"; SMOKE = os.environ.get("SMOKE") == "1"
+SHAPE = {"slow": dict(learning_rate=0.01), "wide": dict(num_leaves=64, max_depth=6, min_child_samples=20),
+         "col5": dict(colsample_bytree=0.5)}.get(FLAG)
 KEYS = KEY.split("+")
-name = f"v34_init_{KEY.replace('k_', '').replace('+', 'p')}{'_drop' if DROP else '_xgb' if XGB else ''}_k{N}_s{SEED}" + ("_smoke" if SMOKE else "")
+name = f"v38_init_{KEY.replace('k_', '').replace('+', 'p')}{f'_p{FLAG}' if FLAG else ''}_k{N}_s{SEED}" + ("_smoke" if SMOKE else "")
 XGB_PARAMS = dict(n_estimators=20000, learning_rate=0.02, max_depth=5, min_child_weight=5, subsample=0.8, colsample_bytree=0.3, reg_alpha=0.071,
                    reg_lambda=2.0, max_bin=1024, tree_method="hist", enable_categorical=True, eval_metric="auc", early_stopping_rounds=500,
                    n_jobs=-1, verbosity=0)
@@ -29,7 +33,10 @@ if __name__ == "__main__":
     refp = f"submissions/oof_v27_hybrid_k{N}_s{SEED}.npy"; ref = roc_auc_score(y, np.load(refp)) if os.path.exists(refp) and not SMOKE else float("nan")
     print(f"{name}: v27 ref OOF {ref:.6f}  features {X.shape[1]}  init from {'+'.join(KEYS)}_teauto{' (its TE columns dropped)' if DROP else ''}{'  learner XGB' if XGB else ''}", flush=True)
     cv = StratifiedKFold(N, shuffle=True, random_state=SEED); oof = np.zeros(len(X)); oof_rk = np.zeros(len(X)); pte = np.zeros(len(Xte)); its = []
-    prm = dict(PARAMS); prm.update(n_estimators=60) if SMOKE else None
+    prm = dict(PARAMS); prm.update(SHAPE) if SHAPE else None
+    if FLAG == "slow": prm["n_estimators"] *= 2   # half the step size, same budget in trees
+    print(f"  lgb params ({FLAG or 'base'}): {prm}", flush=True)
+    prm.update(n_estimators=60) if SMOKE else None
     xprm = dict(XGB_PARAMS, random_state=SEED); xprm.update(n_estimators=60) if SMOKE else None
     for f, (a, b) in enumerate(cv.split(X, y)):
         A, B, C = fold_frames(X, Xte, K, Kte, y, a, b)
@@ -51,4 +58,4 @@ if __name__ == "__main__":
     print(f"{name} OOF {auc:.6f}  (fold-ranked {auc_rk:.6f})  Δ vs v27 {auc-ref:+.6f}  iters {its}  {time.time()-t:.0f}s", flush=True)
     if SMOKE: sys.exit(0)
     np.save(f"submissions/oof_{name}.npy", oof); pd.DataFrame({"id": te.id, TARGET: pte}).to_csv(f"submissions/{name}.csv", index=False)
-    json.dump({"oof_auc": auc, "ref_v27": ref, "iters": its, "n_splits": N, "seed": SEED, "key": KEY, "drop": DROP, "xgb": XGB}, open(f"submissions/{name}.json", "w"), indent=2)
+    json.dump({"oof_auc": auc, "ref_v27": ref, "iters": its, "n_splits": N, "seed": SEED, "key": KEY, "drop": DROP, "xgb": XGB, "flag": FLAG}, open(f"submissions/{name}.json", "w"), indent=2)

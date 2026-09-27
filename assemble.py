@@ -22,11 +22,26 @@ GROUPS = {
   "nn":       (["v12_nn_s101", "v12_nn_s202", "v12_nn_s303"], None),
   "pub_megayak10": (["pub_megayak10"], None), "pub_naji_v3": (["pub_naji_v3"], None), "pub_sergey": (["pub_sergey"], None), "pub_realmlp": (["pub_realmlp"], None), "pub_naji_01blend": (["pub_naji_01blend"], None),   # public OOF sources (import_public.py)
   "pub_mega_A": (["pub_mega_A"], None), "pub_mega_B": (["pub_mega_B"], None), "pub_mega_C": (["pub_mega_C"], None), "pub_mega_D": (["pub_mega_D"], None),   # megayak four views, 10-fold s42
-  "pub_realmlp2": (["pub_realmlp2"], None), "pub_naji_xgb": (["pub_naji_xgb"], None),   # yekenot RealMLP (2026-09-13 version), Naji XGB 10-fold
+  "pub_realmlp2": (["pub_realmlp2"], None), "pub_naji_xgb": (["pub_naji_xgb"], None),
+  "pub_mega6_E": (["pub_mega6_E"], None), "pub_mega6_F": (["pub_mega6_F"], None), "pub_mega6_G": (["pub_mega6_G"], None), "pub_naji_v5": (["pub_naji_v5"], None), "pub_naji_v6": (["pub_naji_v6"], None),   # megayak six-view library E/F/G (2026-09-16) + Naji V5/V6 (09-17); import_public.py   # yekenot RealMLP (2026-09-13 version), Naji XGB 10-fold
   "viewC": (["v33_viewC_k10_s42"], None), "viewD": (["v33_viewD_k10_s42", "v33_viewD_k10_s7", "v33_viewD_k10_s2026", "v33_viewD_k10_s101", "v33_viewD_k10_s202"], None), "viewE": (["v33_viewE_k10_s42"], None), "viewF": (["v33_viewF_k10_s42"], None), "viewD_xgb": (["v33_viewD_xgb_k10_s42"], None), "viewD_init50": (["v33_viewD_initinc50_k10_s42", "v33_viewD_initinc50_k10_s7", "v33_viewD_initinc50_k10_s2026"], None), "viewC_init100": (["v33_viewC_initinc100_k10_s42"], None), "viewD_init500": (["v33_viewD_initinc500_k10_s42"], None), "viewC_xgb": (["v33_viewC_xgb_k10_s42"], None),   # megayak views C / D and our //25 ladder E, on our pipeline (v33)
-  "init": (["v34_init_inc_exact_k10_s42", "v34_init_inc_exact_k10_s7", "v34_init_inc_exact_k10_s2026", "v34_init_inc_exact_k10_s101", "v34_init_inc_exact_k10_s202"], None), "realmlp_own": (["v35_realmlp_k5_s42"], None), "realmlp_e3": (["v35_realmlp_k5_s42_e3"], None), "realmlp_own10": (["v35_realmlp_k10_s%s" % s for s in (42, 7, 2026, 101, 202, 303, 404)], None), "init_drop": (["v34_init_inc_exact_drop_k10_s42"], None), "init100": (["v34_init_inc100_k10_s%s" % s for s in (42, 7, 2026, 101, 202, 303, 404, 505)], None), "init1000": (["v34_init_inc1000_k10_s42"], None),   # init_score views (v34)
+  "init": (["v34_init_inc_exact_k10_s42", "v34_init_inc_exact_k10_s7", "v34_init_inc_exact_k10_s2026", "v34_init_inc_exact_k10_s101", "v34_init_inc_exact_k10_s202"], None), "realmlp_own": (["v35_realmlp_k5_s42"], None), "realmlp_e3": (["v35_realmlp_k5_s42_e3"], None), "realmlp_own10": (["v35_realmlp_k10_s%s" % s for s in (42, 7, 2026, 101, 202, 303, 404)], None), "init_drop": (["v34_init_inc_exact_drop_k10_s42"], None), "init1000": (["v34_init_inc1000_k10_s42"], None),   # init_score views (v34)
+  "init100": (["v34_init_inc100_k10_s%s" % s for s in (42, 7, 2026, 101, 202, 303, 404, 505)], [("refit_init100_s%s" % s, 1) for s in (42, 7, 2026, 101, 202, 303, 404, 505)] + [("v34_init_inc100_k10_s%s" % s, 1) for s in (42, 7, 2026, 101, 202, 303, 404, 505)]),   # 50/50 hedge: refit_full.py test column vs the fold-average, once the refit exists
   "rank": (["v32_rank_p8_k5_s42"], None), "linear": (["v32_linear_l0_k5_s42"], None), "extra": (["v32_extra_k10_s42"], None),   # v32 variants that survive
   "m1":       (["v15_m1"], None), "slow": (["v17_slow"], None), "v6b": (["v6b_round"], None), "xgb": (["v7_xgb"], None),
+  "init100_k20": (["v34_init_inc100_k20_s42", "v34_init_inc100_k20_s7", "v34_init_inc100_k20_s2026"], None),
+  "additive": (["v32_additive_k10_s42"], None),
+  "additive_init100": (["v32_additive_initinc100_k10_s42"], None),
+  "init100_xgb": (["v34_init_inc100_xgb_k10_s42"], None),
+  "init_km": (["v34_init_km_int_k10_s42"], None),
+  "init_combo": (["v34_init_inc100pkm_int_k10_s42"], None),
+  "tabm": (["v36_tabm_k10_s42"], None),
+  "tabm5": (["v36_tabm_k5_s42"], None),
+  "realmlp_k20": (["v35_realmlp_k20_s42"], None),
+  "pub_legtarrr_v19": (["pub_legtarrr_v19"], None),
+  "init100_wide": (["v38_init_inc100_pwide_k10_s42"], None), "init100_col5": (["v38_init_inc100_pcol5_k10_s42"], None), "init100_slow": (["v38_init_inc100_pslow_k10_s42"], None),   # v38 param shapes (Fable 09-27 idea 5)
+  "mono_init100": (["v37_mono_initinc100_k10_s42"], None), "agg_init100": (["v37_agg_initinc100_k10_s%s" % s for s in (42, 7, 2026)], None), "agg_init100_k20": (["v37_agg_initinc100_k20_s42"], None),   # v37 monotone / label-free income aggregates (ideas 4, 7)
+  "realmlp_init100": (["v35_realmlp_k10_s%s_initinc100" % s for s in (42, 7, 2026)], None),   # RealMLP from the init100 margin (idea 2, run_nn6.sh)   # legtarrr residual-stack v19 OOF (import_public.py)
 }
 tr, te, o, y, feats = load(); r = lambda a: rankdata(a) / len(a)
 import os
