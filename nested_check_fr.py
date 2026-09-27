@@ -33,7 +33,10 @@ SETS = {"v18 groups": ["hybrid10", "pub_naji_01blend", "pub_naji_xgb", "pub_mega
         "v20 groups": ["hybrid10", "pub_naji_01blend", "pub_naji_xgb", "pub_mega_B", "pub_mega_D", "viewD", "viewC_xgb", "viewD_init50", "init", "init100", "realmlp_own10"]}
 V23 = ["pub_naji_01blend", "pub_naji_xgb", "viewD_init50", "viewC_init100", "viewD_init500", "init", "realmlp_own10", "init100"]
 V26 = ["pub_naji_01blend", "viewD", "viewD_init50", "init", "realmlp_own10", "init100_k20", "pub_legtarrr_v19", "agg_init100", "init100", "init100_slow", "init100pkm" if False else "init_combo"]
-SETS = {"v23 groups": V23, "v26fr groups": V26, "v26fr groups minus legtarrr v19": [g for g in V26 if g != "pub_legtarrr_v19"]}   # 2026-09-27
+V26N = ["pub_naji_01blend", "viewD", "viewD_init50", "init", "realmlp_own10", "init100_k20", "agg_init100", "init100"]
+V27N = ["pub_naji_01blend", "viewD", "viewD_init50", "init", "realmlp_own10", "init100_k20", "agg_init100", "agg_init100_k20"]
+SETS = {"v26fr nov19 groups (submitted)": V26N, "v27fr nov19 groups": V27N}   # 2026-09-27 evening
+_SETS_09_27 = {"v23 groups": V23, "v26fr groups": V26, "v26fr groups minus legtarrr v19": [g for g in V26 if g != "pub_legtarrr_v19"]}   # 2026-09-27
 def fit_weights(M, yy):
     n = M.shape[1]; auc = lambda w: roc_auc_score(yy, M @ (w / w.sum())); w = np.ones(n) / n; best = auc(w)
     grid = [0, .01, .02, .03, .05, .07, .1, .13, .17, .22, .28, .35, .45, .6]

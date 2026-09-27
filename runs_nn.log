@@ -411,3 +411,82 @@ X      prep shape: (668665, 35)
 X_test prep shape: (286571, 35) 
 
 v35_realmlp_k10_s42_initinc100: 668665 rows, 35 features, device mps, init from k_inc100_teauto
+  fold 0: auc 0.944574  311s
+  fold 1: auc 0.944979  658s
+  fold 2: auc 0.945238  1009s
+  fold 3: auc 0.945697  1362s
+  fold 4: auc 0.946396  1696s
+  fold 5: auc 0.946588  2037s
+  fold 6: auc 0.945436  2411s
+  fold 7: auc 0.946384  2752s
+  fold 8: auc 0.946708  3109s
+  fold 9: auc 0.944669  3386s
+v35_realmlp_k10_s42_initinc100 OOF 0.945661  folds [0.94457, 0.94498, 0.94524, 0.9457, 0.9464, 0.94659, 0.94544, 0.94638, 0.94671, 0.94467]  3386s
+=== exit 0 17:31:15
+=== v35_realmlp.py 10 7 2 k_inc100 start 17:31:15
+PyTorch  version: 2.14.0
+Train shape: (668665, 15)
+Test shape : (286571, 14)
+Orig shape : (10000, 15)
+X      init shape: (668665, 13)
+X_test init shape: (286571, 13) 
+
+init len(cat_cols): 6
+init len(num_cols): 7 
+
+len(new_cat_cols): 18
+len(new_num_cols): 4 
+
+prep len(cat_cols): 24
+prep len(num_cols): 11 
+
+X      prep shape: (668665, 35)
+X_test prep shape: (286571, 35) 
+
+v35_realmlp_k10_s7_initinc100: 668665 rows, 35 features, device mps, init from k_inc100_teauto
+  fold 0: auc 0.945983  205s
+  fold 1: auc 0.945931  402s
+  fold 2: auc 0.945767  595s
+  fold 3: auc 0.944283  787s
+  fold 4: auc 0.946095  979s
+  fold 5: auc 0.947666  1172s
+  fold 6: auc 0.944302  1364s
+  fold 7: auc 0.945936  1564s
+  fold 8: auc 0.945110  1757s
+  fold 9: auc 0.945850  1949s
+v35_realmlp_k10_s7_initinc100 OOF 0.945687  folds [0.94598, 0.94593, 0.94577, 0.94428, 0.94609, 0.94767, 0.9443, 0.94594, 0.94511, 0.94585]  1949s
+=== exit 0 18:03:54
+=== v35_realmlp.py 10 2026 2 k_inc100 start 18:03:54
+PyTorch  version: 2.14.0
+Train shape: (668665, 15)
+Test shape : (286571, 14)
+Orig shape : (10000, 15)
+X      init shape: (668665, 13)
+X_test init shape: (286571, 13) 
+
+init len(cat_cols): 6
+init len(num_cols): 7 
+
+len(new_cat_cols): 18
+len(new_num_cols): 4 
+
+prep len(cat_cols): 24
+prep len(num_cols): 11 
+
+X      prep shape: (668665, 35)
+X_test prep shape: (286571, 35) 
+
+v35_realmlp_k10_s2026_initinc100: 668665 rows, 35 features, device mps, init from k_inc100_teauto
+  fold 0: auc 0.945327  190s
+  fold 1: auc 0.944855  380s
+  fold 2: auc 0.945615  570s
+  fold 3: auc 0.944189  761s
+  fold 4: auc 0.946897  952s
+  fold 5: auc 0.947387  1142s
+  fold 6: auc 0.946384  1333s
+  fold 7: auc 0.945237  1523s
+  fold 8: auc 0.945140  1714s
+  fold 9: auc 0.945810  1904s
+v35_realmlp_k10_s2026_initinc100 OOF 0.945678  folds [0.94533, 0.94485, 0.94561, 0.94419, 0.9469, 0.94739, 0.94638, 0.94524, 0.94514, 0.94581]  1904s
+=== exit 0 18:35:48
+=== nn7 done

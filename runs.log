@@ -1247,3 +1247,78 @@ v38_init_inc100_pslow_k10_s42 OOF 0.946286  (fold-ranked 0.946290)  Δ vs v27 +0
 === chain31 done
 === v37_hybrid_modes.py agg 10 7 k_inc100 start 16:34:38
 v37_agg_initinc100_k10_s7: v27 ref OOF 0.946219  features 79  (4s)
+  fold 0: auc 0.946638  trees 1548  55s
+  fold 1: auc 0.946283  trees 1201  98s
+  fold 2: auc 0.946102  trees 1395  145s
+  fold 3: auc 0.945008  trees 1276  190s
+  fold 4: auc 0.946541  trees 1275  235s
+  fold 5: auc 0.948229  trees 896  272s
+  fold 6: auc 0.945134  trees 1226  315s
+  fold 7: auc 0.946575  trees 1919  371s
+  fold 8: auc 0.945913  trees 1767  424s
+  fold 9: auc 0.946503  trees 1511  472s
+v37_agg_initinc100_k10_s7 OOF 0.946283  (fold-ranked 0.946292)  Δ vs v27 +0.000065  iters [1548, 1201, 1395, 1276, 1275, 896, 1226, 1919, 1767, 1511]  472s
+=== exit 16:42:32
+=== v37_hybrid_modes.py agg 10 2026 k_inc100 start 16:42:32
+v37_agg_initinc100_k10_s2026: v27 ref OOF 0.946249  features 79  (4s)
+  fold 0: auc 0.945953  trees 1606  54s
+  fold 1: auc 0.945521  trees 1510  102s
+  fold 2: auc 0.946117  trees 1469  149s
+  fold 3: auc 0.944916  trees 1403  196s
+  fold 4: auc 0.947457  trees 1093  236s
+  fold 5: auc 0.947880  trees 1280  280s
+  fold 6: auc 0.947045  trees 1154  321s
+  fold 7: auc 0.945735  trees 1578  370s
+  fold 8: auc 0.945700  trees 1627  424s
+  fold 9: auc 0.946588  trees 1085  466s
+v37_agg_initinc100_k10_s2026 OOF 0.946285  (fold-ranked 0.946291)  Δ vs v27 +0.000036  iters [1606, 1510, 1469, 1403, 1093, 1280, 1154, 1578, 1627, 1085]  466s
+=== exit 16:50:20
+=== v34_init_score.py 20 2026 k_inc100 start 16:50:20
+v34_init_inc100_k20_s2026: v27 ref OOF nan  features 65  init from k_inc100_teauto
+  fold 0: auc 0.946081  (init alone 0.714122)  trees 1671  51s
+  fold 1: auc 0.945530  (init alone 0.693196)  trees 1446  96s
+  fold 2: auc 0.946988  (init alone 0.698105)  trees 1299  138s
+  fold 3: auc 0.944217  (init alone 0.702217)  trees 1992  191s
+  fold 4: auc 0.946234  (init alone 0.707179)  trees 1169  230s
+  fold 5: auc 0.946284  (init alone 0.704247)  trees 1564  275s
+  fold 6: auc 0.946288  (init alone 0.700922)  trees 1755  324s
+  fold 7: auc 0.943899  (init alone 0.704920)  trees 1349  372s
+  fold 8: auc 0.948884  (init alone 0.706943)  trees 1709  424s
+  fold 9: auc 0.946102  (init alone 0.706398)  trees 1139  469s
+  fold 10: auc 0.949008  (init alone 0.713520)  trees 1266  517s
+  fold 11: auc 0.946718  (init alone 0.700450)  trees 1361  561s
+  fold 12: auc 0.946373  (init alone 0.709419)  trees 1107  604s
+  fold 13: auc 0.947781  (init alone 0.707541)  trees 1605  663s
+  fold 14: auc 0.946562  (init alone 0.700924)  trees 1959  744s
+  fold 15: auc 0.944876  (init alone 0.703682)  trees 1426  809s
+  fold 16: auc 0.943890  (init alone 0.698969)  trees 1090  863s
+  fold 17: auc 0.947290  (init alone 0.699673)  trees 1361  920s
+  fold 18: auc 0.946326  (init alone 0.704096)  trees 1271  968s
+  fold 19: auc 0.946941  (init alone 0.703810)  trees 972  1010s
+v34_init_inc100_k20_s2026 OOF 0.946310  (fold-ranked 0.946314)  Δ vs v27 +nan  iters [1671, 1446, 1299, 1992, 1169, 1564, 1755, 1349, 1709, 1139, 1266, 1361, 1107, 1605, 1959, 1426, 1090, 1361, 1271, 972]  1010s
+=== exit 17:07:13
+=== v37_hybrid_modes.py agg 20 42 k_inc100 start 17:07:13
+v37_agg_initinc100_k20_s42: v27 ref OOF nan  features 79  (4s)
+  fold 0: auc 0.945785  trees 1485  71s
+  fold 1: auc 0.944835  trees 1446  140s
+  fold 2: auc 0.944047  trees 1249  205s
+  fold 3: auc 0.946962  trees 1386  280s
+  fold 4: auc 0.944468  trees 1352  341s
+  fold 5: auc 0.947075  trees 1262  390s
+  fold 6: auc 0.946303  trees 1046  433s
+  fold 7: auc 0.946402  trees 1148  484s
+  fold 8: auc 0.947469  trees 1402  538s
+  fold 9: auc 0.946434  trees 1341  587s
+  fold 10: auc 0.946946  trees 1238  652s
+  fold 11: auc 0.947704  trees 1087  714s
+  fold 12: auc 0.946160  trees 824  761s
+  fold 13: auc 0.946315  trees 1731  833s
+  fold 14: auc 0.948381  trees 1641  906s
+  fold 15: auc 0.945808  trees 1087  955s
+  fold 16: auc 0.946006  trees 1712  1008s
+  fold 17: auc 0.948754  trees 1710  1060s
+  fold 18: auc 0.946178  trees 1181  1106s
+  fold 19: auc 0.944499  trees 992  1145s
+v37_agg_initinc100_k20_s42 OOF 0.946318  (fold-ranked 0.946327)  Δ vs v27 +nan  iters [1485, 1446, 1249, 1386, 1352, 1262, 1046, 1148, 1402, 1341, 1238, 1087, 824, 1731, 1641, 1087, 1712, 1710, 1181, 992]  1145s
+=== exit 17:26:21
+=== chain32 done
