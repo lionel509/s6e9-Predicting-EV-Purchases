@@ -38,6 +38,7 @@ GROUPS = {
   "tabm": (["v36_tabm_k10_s42"], None),
   "tabm5": (["v36_tabm_k5_s42"], None),
   "realmlp_k20": (["v35_realmlp_k20_s42"], None),
+  "stack_tn": (["v39_stack_tn_k10_s42"], None), "stack_tn_initlr": (["v39_stack_tn_initlr_k10_s42"], None),   # v39 inner-fold basic-model stack (heuljax lever)
   "pub_legtarrr_v19": (["pub_legtarrr_v19"], None),
   "init100_wide": (["v38_init_inc100_pwide_k10_s42"], None), "init100_col5": (["v38_init_inc100_pcol5_k10_s42"], None), "init100_slow": (["v38_init_inc100_pslow_k10_s42"], None),   # v38 param shapes (Fable 09-27 idea 5)
   "mono_init100": (["v37_mono_initinc100_k10_s42"], None), "agg_init100": (["v37_agg_initinc100_k10_s%s" % s for s in (42, 7, 2026)], None), "agg_init100_k20": (["v37_agg_initinc100_k20_s42"], None),   # v37 monotone / label-free income aggregates (ideas 4, 7)
