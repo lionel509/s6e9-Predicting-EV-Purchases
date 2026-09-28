@@ -42,6 +42,7 @@ GROUPS = {
   "pub_legtarrr_v19": (["pub_legtarrr_v19"], None),
   "init100_wide": (["v38_init_inc100_pwide_k10_s42"], None), "init100_col5": (["v38_init_inc100_pcol5_k10_s42"], None), "init100_slow": (["v38_init_inc100_pslow_k10_s42"], None),   # v38 param shapes (Fable 09-27 idea 5)
   "mono_init100": (["v37_mono_initinc100_k10_s42"], None), "agg_init100": (["v37_agg_initinc100_k10_s%s" % s for s in (42, 7, 2026)], None), "agg_init100_k20": (["v37_agg_initinc100_k20_s42"], None),   # v37 monotone / label-free income aggregates (ideas 4, 7)
+  "hj_xgb": (["v40_heuljax_k10_s%s" % s for s in (42, 7, 2026, 101, 202, 303, 404, 505)], None),   # v40 heuljax XGB port; s42 = the public kernel output itself (issue #1)
   "realmlp_init100": (["v35_realmlp_k10_s%s_initinc100" % s for s in (42, 7, 2026)], None),   # RealMLP from the init100 margin (idea 2, run_nn6.sh)   # legtarrr residual-stack v19 OOF (import_public.py)
 }
 tr, te, o, y, feats = load(); r = lambda a: rankdata(a) / len(a)
