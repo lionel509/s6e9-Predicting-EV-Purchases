@@ -1322,3 +1322,32 @@ v37_agg_initinc100_k20_s42: v27 ref OOF nan  features 79  (4s)
 v37_agg_initinc100_k20_s42 OOF 0.946318  (fold-ranked 0.946327)  Δ vs v27 +nan  iters [1485, 1446, 1249, 1386, 1352, 1262, 1046, 1148, 1402, 1341, 1238, 1087, 824, 1731, 1641, 1087, 1712, 1710, 1181, 992]  1145s
 === exit 17:26:21
 === chain32 done
+=== v39_stacked_features.py tn 10 42 start 19:50:46
+v39_stack_tn_k10_s42: v27 ref OOF 0.946240  features 82  variant tn  stack stk_rawlgb+stk_lr+stk_surp_exact+stk_surp_100+stk_lr_minus_raw
+  rawlgb cols ['Gender', 'City_Type', 'Current_Car_Type', 'Home_Charging_Possible', 'Subsidy_Available', 'Range_Anxiety_Level', 'Age', 'Annual_Income_USD', 'Daily_Commute_km', 'Number_of_Cars_Owned', 'Charging_Stations_Near_Home', 'Charging_Stations_Near_Work', 'Environmental_Concern_Level', 'fq_inc', 'fq_km', 'is_30k_spike', 'is_millionaire_cliff', 'is_dead_zone', 'is_env_hater', 'Annual_Income_USD_org_mean', 'Daily_Commute_km_org_mean']
+  fold 0: auc 0.945271  (init alone 0.703530)  (basic rawlgb 0.940995 lr 0.943646)  trees 1064  A.shape[1] 132  111s
+  fold 1: auc 0.945394  (init alone 0.704482)  (basic rawlgb 0.941179 lr 0.943563)  trees 1034  A.shape[1] 132  218s
+  fold 2: auc 0.945749  (init alone 0.706076)  (basic rawlgb 0.941916 lr 0.943971)  trees 934  A.shape[1] 132  341s
+  fold 3: auc 0.946269  (init alone 0.704224)  (basic rawlgb 0.942399 lr 0.944724)  trees 819  A.shape[1] 132  459s
+  fold 4: auc 0.946955  (init alone 0.704853)  (basic rawlgb 0.943224 lr 0.945116)  trees 831  A.shape[1] 132  578s
+  fold 5: auc 0.947251  (init alone 0.702098)  (basic rawlgb 0.943426 lr 0.945461)  trees 1340  A.shape[1] 132  702s
+  fold 6: auc 0.946099  (init alone 0.703661)  (basic rawlgb 0.942478 lr 0.944354)  trees 729  A.shape[1] 132  807s
+  fold 7: auc 0.947065  (init alone 0.706663)  (basic rawlgb 0.943274 lr 0.945499)  trees 1135  A.shape[1] 132  917s
+  fold 8: auc 0.947297  (init alone 0.706575)  (basic rawlgb 0.943224 lr 0.945453)  trees 1069  A.shape[1] 132  1019s
+  fold 9: auc 0.945371  (init alone 0.697954)  (basic rawlgb 0.941623 lr 0.943519)  trees 1437  A.shape[1] 132  1131s
+=== exit 20:09:39
+=== v39_stacked_features.py tn_initlr 10 42 start 20:09:39
+v39_stack_tn_initlr_k10_s42: v27 ref OOF 0.946240  features 82  variant tn_initlr  stack stk_rawlgb+stk_lr+stk_surp_exact+stk_surp_100+stk_lr_minus_raw
+  rawlgb cols ['Gender', 'City_Type', 'Current_Car_Type', 'Home_Charging_Possible', 'Subsidy_Available', 'Range_Anxiety_Level', 'Age', 'Annual_Income_USD', 'Daily_Commute_km', 'Number_of_Cars_Owned', 'Charging_Stations_Near_Home', 'Charging_Stations_Near_Work', 'Environmental_Concern_Level', 'fq_inc', 'fq_km', 'is_30k_spike', 'is_millionaire_cliff', 'is_dead_zone', 'is_env_hater', 'Annual_Income_USD_org_mean', 'Daily_Commute_km_org_mean']
+  fold 0: auc 0.945281  (init alone 0.943646)  (basic rawlgb 0.940995 lr 0.943646)  trees 649  A.shape[1] 132  101s
+  fold 1: auc 0.945366  (init alone 0.943563)  (basic rawlgb 0.941179 lr 0.943563)  trees 1699  A.shape[1] 132  216s
+  fold 2: auc 0.945708  (init alone 0.943971)  (basic rawlgb 0.941916 lr 0.943971)  trees 680  A.shape[1] 132  312s
+  fold 3: auc 0.946275  (init alone 0.944724)  (basic rawlgb 0.942399 lr 0.944724)  trees 486  A.shape[1] 132  404s
+  fold 4: auc 0.946949  (init alone 0.945116)  (basic rawlgb 0.943224 lr 0.945116)  trees 1063  A.shape[1] 132  508s
+  fold 5: auc 0.947286  (init alone 0.945461)  (basic rawlgb 0.943426 lr 0.945461)  trees 738  A.shape[1] 132  605s
+  fold 6: auc 0.946052  (init alone 0.944354)  (basic rawlgb 0.942478 lr 0.944354)  trees 592  A.shape[1] 132  699s
+  fold 7: auc 0.947135  (init alone 0.945499)  (basic rawlgb 0.943274 lr 0.945499)  trees 1166  A.shape[1] 132  804s
+  fold 8: auc 0.947386  (init alone 0.945453)  (basic rawlgb 0.943224 lr 0.945453)  trees 1307  A.shape[1] 132  913s
+  fold 9: auc 0.945444  (init alone 0.943519)  (basic rawlgb 0.941623 lr 0.943519)  trees 1432  A.shape[1] 132  1024s
+=== exit 20:26:46
+=== chain33 done
