@@ -44,6 +44,7 @@ GROUPS = {
   "mono_init100": (["v37_mono_initinc100_k10_s42"], None), "agg_init100": (["v37_agg_initinc100_k10_s%s" % s for s in (42, 7, 2026)], None), "agg_init100_k20": (["v37_agg_initinc100_k20_s%s" % s for s in (42, 7, 2026)], None),   # v37 monotone / label-free income aggregates (ideas 4, 7)
   "hj_xgb": (["v40_heuljax_k10_s%s" % s for s in (42, 7, 2026, 101, 202, 303, 404, 505)], None),   # v40 heuljax XGB port; s42 = the public kernel output itself (issue #1)
   "hj_k20": (["v40_heuljax_k20_s%s" % s for s in (7, 2026, 101, 202, 303, 404, 505, 42)], None),   # v41: heuljax at 20 folds (issue #1)
+  "hj_k20r": (["v40_heuljax_k20_s%s" % s for s in (7, 2026, 101, 202, 303, 404, 505, 42)], [("v40_heuljax_refit_r1500_s%s" % s, 1) for s in (7, 2026, 101, 202, 303, 404, 505, 42)] + [("v40_heuljax_k20_s%s" % s, 1) for s in (7, 2026, 101, 202, 303, 404, 505, 42)]),   # same OOF; test = 50/50 full-train refit (r1500) + 20-fold average, holdout +0.00002-0.00003 (run_refit_ho.sh, issue #1)
   "realmlp_init100": (["v35_realmlp_k10_s%s_initinc100" % s for s in (42, 7, 2026)], None),   # RealMLP from the init100 margin (idea 2, run_nn6.sh)   # legtarrr residual-stack v19 OOF (import_public.py)
 }
 tr, te, o, y, feats = load(); r = lambda a: rankdata(a) / len(a)
