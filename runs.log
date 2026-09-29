@@ -1354,3 +1354,4 @@ v39_stack_tn_initlr_k10_s42: v27 ref OOF 0.946240  features 82  variant tn_initl
 2026-09-28 v40 heuljax port seeds 7/2026/101: OOF 0.946283 / 0.946263 / 0.946300 (public s42 0.946309); 4-seed bag group 0.946412
 2026-09-28 blend_v28hj_pp OOF 0.946532 -> LB 0.94644; blend_v29fr_nov19_pp OOF 0.946538 (nested 0.946524 vs v27 0.946507) -> LB 0.94644
 2026-09-28 v40 seeds 202/303/404/505: 0.946318/0.946286/0.946267/0.946274; 8-seed bag 0.946433; blend_v30fr_nov19_pp OOF 0.946544 nested 0.946531 -> LB 0.94644
+2026-09-28 v40 heuljax s7 FIXED_ROUNDS=1000 (no ES on scored fold): OOF 0.946269 vs ES 0.946283 -> ES optimism ~0.000014/model (upper bound; fixed 1000 also under-trains some folds). Naji OOF hub sweep: no new OOF sources.

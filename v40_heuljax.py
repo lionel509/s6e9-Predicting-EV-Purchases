@@ -37,7 +37,8 @@ ORIG_DIR = Path('data/orig')
 OOF_DIR = Path('submissions/v40_raw')
 TEST_PRED_DIR = Path('submissions/v40_raw')
 SUBMISSION_PATH = Path(f'submissions/v40_raw/sub_{sys.argv[1]}.csv')
-EXP_NAME = f'v40_heuljax_k10_s{sys.argv[1]}'
+FIXED_ROUNDS = int(os.getenv('FIXED_ROUNDS', '0'))   # >0: no early stopping on the scored fold (ES-optimism check, issue #1)
+EXP_NAME = f'v40_heuljax_k10_s{sys.argv[1]}' + (f'_fix{FIXED_ROUNDS}' if FIXED_ROUNDS else '')
 MODEL_NAME = EXP_NAME
 if SMOKE_TEST:
     OOF_DIR /= '_smoke'
@@ -1003,8 +1004,8 @@ with threadpool_limits(limits=N_THREADS):
                 maximize=True, save_best=True)
             booster = xgb.train(
                 dict(XGB_PARAMS, seed=RANDOM_STATE+fold), dtrain,
-                num_boost_round=N_ESTIMATORS, evals=[(dvalid, 'valid')],
-                callbacks=[stopper], verbose_eval=VERBOSE_EVERY or False)
+                num_boost_round=FIXED_ROUNDS or N_ESTIMATORS, evals=[(dvalid, 'valid')],
+                callbacks=[] if FIXED_ROUNDS else [stopper], verbose_eval=VERBOSE_EVERY or False)
             pred_valid = booster.predict(dvalid)
             pred_test = booster.predict(dtest)
             for pred, size in ((pred_valid, len(valid_idx)), (pred_test, len(TEST_IDS))):
