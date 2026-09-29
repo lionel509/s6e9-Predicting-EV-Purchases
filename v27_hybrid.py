@@ -9,7 +9,7 @@ Model: Naji-shaped LightGBM (lr 0.02, depth 5, 32 leaves, colsample 0.3, max_bin
 OOF is saved as raw probabilities (not fold-ranked) so it compares like-for-like with ours; the fold-ranked
 AUC megayak reports is printed alongside.
 Usage: python v27_hybrid.py [n_folds=5] [seed=42] [tag]"""
-import sys, time, json, numpy as np, pandas as pd, lightgbm as lgb
+import os, sys, time, json, numpy as np, pandas as pd, lightgbm as lgb
 from sklearn.model_selection import StratifiedKFold
 from sklearn.preprocessing import TargetEncoder
 from sklearn.metrics import roc_auc_score
@@ -44,6 +44,10 @@ def build(train, test, orig):
     K = pd.DataFrame({"k_inc_exact": inc.astype(str), "k_inc100": (inc // 100).astype(str), "k_inc1000": (inc // 1000).astype(str), "k_km_int": (km // 10).astype(str)})
     for c in CATS + ["Age", "Number_of_Cars_Owned", "Charging_Stations_Near_Home", "Charging_Stations_Near_Work", "Environmental_Concern_Level"]:
         K[f"k_{c}"] = df[c].astype(str).to_numpy()
+    if os.environ.get("TOKENS") == "1":   # GPT-2 BPE tokens of income: the generator writes numbers token by token (heuljax's LR, issue #1)
+        import tiktoken; enc = tiktoken.get_encoding("gpt2"); u, inv = np.unique(inc, return_inverse=True); tk = [enc.encode(" " + str(v)) for v in u]
+        K["k_tok1"] = np.array([str(t[0]) for t in tk])[inv]; K["k_tok2"] = np.array(["_".join(map(str, t[:2])) for t in tk])[inv]
+        K["k_toklast"] = np.array([f"{len(t)}_{t[-1]}" for t in tk])[inv]
     for c in K.columns: df[f"{c}_fe"] = K[c].map(K[c].value_counts(normalize=True)).astype("float32").values
     for c in CATS: df[c] = df[c].astype("category")
     cut = lambda x: (x.iloc[:n].reset_index(drop=True), x.iloc[n:].reset_index(drop=True))

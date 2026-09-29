@@ -18,7 +18,7 @@ N = int(sys.argv[1]) if len(sys.argv) > 1 else 5; SEED = int(sys.argv[2]) if len
 KEY = sys.argv[3] if len(sys.argv) > 3 else "k_inc_exact"; FLAG = sys.argv[4] if len(sys.argv) > 4 else None
 DROP = FLAG == "drop"; XGB = FLAG == "xgb"; SMOKE = os.environ.get("SMOKE") == "1"
 KEYS = KEY.split("+")
-name = f"v34_init_{KEY.replace('k_', '').replace('+', 'p')}{'_drop' if DROP else '_xgb' if XGB else ''}_k{N}_s{SEED}" + ("_smoke" if SMOKE else "")
+name = f"v34_init_{KEY.replace('k_', '').replace('+', 'p')}{'_drop' if DROP else '_xgb' if XGB else ''}{'_tok' if os.environ.get('TOKENS') == '1' else ''}_k{N}_s{SEED}" + ("_smoke" if SMOKE else "")
 XGB_PARAMS = dict(n_estimators=20000, learning_rate=0.02, max_depth=5, min_child_weight=5, subsample=0.8, colsample_bytree=0.3, reg_alpha=0.071,
                    reg_lambda=2.0, max_bin=1024, tree_method="hist", enable_categorical=True, eval_metric="auc", early_stopping_rounds=500,
                    n_jobs=-1, verbosity=0)

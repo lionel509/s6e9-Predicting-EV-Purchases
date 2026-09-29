@@ -1371,3 +1371,4 @@ v39_stack_tn_initlr_k10_s42: v27 ref OOF 0.946240  features 82  variant tn_initl
 2026-09-29 agg refits m1.4 s42/7/2026 (1842-1901 trees). blend_v33fr_probit = v32 + agg_init100_k20r test mix; OOF 0.946560 same weights; spearman vs v32 0.999997 -> _pp LB 0.94645. Picks: v33 + v18.
 2026-09-29 heuljax k30 s7 OOF 0.946374 (k20 0.946333, k10 0.946283). chain35 queued: k30 heuljax 2026/101/202 + k30 fix1000 s7, agg k30 7/2026/42. Groups hj_k30r, agg_init100_k30r (refit mixes reuse the full-train refits).
 2026-09-29 PUBLIC heuljax generator-aware ridge LR (GPT-2 income tokens) OOF 0.946400 k10 s42, audited leak-free; nested v33 0.946550 -> +pub_hjlr2 0.946672. blend_v34fr_probit OOF 0.946683 -> _pp LB 0.94667, rank ~16/3398 (#10 0.94674, #50 0.94661, #200 0.94657). Picks: v34 + v33. Local port v42_hjlr.py (tiktoken gpt2) running s42.
+2026-09-29 v42_hjlr local port s42 k10 OOF 0.946400 (public 0.946400, spearman 0.999997). run_v42.sh: k20/k30 x seeds 7/2026/101/202.
