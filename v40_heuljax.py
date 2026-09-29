@@ -39,8 +39,10 @@ TEST_PRED_DIR = Path('submissions/v40_raw')
 SUBMISSION_PATH = Path(f'submissions/v40_raw/sub_{sys.argv[1]}.csv')
 FIXED_ROUNDS = int(os.getenv('FIXED_ROUNDS', '0'))   # >0: no early stopping on the scored fold (ES-optimism check, issue #1)
 K = int(os.getenv('N_FOLDS', '10'))                    # 20: more rows per fold model (issue #1)
+REFIT = int(os.getenv('REFIT', '0'))                  # >0: one fit on all train rows for REFIT rounds, test column only (issue #1)
+HOLDOUT = os.getenv('HOLDOUT') == '1'                 # fold 0 of a 10-fold split stands in for test, to check REFIT against the fold average (issue #1)
 DISTILL = int(os.getenv('DISTILL', '0'))              # >0: refit on own in-sample soft labels, train rows only (broccoli beef, issue #1)
-EXP_NAME = f'v40_heuljax_k{K}_s{sys.argv[1]}' + (f'_fix{FIXED_ROUNDS}' if FIXED_ROUNDS else '') + (f'_d{DISTILL}' if DISTILL else '')
+EXP_NAME = f'v40_heuljax_k{K}_s{sys.argv[1]}' + (f'_fix{FIXED_ROUNDS}' if FIXED_ROUNDS else '') + (f'_d{DISTILL}' if DISTILL else '') + ('_ho' if HOLDOUT else '')
 MODEL_NAME = EXP_NAME
 if SMOKE_TEST:
     OOF_DIR /= '_smoke'
@@ -399,6 +401,11 @@ if SMOKE_TEST:
         train_row_index = chosen
         train = train.iloc[chosen].reset_index(drop=True)
     test = test.iloc[:SMOKE_TEST_ROWS].copy().reset_index(drop=True)
+if HOLDOUT:
+    _keep, _ho = next(StratifiedKFold(10, shuffle=True, random_state=RANDOM_STATE).split(train, train[TARGET]))
+    HO_Y = train[TARGET].iloc[_ho].eq('Yes').to_numpy(np.int8)
+    test = train.iloc[_ho].drop(columns=[TARGET]).reset_index(drop=True)
+    train, train_row_index = train.iloc[_keep].reset_index(drop=True), train_row_index[_keep]
 TRAIN_IDS, TEST_IDS = train[ID_COL].to_numpy(copy=True), test[ID_COL].to_numpy(copy=True)
 y = train[TARGET].eq('Yes').to_numpy(np.int8)
 if np.bincount(y, minlength=2).min() < N_FOLDS:
@@ -970,6 +977,19 @@ def save_submission(frame, destination):
             tmp.unlink()
 
 
+if REFIT:
+    _all = np.arange(len(y))
+    with threadpool_limits(limits=N_THREADS):
+        _tx, _, _sx, _tm, _, _sm = build_fold_bundle(_all, np.array([], dtype=_all.dtype), 0)
+        _dt = xgb.QuantileDMatrix(_tx, label=y, base_margin=_tm, feature_names=FEATURE_COLS, feature_types=FEATURE_TYPES,
+                                  enable_categorical=True, max_bin=XGB_PARAMS['max_bin'], nthread=N_THREADS)
+        _ds = xgb.QuantileDMatrix(_sx, base_margin=_sm, feature_names=FEATURE_COLS, feature_types=FEATURE_TYPES,
+                                  enable_categorical=True, max_bin=XGB_PARAMS['max_bin'], ref=_dt, nthread=N_THREADS)
+        _pt = xgb.train(dict(XGB_PARAMS, seed=RANDOM_STATE), _dt, num_boost_round=REFIT).predict(_ds)
+    _name = f'v40_heuljax_refit_r{REFIT}_s{sys.argv[1]}' + ('_ho' if HOLDOUT else '')
+    pd.DataFrame({ID_COL: TEST_IDS, TARGET: _pt}).to_csv(f'submissions/{_name}.csv', index=False)
+    print(f'{_name} written  rows {len(_pt)}' + (f'  HOLDOUT AUC {roc_auc_score(HO_Y, _pt):.6f}' if HOLDOUT else ''), flush=True)
+    sys.exit(0)
 cv = StratifiedKFold(n_splits=N_FOLDS, shuffle=True, random_state=RANDOM_STATE)
 splits = list(cv.split(np.zeros(len(y)), y))
 oof = np.full(len(y), np.nan, dtype=np.float32)
@@ -1074,5 +1094,6 @@ gc.collect();
 
 np.save(f"submissions/oof_{EXP_NAME}.npy", oof.astype(np.float64))
 submission.to_csv(f"submissions/{EXP_NAME}.csv", index=False)
+if HOLDOUT: print(f"{EXP_NAME} HOLDOUT AUC of the fold average {roc_auc_score(HO_Y, test_pred):.6f}", flush=True)
 if DISTILL: print(f"{EXP_NAME} teacher OOF {roc_auc_score(y, teacher_oof):.6f}", flush=True)
 print(f"{EXP_NAME} OOF {pooled_auc:.6f}  folds {' '.join(f'{a:.6f}' for a in fold_aucs)}", flush=True)
