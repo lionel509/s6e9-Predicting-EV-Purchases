@@ -1357,3 +1357,6 @@ v39_stack_tn_initlr_k10_s42: v27 ref OOF 0.946240  features 82  variant tn_initl
 2026-09-28 v40 heuljax s7 FIXED_ROUNDS=1000 (no ES on scored fold): OOF 0.946269 vs ES 0.946283 -> ES optimism ~0.000014/model (upper bound; fixed 1000 also under-trains some folds). Naji OOF hub sweep: no new OOF sources.
 2026-09-28 v41 DISTILL=1 heuljax s7: student below teacher on 6/6 folds (-0.00004..-0.00008 each), ~4x slower; stopped at fold 6, dropped. 20-fold seeds 7/2026/101/202 queued.
 2026-09-29 v41 heuljax k20 s7: OOF 0.946333 (k10 s7 0.946283). Nested fr: v30 0.946531 | v30+hj_k20(1 seed) 0.946535 (both halves up) | v27+hj_k20 only 0.946527 (1 seed ~= 8-seed k10 bag). Waiting on seeds 2026/101/202 + k20 fix1000 ES check.
+2026-09-29 heuljax k20 s2026 OOF 0.946346 (k10 0.946263). PROBIT nested: v30 groups 0.946535 (rank 0.946531, both halves up); v30+hj_k20(2 seeds) 0.946537; v27+hj_k20 only 0.946537. RealMLP 20-fold on MPS (nn8) + chain34 queued.
+2026-09-29 heuljax k20 seeds 7/2026/101/202: 0.946333/0.946346/0.946348/0.946339 (k10 same seeds avg 0.946291; +0.000050, 4/4 up).
+2026-09-29 nested fr (4-seed hj_k20): rank v27+hj_k20 0.946541 vs v30 0.946531; PROBIT v27+hj_k20 0.946546 vs v30 0.946535 (both halves up everywhere; hj_xgb weight -> 0). Building blend_v31fr_probit (EXCLUDE legtarrr_v19,hj_xgb,realmlp_k20).
