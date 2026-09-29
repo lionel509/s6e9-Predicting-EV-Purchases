@@ -36,6 +36,8 @@ for g, (oofs, tests) in GROUPS.items():
         else: tst = r(sum(w * pd.read_csv(f"submissions/{n}.csv")["Will_Buy_EV"].values for n, w in tests) / sum(w for _, w in tests))
     O.append(oof); P.append(tst); names.append(g); print(f"  {g:11s} {len(oofs)} seed(s)  OOF {roc_auc_score(y, oof):.6f}")
 O, P = np.column_stack(O), np.column_stack(P)
+if os.environ.get("PROBIT") == "1":   # blend in probit space: ndtri of each group's rank column, OOF and test alike (issue #1)
+    from scipy.special import ndtri; O, P = ndtri(np.clip(O, 1e-6, 1 - 1e-6)), ndtri(np.clip(P, 1e-6, 1 - 1e-6))
 def fit_weights(O, y):
     """Coordinate search over the simplex (each weight tried on a grid, others held, renormalised), 4 passes, then a
     Nelder-Mead polish. Nelder-Mead alone from equal weights stalls once there are more than ~10 groups (blend_v5
@@ -57,4 +59,4 @@ def fit_weights(O, y):
     return w / w.sum(), best
 w, auc = fit_weights(O, y)
 print(f"blend OOF {auc:.6f}  weights {dict(zip(names, np.round(w, 3)))}  best group {max(roc_auc_score(y, O[:, i]) for i in range(len(names))):.6f}")
-np.save(f"submissions/oof_{out}.npy", O @ w); pd.DataFrame({"id": te.id, "Will_Buy_EV": P @ w}).to_csv(f"submissions/{out}.csv", index=False); print(f"wrote submissions/{out}.csv")
+np.save(f"submissions/oof_{out}.npy", O @ w); pd.DataFrame({"id": te.id, "Will_Buy_EV": r(P @ w) if os.environ.get("PROBIT") == "1" else P @ w}).to_csv(f"submissions/{out}.csv", index=False); print(f"wrote submissions/{out}.csv")

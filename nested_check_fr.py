@@ -29,6 +29,8 @@ for k, (ns, _) in eval(compile(ast.fix_missing_locations(ast.Expression(_g.value
     if ns and k not in G: G[k] = ns   # every other assemble.py group, by its own seeds (2026-09-27)
 G["init100"] = ["v34_init_inc100_k10_s%s" % s for s in (42, 7, 2026, 101, 202, 303, 404, 505)]   # v23-era 8-seed group
 O = {g: np.mean([foldrank(n, np.load(f"submissions/oof_{n}.npy")) for n in ns], 0) for g, ns in G.items()}
+if os.environ.get("PROBIT") == "1":   # blend in probit space: ndtri of each group's fold-ranked average (issue #1)
+    from scipy.special import ndtri; O = {g: ndtri(np.clip(v, 1e-6, 1 - 1e-6)) for g, v in O.items()}
 SETS = {"v18 groups": ["hybrid10", "pub_naji_01blend", "pub_naji_xgb", "pub_mega_B", "pub_mega_D", "viewD", "viewC_xgb", "init", "realmlp_own10"],
         "v20 groups": ["hybrid10", "pub_naji_01blend", "pub_naji_xgb", "pub_mega_B", "pub_mega_D", "viewD", "viewC_xgb", "viewD_init50", "init", "init100", "realmlp_own10"]}
 V23 = ["pub_naji_01blend", "pub_naji_xgb", "viewD_init50", "viewC_init100", "viewD_init500", "init", "realmlp_own10", "init100"]
