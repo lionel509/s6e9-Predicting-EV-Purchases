@@ -1361,3 +1361,4 @@ v39_stack_tn_initlr_k10_s42: v27 ref OOF 0.946240  features 82  variant tn_initl
 2026-09-29 heuljax k20 seeds 7/2026/101/202: 0.946333/0.946346/0.946348/0.946339 (k10 same seeds avg 0.946291; +0.000050, 4/4 up).
 2026-09-29 nested fr (4-seed hj_k20): rank v27+hj_k20 0.946541 vs v30 0.946531; PROBIT v27+hj_k20 0.946546 vs v30 0.946535 (both halves up everywhere; hj_xgb weight -> 0). Building blend_v31fr_probit (EXCLUDE legtarrr_v19,hj_xgb,realmlp_k20).
 2026-09-29 k20 fix1000 s7 OOF 0.946316 (k10 fix1000 0.946269: +0.000047 no-ES; ES optimism k20 0.000017 vs k10 0.000014). blend_v31fr_probit OOF 0.946556 (hj_k20 0.359) -> _pp LB 0.94645. Picks: v31 + v18.
+2026-09-29 heuljax k20 s303 0.946346 (k10 0.946286), s404 0.946353 (k10 0.946267); RealMLP k20 s42 0.946198 (k10 ~0.94612, +0.00007).
