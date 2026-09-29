@@ -29,7 +29,7 @@ GROUPS = {
   "init100": (["v34_init_inc100_k10_s%s" % s for s in (42, 7, 2026, 101, 202, 303, 404, 505)], [("refit_init100_s%s" % s, 1) for s in (42, 7, 2026, 101, 202, 303, 404, 505)] + [("v34_init_inc100_k10_s%s" % s, 1) for s in (42, 7, 2026, 101, 202, 303, 404, 505)]),   # 50/50 hedge: refit_full.py test column vs the fold-average, once the refit exists
   "rank": (["v32_rank_p8_k5_s42"], None), "linear": (["v32_linear_l0_k5_s42"], None), "extra": (["v32_extra_k10_s42"], None),   # v32 variants that survive
   "m1":       (["v15_m1"], None), "slow": (["v17_slow"], None), "v6b": (["v6b_round"], None), "xgb": (["v7_xgb"], None),
-  "init100_k20": (["v34_init_inc100_k20_s42", "v34_init_inc100_k20_s7", "v34_init_inc100_k20_s2026"], None),
+  "init100_k20": (["v34_init_inc100_k20_s%s" % s for s in (42, 7, 2026, 101)], None),
   "additive": (["v32_additive_k10_s42"], None),
   "additive_init100": (["v32_additive_initinc100_k10_s42"], None),
   "init100_xgb": (["v34_init_inc100_xgb_k10_s42"], None),
@@ -41,7 +41,7 @@ GROUPS = {
   "stack_tn": (["v39_stack_tn_k10_s42"], None), "stack_tn_initlr": (["v39_stack_tn_initlr_k10_s42"], None),   # v39 inner-fold basic-model stack (heuljax lever)
   "pub_legtarrr_v19": (["pub_legtarrr_v19"], None),
   "init100_wide": (["v38_init_inc100_pwide_k10_s42"], None), "init100_col5": (["v38_init_inc100_pcol5_k10_s42"], None), "init100_slow": (["v38_init_inc100_pslow_k10_s42"], None),   # v38 param shapes (Fable 09-27 idea 5)
-  "mono_init100": (["v37_mono_initinc100_k10_s42"], None), "agg_init100": (["v37_agg_initinc100_k10_s%s" % s for s in (42, 7, 2026)], None), "agg_init100_k20": (["v37_agg_initinc100_k20_s42"], None),   # v37 monotone / label-free income aggregates (ideas 4, 7)
+  "mono_init100": (["v37_mono_initinc100_k10_s42"], None), "agg_init100": (["v37_agg_initinc100_k10_s%s" % s for s in (42, 7, 2026)], None), "agg_init100_k20": (["v37_agg_initinc100_k20_s%s" % s for s in (42, 7, 2026)], None),   # v37 monotone / label-free income aggregates (ideas 4, 7)
   "hj_xgb": (["v40_heuljax_k10_s%s" % s for s in (42, 7, 2026, 101, 202, 303, 404, 505)], None),   # v40 heuljax XGB port; s42 = the public kernel output itself (issue #1)
   "hj_k20": (["v40_heuljax_k20_s%s" % s for s in (7, 2026, 101, 202, 303, 404, 505, 42)], None),   # v41: heuljax at 20 folds (issue #1)
   "realmlp_init100": (["v35_realmlp_k10_s%s_initinc100" % s for s in (42, 7, 2026)], None),   # RealMLP from the init100 margin (idea 2, run_nn6.sh)   # legtarrr residual-stack v19 OOF (import_public.py)
