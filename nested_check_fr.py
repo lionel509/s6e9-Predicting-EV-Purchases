@@ -45,7 +45,8 @@ _SETS_09_29b = {"v31 groups (submitted)": V31, "v31 + realmlp_k20": V31 + ["real
 V33 = [g for g in V31 if g != "realmlp_own10"] + ["realmlp_k20"]
 _SETS_09_29c = {"v33 groups (submitted)": V33, "v33 + pub_hjlr2": V33 + ["pub_hjlr2"], "v33 + pub_hjlr2 + pub_hjlr": V33 + ["pub_hjlr2", "pub_hjlr"]}   # 2026-09-29 08:45, issue #1
 V34 = V33 + ["pub_hjlr2", "pub_hjlr"]
-SETS = {"v34 groups (submitted)": V34, "v34 + init100_tok": V34 + ["init100_tok"]}   # 2026-09-29 10:15, issue #1
+_SETS_09_29d = {"v34 groups (submitted)": V34, "v34 + init100_tok": V34 + ["init100_tok"]}   # 2026-09-29 10:15, issue #1
+SETS = {"v34 groups (submitted)": V34, "v34 + init100_tok_k20": V34 + ["init100_tok_k20"]}   # 2026-09-29 evening, issue #1
 _SETS_09_27 = {"v23 groups": V23, "v26fr groups": V26, "v26fr groups minus legtarrr v19": [g for g in V26 if g != "pub_legtarrr_v19"]}   # 2026-09-27
 def fit_weights(M, yy):
     n = M.shape[1]; auc = lambda w: roc_auc_score(yy, M @ (w / w.sum())); w = np.ones(n) / n; best = auc(w)
