@@ -1355,3 +1355,5 @@ v39_stack_tn_initlr_k10_s42: v27 ref OOF 0.946240  features 82  variant tn_initl
 2026-09-28 blend_v28hj_pp OOF 0.946532 -> LB 0.94644; blend_v29fr_nov19_pp OOF 0.946538 (nested 0.946524 vs v27 0.946507) -> LB 0.94644
 2026-09-28 v40 seeds 202/303/404/505: 0.946318/0.946286/0.946267/0.946274; 8-seed bag 0.946433; blend_v30fr_nov19_pp OOF 0.946544 nested 0.946531 -> LB 0.94644
 2026-09-28 v40 heuljax s7 FIXED_ROUNDS=1000 (no ES on scored fold): OOF 0.946269 vs ES 0.946283 -> ES optimism ~0.000014/model (upper bound; fixed 1000 also under-trains some folds). Naji OOF hub sweep: no new OOF sources.
+2026-09-28 v41 DISTILL=1 heuljax s7: student below teacher on 6/6 folds (-0.00004..-0.00008 each), ~4x slower; stopped at fold 6, dropped. 20-fold seeds 7/2026/101/202 queued.
+2026-09-29 v41 heuljax k20 s7: OOF 0.946333 (k10 s7 0.946283). Nested fr: v30 0.946531 | v30+hj_k20(1 seed) 0.946535 (both halves up) | v27+hj_k20 only 0.946527 (1 seed ~= 8-seed k10 bag). Waiting on seeds 2026/101/202 + k20 fix1000 ES check.
