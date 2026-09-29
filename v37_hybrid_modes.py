@@ -43,7 +43,7 @@ isfx = f"_init{INIT.replace('k_', '')}" if INIT else ""
 suffix = {"tecv": f"_cv{INNER}", "wobble": f"_a{ALPHA:g}", "rank": f"_p{PAIRS}", "linear": f"_l{LLAM:g}", "extra": "",
           "additive": isfx, "mono": isfx, "agg": isfx}[MODE]
 SMOKE = os.environ.get("SMOKE") == "1"
-name = f"v37_{MODE}{suffix}_k{N}_s{SEED}" + ("_smoke" if SMOKE else "")
+name = f"v37_{MODE}{suffix}{'_tok' if os.environ.get('TOKENS') == '1' else ''}_k{N}_s{SEED}" + ("_smoke" if SMOKE else "")
 
 def frames(X, Xte, K, Kte, y, a, b, inner=5):
     """v27's fold_frames with the inner cv exposed. TE seed stays 42 like v27's main loop."""
