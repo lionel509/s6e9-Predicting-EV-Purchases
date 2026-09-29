@@ -20,6 +20,7 @@ dependencies = [
     "scikit-learn>=1.9.0",
     "scipy>=1.18.1",
     "tabm>=0.0.3",
+    "tiktoken>=0.14.0",
     "torch>=2.14.0",
     "xgboost>=3.4.1",
 ]
