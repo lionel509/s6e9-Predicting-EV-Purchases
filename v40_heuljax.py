@@ -38,7 +38,9 @@ OOF_DIR = Path('submissions/v40_raw')
 TEST_PRED_DIR = Path('submissions/v40_raw')
 SUBMISSION_PATH = Path(f'submissions/v40_raw/sub_{sys.argv[1]}.csv')
 FIXED_ROUNDS = int(os.getenv('FIXED_ROUNDS', '0'))   # >0: no early stopping on the scored fold (ES-optimism check, issue #1)
-EXP_NAME = f'v40_heuljax_k10_s{sys.argv[1]}' + (f'_fix{FIXED_ROUNDS}' if FIXED_ROUNDS else '')
+K = int(os.getenv('N_FOLDS', '10'))                    # 20: more rows per fold model (issue #1)
+DISTILL = int(os.getenv('DISTILL', '0'))              # >0: refit on own in-sample soft labels, train rows only (broccoli beef, issue #1)
+EXP_NAME = f'v40_heuljax_k{K}_s{sys.argv[1]}' + (f'_fix{FIXED_ROUNDS}' if FIXED_ROUNDS else '') + (f'_d{DISTILL}' if DISTILL else '')
 MODEL_NAME = EXP_NAME
 if SMOKE_TEST:
     OOF_DIR /= '_smoke'
@@ -61,7 +63,7 @@ CATEGORY_VOCAB = {
     'Subsidy_Available': ['No', 'Yes'],
     'Range_Anxiety_Level': ['Low', 'Medium', 'High'],
 }
-N_FOLDS, RANDOM_STATE, INNER_FOLDS = 10, int(sys.argv[1]), 5
+N_FOLDS, RANDOM_STATE, INNER_FOLDS = K, int(sys.argv[1]), 5
 N_THREADS = max(1, min(int(os.getenv('XGB_SAMPLE_THREADS', '10')), os.cpu_count() or 1))
 numba.set_num_threads(min(N_THREADS, numba.config.NUMBA_NUM_THREADS))
 np.random.seed(RANDOM_STATE)
@@ -975,6 +977,7 @@ visits = np.zeros(len(y), dtype=np.uint8)
 fold_assignment = np.full(len(y), -1, dtype=np.int16)
 test_fold_predictions = []
 fold_aucs = []
+teacher_oof = np.full(len(y), np.nan, dtype=np.float32)
 
 with threadpool_limits(limits=N_THREADS):
     for fold, (train_idx, valid_idx) in enumerate(splits):
@@ -1006,6 +1009,17 @@ with threadpool_limits(limits=N_THREADS):
                 dict(XGB_PARAMS, seed=RANDOM_STATE+fold), dtrain,
                 num_boost_round=FIXED_ROUNDS or N_ESTIMATORS, evals=[(dvalid, 'valid')],
                 callbacks=[] if FIXED_ROUNDS else [stopper], verbose_eval=VERBOSE_EVERY or False)
+            teacher_oof[valid_idx] = booster.predict(dvalid)
+            for d in range(DISTILL):
+                dtrain.set_label(booster.predict(dtrain))
+                booster = xgb.train(
+                    dict(XGB_PARAMS, seed=RANDOM_STATE+fold), dtrain,
+                    num_boost_round=FIXED_ROUNDS or N_ESTIMATORS, evals=[(dvalid, 'valid')],
+                    callbacks=[] if FIXED_ROUNDS else [xgb.callback.EarlyStopping(
+                        rounds=EARLY_STOPPING_ROUNDS, metric_name='auc', data_name='valid',
+                        maximize=True, save_best=True)], verbose_eval=VERBOSE_EVERY or False)
+            if DISTILL:
+                print(f'FOLD {fold+1} teacher AUC={roc_auc_score(y[valid_idx], teacher_oof[valid_idx]):.6f}', flush=True)
             pred_valid = booster.predict(dvalid)
             pred_test = booster.predict(dtest)
             for pred, size in ((pred_valid, len(valid_idx)), (pred_test, len(TEST_IDS))):
@@ -1060,4 +1074,5 @@ gc.collect();
 
 np.save(f"submissions/oof_{EXP_NAME}.npy", oof.astype(np.float64))
 submission.to_csv(f"submissions/{EXP_NAME}.csv", index=False)
+if DISTILL: print(f"{EXP_NAME} teacher OOF {roc_auc_score(y, teacher_oof):.6f}", flush=True)
 print(f"{EXP_NAME} OOF {pooled_auc:.6f}  folds {' '.join(f'{a:.6f}' for a in fold_aucs)}", flush=True)
