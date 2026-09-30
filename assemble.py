@@ -48,6 +48,7 @@ GROUPS = {
   "init100_tok": (["v34_init_inc100_tok_k10_s%s" % s for s in (7, 2026, 101, 42)], None), "init100_tok_k20": (["v34_init_inc100_tok_k20_s%s" % s for s in (7, 2026, 101, 42)], None),   # init100 + GPT-2 income token keys (TOKENS=1, issue #1)
   "agg_init100_tok_k20": (["v37_agg_initinc100_tok_k20_s%s" % s for s in (7, 2026, 42)], None),   # agg + GPT-2 income token keys (TOKENS=1, issue #1)
   "init100_tokx_k20": (["v34_init_inc100_tok_cross_k20_s%s" % s for s in (7, 2026, 101, 42)], None),   # + income tok1 x subsidy/home/city keys (EXTRA=cross, issue #1)
+  "hj_xtok_k20": (["v40_heuljax_k20_s%s_xtok" % s for s in (7, 2026, 101, 42)], None),   # heuljax XGB + GPT-2 token MSTE keys (XTOK=1, issue #1)
   "v42_hjlr_k20": (["v42_hjlr_k20_s%s" % s for s in (7, 2026, 101, 202)], None), "v42_hjlr_k30": (["v42_hjlr_k30_s%s" % s for s in (7, 2026, 101, 202)], None),   # own seeds of heuljax's GPT-2-token LR (issue #1)
   "pub_hjlr2": (["pub_hjlr2_k10_s42"], None), "pub_hjlr": (["pub_hjlr_k10_s42"], None),   # PUBLIC heuljax (#2 on LB) LR kernels of 09-29: generator-aware ridge LR 0.946400, LR sample 0.946264 (issue #1)
   "hj_k30r": (["v40_heuljax_k30_s%s" % s for s in (7, 2026, 101, 202)], [("v40_heuljax_refit_r1500_s%s" % s, 1) for s in (7, 2026, 101, 202)] + [("v40_heuljax_k30_s%s" % s, 1) for s in (7, 2026, 101, 202)]),   # heuljax at 30 folds; test = 50/50 full-train refit + 30-fold average (issue #1)

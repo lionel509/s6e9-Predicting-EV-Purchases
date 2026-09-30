@@ -52,7 +52,9 @@ V36 = V34 + ["init100_tok_k20"]
 _SETS_09_29g = {"v36 groups (submitted)": V36, "v36 + agg_init100_tok_k20": V36 + ["agg_init100_tok_k20"]}   # 2026-09-29 night, issue #1
 _SETS_09_29h = {"v36 groups (submitted)": V36, "v36 + v42_hjlr_k20": V36 + ["v42_hjlr_k20"], "v36, v42_hjlr_k20 for pub_hjlr2": [g for g in V36 if g != "pub_hjlr2"] + ["v42_hjlr_k20"]}   # 2026-09-29 ~22:00, issue #1
 V37 = [g for g in V36 if g != "pub_hjlr2"] + ["v42_hjlr_k20"]
-SETS = {"v37 groups (submitted)": V37, "v37 + init100_tokx_k20": V37 + ["init100_tokx_k20"], "v37, tokx for tok": [g for g in V37 if g != "init100_tok_k20"] + ["init100_tokx_k20"]}   # 2026-09-30 ~00:15, issue #1
+_SETS_09_30a = {"v37 groups (submitted)": V37, "v37 + init100_tokx_k20": V37 + ["init100_tokx_k20"], "v37, tokx for tok": [g for g in V37 if g != "init100_tok_k20"] + ["init100_tokx_k20"]}   # 2026-09-30 ~00:15, issue #1
+V38 = [g for g in V37 if g != "init100_tok_k20"] + ["init100_tokx_k20"]
+SETS = {"v38 groups (submitted)": V38, "v38 + hj_xtok_k20": V38 + ["hj_xtok_k20"], "v38, hj_xtok for hj_k20": [g for g in V38 if g != "hj_k20"] + ["hj_xtok_k20"]}   # 2026-09-30 ~01:45, issue #1
 _SETS_09_27 = {"v23 groups": V23, "v26fr groups": V26, "v26fr groups minus legtarrr v19": [g for g in V26 if g != "pub_legtarrr_v19"]}   # 2026-09-27
 def fit_weights(M, yy):
     n = M.shape[1]; auc = lambda w: roc_auc_score(yy, M @ (w / w.sum())); w = np.ones(n) / n; best = auc(w)
