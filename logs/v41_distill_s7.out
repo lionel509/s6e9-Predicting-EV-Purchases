@@ -1,0 +1,23 @@
+=== DISTILL=1 v40_heuljax.py 7 start 22:49:25
+DEVICE=cpu | CUDA unavailable
+v40_heuljax_k10_s7_d1 | CV | cpu | folds=10
+TRAIN=668,665 TEST=286,571 FEATURES=173
+FOLD 1/10 | features
+FOLD 1 teacher AUC=0.946608
+FOLD 1/10 | AUC=0.946572271 | trees=4542 | seconds=434.81
+FOLD 2/10 | features
+FOLD 2 teacher AUC=0.946430
+FOLD 2/10 | AUC=0.946349117 | trees=3258 | seconds=420.49
+FOLD 3/10 | features
+FOLD 3 teacher AUC=0.945977
+FOLD 3/10 | AUC=0.945930547 | trees=3656 | seconds=444.99
+FOLD 4/10 | features
+FOLD 4 teacher AUC=0.945034
+FOLD 4/10 | AUC=0.944953790 | trees=3888 | seconds=558.71
+FOLD 5/10 | features
+FOLD 5 teacher AUC=0.946612
+FOLD 5/10 | AUC=0.946556271 | trees=3547 | seconds=304.26
+FOLD 6/10 | features
+FOLD 6 teacher AUC=0.948265
+FOLD 6/10 | AUC=0.948191315 | trees=4259 | seconds=355.26
+FOLD 7/10 | features

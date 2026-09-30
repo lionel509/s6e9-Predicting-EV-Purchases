@@ -1,0 +1,4 @@
+v18 groups  in-sample 0.946479   nested halves 0.946336 / 0.946600  mean 0.946468
+   weights: {'hybrid10': 0.129, 'pub_naji_01blend': 0.168, 'pub_naji_xgb': 0.069, 'viewD': 0.168, 'viewC_xgb': 0.03, 'init': 0.218, 'realmlp_own10': 0.218}
+v20 groups  in-sample 0.946495   nested halves 0.946358 / 0.946617  mean 0.946487
+   weights: {'pub_naji_01blend': 0.165, 'pub_naji_xgb': 0.019, 'viewD': 0.068, 'viewD_init50': 0.097, 'init': 0.165, 'init100': 0.272, 'realmlp_own10': 0.214}

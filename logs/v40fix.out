@@ -1,0 +1,31 @@
+=== v40_heuljax.py 7 start 20:31:19
+DEVICE=cpu | CUDA unavailable
+v40_heuljax_k10_s7_fix1000 | CV | cpu | folds=10
+TRAIN=668,665 TEST=286,571 FEATURES=173
+FOLD 1/10 | features
+FOLD 1/10 | AUC=0.946598741 | trees=1000 | seconds=68.90
+FOLD 2/10 | features
+FOLD 2/10 | AUC=0.946394400 | trees=1000 | seconds=66.28
+FOLD 3/10 | features
+FOLD 3/10 | AUC=0.945955328 | trees=1000 | seconds=71.66
+FOLD 4/10 | features
+FOLD 4/10 | AUC=0.945027122 | trees=1000 | seconds=77.02
+FOLD 5/10 | features
+FOLD 5/10 | AUC=0.946574865 | trees=1000 | seconds=72.27
+FOLD 6/10 | features
+FOLD 6/10 | AUC=0.948262174 | trees=1000 | seconds=68.75
+FOLD 7/10 | features
+FOLD 7/10 | AUC=0.944898566 | trees=1000 | seconds=67.84
+FOLD 8/10 | features
+FOLD 8/10 | AUC=0.946556729 | trees=1000 | seconds=69.75
+FOLD 9/10 | features
+FOLD 9/10 | AUC=0.945928385 | trees=1000 | seconds=72.65
+FOLD 10/10 | features
+FOLD 10/10 | AUC=0.946568373 | trees=1000 | seconds=69.95
+CV POOLED_OOF_AUC=0.946268594080
+Saved submissions/v40_raw/v40_heuljax_k10_s7_fix1000_OOF.parquet
+Saved submissions/v40_raw/v40_heuljax_k10_s7_fix1000_TEST.parquet
+Saved submissions/v40_raw/sub_7.csv
+v40_heuljax_k10_s7_fix1000 OOF 0.946269  folds 0.946599 0.946394 0.945955 0.945027 0.946575 0.948262 0.944899 0.946557 0.945928 0.946568
+=== exit 20:43:11
+=== v40 done

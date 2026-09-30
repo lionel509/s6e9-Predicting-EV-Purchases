@@ -1,0 +1,6 @@
+v33 groups (submitted) in-sample 0.946559   nested halves 0.946404 / 0.946697  mean 0.946550
+   weights: {'pub_naji_01blend': 0.081, 'viewD_init50': 0.081, 'init': 0.081, 'init100_k20': 0.058, 'agg_init100': 0.035, 'agg_init100_k20': 0.198, 'hj_k20': 0.407, 'realmlp_k20': 0.058}
+v33 + pub_hjlr2 in-sample 0.946680   nested halves 0.946530 / 0.946813  mean 0.946672
+   weights: {'viewD_init50': 0.061, 'init': 0.03, 'init100_k20': 0.061, 'agg_init100_k20': 0.152, 'hj_k20': 0.303, 'pub_hjlr2': 0.394}
+v33 + pub_hjlr2 + pub_hjlr in-sample 0.946681   nested halves 0.946531 / 0.946814  mean 0.946672
+   weights: {'viewD': 0.043, 'viewD_init50': 0.022, 'init': 0.043, 'init100_k20': 0.109, 'agg_init100_k20': 0.109, 'hj_k20': 0.283, 'pub_hjlr2': 0.37, 'pub_hjlr': 0.022}

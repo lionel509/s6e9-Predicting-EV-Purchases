@@ -1,0 +1,36 @@
+v33_viewC_k10_s42: base features 57 | TE keys 15 x (2.0, 30.0, 300.0) | windows 11  (4s)
+  fold 0: auc 0.945196  trees 1422  ncol 113  55s
+  fold 1: auc 0.945352  trees 1321  ncol 113  95s
+  fold 2: auc 0.945680  trees 1651  ncol 113  141s
+  fold 3: auc 0.946195  trees 1422  ncol 113  182s
+  fold 4: auc 0.946839  trees 1198  ncol 113  219s
+  fold 5: auc 0.947261  trees 1374  ncol 113  259s
+  fold 6: auc 0.946120  trees 861  ncol 113  290s
+  fold 7: auc 0.947079  trees 1356  ncol 113  330s
+  fold 8: auc 0.947157  trees 1561  ncol 113  374s
+  fold 9: auc 0.945336  trees 1242  ncol 113  412s
+v33_viewC_k10_s42 OOF 0.946217  (fold-ranked 0.946222)  iters [1422, 1321, 1651, 1422, 1198, 1374, 861, 1356, 1561, 1242]  412s
+v33_viewD_k10_s42: base features 67 | TE keys 17 x ('auto', 20.0, 200.0) | windows 11  (4s)
+  fold 0: auc 0.945022  trees 1187  ncol 129  44s
+  fold 1: auc 0.945301  trees 1335  ncol 129  89s
+  fold 2: auc 0.945456  trees 1312  ncol 129  133s
+  fold 3: auc 0.946063  trees 1605  ncol 129  182s
+  fold 4: auc 0.946650  trees 1514  ncol 129  230s
+  fold 5: auc 0.947124  trees 1358  ncol 129  275s
+  fold 6: auc 0.945987  trees 984  ncol 129  314s
+  fold 7: auc 0.946886  trees 1674  ncol 129  364s
+  fold 8: auc 0.947113  trees 1817  ncol 129  413s
+  fold 9: auc 0.945228  trees 1637  ncol 129  461s
+v33_viewD_k10_s42 OOF 0.946077  (fold-ranked 0.946083)  iters [1187, 1335, 1312, 1605, 1514, 1358, 984, 1674, 1817, 1637]  461s
+v33_viewE_k10_s42: base features 66 | TE keys 16 x ('auto', 20.0, 200.0) | windows 11  (4s)
+  fold 0: auc 0.944928  trees 1487  ncol 125  48s
+  fold 1: auc 0.945291  trees 1387  ncol 125  92s
+  fold 2: auc 0.945437  trees 1364  ncol 125  135s
+  fold 3: auc 0.945969  trees 1635  ncol 125  183s
+  fold 4: auc 0.946592  trees 1458  ncol 125  229s
+  fold 5: auc 0.947034  trees 2008  ncol 125  283s
+  fold 6: auc 0.945908  trees 1024  ncol 125  319s
+  fold 7: auc 0.946818  trees 1541  ncol 125  365s
+  fold 8: auc 0.946933  trees 1371  ncol 125  406s
+  fold 9: auc 0.945202  trees 1935  ncol 125  458s
+v33_viewE_k10_s42 OOF 0.946007  (fold-ranked 0.946011)  iters [1487, 1387, 1364, 1635, 1458, 2008, 1024, 1541, 1371, 1935]  458s

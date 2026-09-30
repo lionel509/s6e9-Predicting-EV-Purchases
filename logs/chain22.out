@@ -1,0 +1,24 @@
+v34_init_inc_exact_k10_s7: v27 ref OOF 0.946219  features 65  init from k_inc_exact_teauto
+  fold 0: auc 0.946366  (init alone 0.710737)  trees 1840  69s
+  fold 1: auc 0.946380  (init alone 0.712660)  trees 1058  111s
+  fold 2: auc 0.945949  (init alone 0.708526)  trees 1701  171s
+  fold 3: auc 0.944963  (init alone 0.712669)  trees 1930  229s
+  fold 4: auc 0.946466  (init alone 0.718325)  trees 1477  277s
+  fold 5: auc 0.948090  (init alone 0.713505)  trees 950  315s
+  fold 6: auc 0.944824  (init alone 0.712606)  trees 1272  357s
+  fold 7: auc 0.946220  (init alone 0.706047)  trees 1297  404s
+  fold 8: auc 0.945699  (init alone 0.710069)  trees 1430  452s
+  fold 9: auc 0.946588  (init alone 0.712979)  trees 1324  505s
+v34_init_inc_exact_k10_s7 OOF 0.946146  (fold-ranked 0.946154)  Δ vs v27 -0.000073  iters [1840, 1058, 1701, 1930, 1477, 950, 1272, 1297, 1430, 1324]  506s
+v34_init_inc_exact_k10_s2026: v27 ref OOF 0.946249  features 65  init from k_inc_exact_teauto
+  fold 0: auc 0.945742  (init alone 0.710008)  trees 1524  67s
+  fold 1: auc 0.945266  (init alone 0.709572)  trees 1729  130s
+  fold 2: auc 0.945872  (init alone 0.712821)  trees 1633  192s
+  fold 3: auc 0.944911  (init alone 0.712015)  trees 1473  255s
+  fold 4: auc 0.947081  (init alone 0.714363)  trees 1603  317s
+  fold 5: auc 0.947789  (init alone 0.713818)  trees 1329  360s
+  fold 6: auc 0.946866  (init alone 0.715086)  trees 1433  404s
+  fold 7: auc 0.945477  (init alone 0.709569)  trees 1839  456s
+  fold 8: auc 0.945553  (init alone 0.709868)  trees 1661  505s
+  fold 9: auc 0.946504  (init alone 0.711868)  trees 1042  543s
+v34_init_inc_exact_k10_s2026 OOF 0.946100  (fold-ranked 0.946106)  Δ vs v27 -0.000148  iters [1524, 1729, 1633, 1473, 1603, 1329, 1433, 1839, 1661, 1042]  543s

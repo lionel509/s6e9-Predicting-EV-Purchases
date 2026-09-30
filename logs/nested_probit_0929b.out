@@ -1,0 +1,6 @@
+v30 (hj_xgb, submitted) in-sample 0.946544   nested halves 0.946394 / 0.946676  mean 0.946535
+   weights: {'pub_naji_01blend': 0.086, 'viewD_init50': 0.086, 'init': 0.086, 'realmlp_own10': 0.086, 'init100_k20': 0.123, 'agg_init100': 0.123, 'agg_init100_k20': 0.062, 'hj_xgb': 0.346}
+v30 + hj_k20 in-sample 0.946554   nested halves 0.946403 / 0.946685  mean 0.946544
+   weights: {'pub_naji_01blend': 0.09, 'viewD_init50': 0.09, 'init': 0.09, 'realmlp_own10': 0.064, 'init100_k20': 0.09, 'agg_init100': 0.128, 'agg_init100_k20': 0.09, 'hj_k20': 0.359}
+v27 + hj_k20 only in-sample 0.946554   nested halves 0.946403 / 0.946688  mean 0.946546
+   weights: {'pub_naji_01blend': 0.069, 'viewD_init50': 0.097, 'init': 0.097, 'realmlp_own10': 0.069, 'init100_k20': 0.069, 'agg_init100': 0.139, 'agg_init100_k20': 0.069, 'hj_k20': 0.389}

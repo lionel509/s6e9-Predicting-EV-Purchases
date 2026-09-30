@@ -1,0 +1,17 @@
+v34_init_inc_exact_k10_s42: v27 ref OOF 0.946240  features 65  init from k_inc_exact_teauto
+  fold 0: auc 0.945153  (init alone 0.713852)  trees 1401  44s
+  fold 1: auc 0.945347  (init alone 0.712905)  trees 1239  81s
+  fold 2: auc 0.945625  (init alone 0.713683)  trees 2162  134s
+  fold 3: auc 0.946260  (init alone 0.712200)  trees 1963  183s
+  fold 4: auc 0.946966  (init alone 0.711606)  trees 1516  224s
+  fold 5: auc 0.947158  (init alone 0.709111)  trees 1361  264s
+  fold 6: auc 0.945993  (init alone 0.711055)  trees 934  295s
+  fold 7: auc 0.946854  (init alone 0.715134)  trees 1757  338s
+  fold 8: auc 0.947204  (init alone 0.712916)  trees 1531  378s
+  fold 9: auc 0.945255  (init alone 0.705689)  trees 1447  417s
+v34_init_inc_exact_k10_s42 OOF 0.946177  (fold-ranked 0.946181)  Δ vs v27 -0.000063  iters [1401, 1239, 2162, 1963, 1516, 1361, 934, 1757, 1531, 1447]  417s
+v34_init_inc_exact_drop_k10_s42: v27 ref OOF 0.946240  features 65  init from k_inc_exact_teauto (its TE columns dropped)
+  fold 0: auc 0.941520  (init alone 0.713852)  trees 851  33s
+  fold 1: auc 0.941727  (init alone 0.712905)  trees 1083  67s
+  fold 2: auc 0.941781  (init alone 0.713683)  trees 1102  100s
+  fold 3: auc 0.942072  (init alone 0.712200)  trees 1092  135s

@@ -1,0 +1,7 @@
+v32_rank_p8_k5_s42: v27 ref OOF 0.946153  features 65  (4s)
+  fold 0: auc 0.945005  trees 518  51s
+  fold 1: auc 0.945441  trees 263  95s
+  fold 2: auc 0.946470  trees 248  131s
+  fold 3: auc 0.946248  trees 471  187s
+  fold 4: auc 0.946064  trees 596  246s
+v32_rank_p8_k5_s42 OOF 0.945846  (fold-ranked 0.945846)  Δ vs v27 -0.000307  iters [518, 263, 248, 471, 596]  246s

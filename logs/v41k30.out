@@ -1,0 +1,70 @@
+=== N_FOLDS=30 s7 start 07:37:31
+DEVICE=cpu | CUDA unavailable
+v40_heuljax_k30_s7 | CV | cpu | folds=30
+TRAIN=668,665 TEST=286,571 FEATURES=173
+FOLD 1/30 | features
+FOLD 1/30 | AUC=0.947411524 | trees=738 | seconds=85.61
+FOLD 2/30 | features
+FOLD 2/30 | AUC=0.945685971 | trees=621 | seconds=77.48
+FOLD 3/30 | features
+FOLD 3/30 | AUC=0.946939674 | trees=1352 | seconds=109.75
+FOLD 4/30 | features
+FOLD 4/30 | AUC=0.945881841 | trees=866 | seconds=88.07
+FOLD 5/30 | features
+FOLD 5/30 | AUC=0.947180606 | trees=2456 | seconds=158.15
+FOLD 6/30 | features
+FOLD 6/30 | AUC=0.946547327 | trees=573 | seconds=76.49
+FOLD 7/30 | features
+FOLD 7/30 | AUC=0.946888569 | trees=981 | seconds=102.49
+FOLD 8/30 | features
+FOLD 8/30 | AUC=0.947771986 | trees=422 | seconds=68.04
+FOLD 9/30 | features
+FOLD 9/30 | AUC=0.943390666 | trees=618 | seconds=76.54
+FOLD 10/30 | features
+FOLD 10/30 | AUC=0.945760721 | trees=1581 | seconds=119.48
+FOLD 11/30 | features
+FOLD 11/30 | AUC=0.945154464 | trees=1963 | seconds=144.56
+FOLD 12/30 | features
+FOLD 12/30 | AUC=0.944710853 | trees=1330 | seconds=107.59
+FOLD 13/30 | features
+FOLD 13/30 | AUC=0.948082058 | trees=717 | seconds=82.09
+FOLD 14/30 | features
+FOLD 14/30 | AUC=0.949161083 | trees=671 | seconds=78.91
+FOLD 15/30 | features
+FOLD 15/30 | AUC=0.942945484 | trees=633 | seconds=77.41
+FOLD 16/30 | features
+FOLD 16/30 | AUC=0.949877609 | trees=1135 | seconds=99.85
+FOLD 17/30 | features
+FOLD 17/30 | AUC=0.947027393 | trees=1787 | seconds=128.58
+FOLD 18/30 | features
+FOLD 18/30 | AUC=0.948108784 | trees=1165 | seconds=101.87
+FOLD 19/30 | features
+FOLD 19/30 | AUC=0.946907915 | trees=553 | seconds=74.57
+FOLD 20/30 | features
+FOLD 20/30 | AUC=0.944121889 | trees=953 | seconds=90.87
+FOLD 21/30 | features
+FOLD 21/30 | AUC=0.943702721 | trees=1118 | seconds=99.63
+FOLD 22/30 | features
+FOLD 22/30 | AUC=0.943753017 | trees=798 | seconds=84.75
+FOLD 23/30 | features
+FOLD 23/30 | AUC=0.949822852 | trees=1717 | seconds=125.97
+FOLD 24/30 | features
+FOLD 24/30 | AUC=0.946361037 | trees=959 | seconds=92.09
+FOLD 25/30 | features
+FOLD 25/30 | AUC=0.943313769 | trees=1299 | seconds=107.44
+FOLD 26/30 | features
+FOLD 26/30 | AUC=0.948543143 | trees=769 | seconds=85.14
+FOLD 27/30 | features
+FOLD 27/30 | AUC=0.946568151 | trees=1125 | seconds=100.55
+FOLD 28/30 | features
+FOLD 28/30 | AUC=0.947918028 | trees=369 | seconds=66.10
+FOLD 29/30 | features
+FOLD 29/30 | AUC=0.946659572 | trees=809 | seconds=85.04
+FOLD 30/30 | features
+FOLD 30/30 | AUC=0.945184906 | trees=1655 | seconds=121.40
+CV POOLED_OOF_AUC=0.946373931658
+Saved submissions/v40_raw/v40_heuljax_k30_s7_OOF.parquet
+Saved submissions/v40_raw/v40_heuljax_k30_s7_TEST.parquet
+Saved submissions/v40_raw/sub_7.csv
+v40_heuljax_k30_s7 OOF 0.946374  folds 0.947412 0.945686 0.946940 0.945882 0.947181 0.946547 0.946889 0.947772 0.943391 0.945761 0.945154 0.944711 0.948082 0.949161 0.942945 0.949878 0.947027 0.948109 0.946908 0.944122 0.943703 0.943753 0.949823 0.946361 0.943314 0.948543 0.946568 0.947918 0.946660 0.945185
+=== exit 08:26:13

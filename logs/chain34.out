@@ -1,0 +1,753 @@
+=== N_FOLDS=20 v40_heuljax.py 303 start 03:00:45
+DEVICE=cpu | CUDA unavailable
+v40_heuljax_k20_s303 | CV | cpu | folds=20
+TRAIN=668,665 TEST=286,571 FEATURES=173
+FOLD 1/20 | features
+FOLD 1/20 | AUC=0.945692600 | trees=878 | seconds=102.16
+FOLD 2/20 | features
+FOLD 2/20 | AUC=0.943219030 | trees=848 | seconds=90.79
+FOLD 3/20 | features
+FOLD 3/20 | AUC=0.946278668 | trees=930 | seconds=96.31
+FOLD 4/20 | features
+FOLD 4/20 | AUC=0.947436735 | trees=580 | seconds=79.60
+FOLD 5/20 | features
+FOLD 5/20 | AUC=0.946936022 | trees=1584 | seconds=127.89
+FOLD 6/20 | features
+FOLD 6/20 | AUC=0.945547981 | trees=738 | seconds=93.34
+FOLD 7/20 | features
+FOLD 7/20 | AUC=0.947552753 | trees=707 | seconds=84.30
+FOLD 8/20 | features
+FOLD 8/20 | AUC=0.947223607 | trees=1575 | seconds=121.48
+FOLD 9/20 | features
+FOLD 9/20 | AUC=0.945309559 | trees=987 | seconds=96.97
+FOLD 10/20 | features
+FOLD 10/20 | AUC=0.945702158 | trees=681 | seconds=84.47
+FOLD 11/20 | features
+FOLD 11/20 | AUC=0.947120111 | trees=789 | seconds=88.66
+FOLD 12/20 | features
+FOLD 12/20 | AUC=0.945734515 | trees=1078 | seconds=110.15
+FOLD 13/20 | features
+FOLD 13/20 | AUC=0.946425802 | trees=629 | seconds=79.47
+FOLD 14/20 | features
+FOLD 14/20 | AUC=0.949320806 | trees=1022 | seconds=96.63
+FOLD 15/20 | features
+FOLD 15/20 | AUC=0.947005557 | trees=2028 | seconds=146.19
+FOLD 16/20 | features
+FOLD 16/20 | AUC=0.945737522 | trees=666 | seconds=81.14
+FOLD 17/20 | features
+FOLD 17/20 | AUC=0.945998717 | trees=595 | seconds=78.32
+FOLD 18/20 | features
+FOLD 18/20 | AUC=0.948520875 | trees=535 | seconds=76.75
+FOLD 19/20 | features
+FOLD 19/20 | AUC=0.944671674 | trees=1558 | seconds=126.91
+FOLD 20/20 | features
+FOLD 20/20 | AUC=0.945549825 | trees=663 | seconds=82.63
+CV POOLED_OOF_AUC=0.946346198607
+Saved submissions/v40_raw/v40_heuljax_k20_s303_OOF.parquet
+Saved submissions/v40_raw/v40_heuljax_k20_s303_TEST.parquet
+Saved submissions/v40_raw/sub_303.csv
+v40_heuljax_k20_s303 OOF 0.946346  folds 0.945693 0.943219 0.946279 0.947437 0.946936 0.945548 0.947553 0.947224 0.945310 0.945702 0.947120 0.945735 0.946426 0.949321 0.947006 0.945738 0.945999 0.948521 0.944672 0.945550
+=== exit 03:33:16
+=== N_FOLDS=20 v40_heuljax.py 404 start 03:33:16
+DEVICE=cpu | CUDA unavailable
+v40_heuljax_k20_s404 | CV | cpu | folds=20
+TRAIN=668,665 TEST=286,571 FEATURES=173
+FOLD 1/20 | features
+FOLD 1/20 | AUC=0.946446418 | trees=1182 | seconds=107.68
+FOLD 2/20 | features
+FOLD 2/20 | AUC=0.945800745 | trees=1483 | seconds=116.78
+FOLD 3/20 | features
+FOLD 3/20 | AUC=0.946398170 | trees=2604 | seconds=169.16
+FOLD 4/20 | features
+FOLD 4/20 | AUC=0.946570714 | trees=512 | seconds=76.17
+FOLD 5/20 | features
+FOLD 5/20 | AUC=0.946098236 | trees=1488 | seconds=122.17
+FOLD 6/20 | features
+FOLD 6/20 | AUC=0.947045800 | trees=1512 | seconds=127.52
+FOLD 7/20 | features
+FOLD 7/20 | AUC=0.944585105 | trees=556 | seconds=79.07
+FOLD 8/20 | features
+FOLD 8/20 | AUC=0.945244698 | trees=1431 | seconds=118.99
+FOLD 9/20 | features
+FOLD 9/20 | AUC=0.946484112 | trees=862 | seconds=93.54
+FOLD 10/20 | features
+FOLD 10/20 | AUC=0.948261058 | trees=547 | seconds=80.72
+FOLD 11/20 | features
+FOLD 11/20 | AUC=0.947396582 | trees=993 | seconds=110.93
+FOLD 12/20 | features
+FOLD 12/20 | AUC=0.944651037 | trees=1455 | seconds=118.91
+FOLD 13/20 | features
+FOLD 13/20 | AUC=0.947129085 | trees=810 | seconds=89.82
+FOLD 14/20 | features
+FOLD 14/20 | AUC=0.945590953 | trees=735 | seconds=86.53
+FOLD 15/20 | features
+FOLD 15/20 | AUC=0.946727208 | trees=560 | seconds=84.54
+FOLD 16/20 | features
+FOLD 16/20 | AUC=0.945982518 | trees=854 | seconds=108.30
+FOLD 17/20 | features
+FOLD 17/20 | AUC=0.945485930 | trees=928 | seconds=98.43
+FOLD 18/20 | features
+FOLD 18/20 | AUC=0.947669175 | trees=751 | seconds=86.83
+FOLD 19/20 | features
+FOLD 19/20 | AUC=0.947250103 | trees=702 | seconds=88.65
+FOLD 20/20 | features
+FOLD 20/20 | AUC=0.946403223 | trees=1123 | seconds=111.69
+CV POOLED_OOF_AUC=0.946352562211
+Saved submissions/v40_raw/v40_heuljax_k20_s404_OOF.parquet
+Saved submissions/v40_raw/v40_heuljax_k20_s404_TEST.parquet
+Saved submissions/v40_raw/sub_404.csv
+v40_heuljax_k20_s404 OOF 0.946353  folds 0.946446 0.945801 0.946398 0.946571 0.946098 0.947046 0.944585 0.945245 0.946484 0.948261 0.947397 0.944651 0.947129 0.945591 0.946727 0.945983 0.945486 0.947669 0.947250 0.946403
+=== exit 04:07:59
+=== N_FOLDS=20 v40_heuljax.py 505 start 04:07:59
+DEVICE=cpu | CUDA unavailable
+v40_heuljax_k20_s505 | CV | cpu | folds=20
+TRAIN=668,665 TEST=286,571 FEATURES=173
+FOLD 1/20 | features
+FOLD 1/20 | AUC=0.947471450 | trees=674 | seconds=86.86
+FOLD 2/20 | features
+FOLD 2/20 | AUC=0.943212287 | trees=771 | seconds=100.30
+FOLD 3/20 | features
+FOLD 3/20 | AUC=0.949850682 | trees=924 | seconds=99.74
+FOLD 4/20 | features
+FOLD 4/20 | AUC=0.945257236 | trees=1113 | seconds=106.80
+FOLD 5/20 | features
+FOLD 5/20 | AUC=0.948784847 | trees=728 | seconds=86.72
+FOLD 6/20 | features
+FOLD 6/20 | AUC=0.947400298 | trees=428 | seconds=74.59
+FOLD 7/20 | features
+FOLD 7/20 | AUC=0.942517558 | trees=1347 | seconds=119.14
+FOLD 8/20 | features
+FOLD 8/20 | AUC=0.947623958 | trees=1315 | seconds=113.08
+FOLD 9/20 | features
+FOLD 9/20 | AUC=0.946688293 | trees=1029 | seconds=97.62
+FOLD 10/20 | features
+FOLD 10/20 | AUC=0.948071580 | trees=819 | seconds=88.17
+FOLD 11/20 | features
+FOLD 11/20 | AUC=0.944860491 | trees=1035 | seconds=98.65
+FOLD 12/20 | features
+FOLD 12/20 | AUC=0.945339118 | trees=1182 | seconds=106.23
+FOLD 13/20 | features
+FOLD 13/20 | AUC=0.946542583 | trees=791 | seconds=89.61
+FOLD 14/20 | features
+FOLD 14/20 | AUC=0.946322457 | trees=659 | seconds=83.26
+FOLD 15/20 | features
+FOLD 15/20 | AUC=0.945243901 | trees=552 | seconds=79.00
+FOLD 16/20 | features
+FOLD 16/20 | AUC=0.946291223 | trees=868 | seconds=91.97
+FOLD 17/20 | features
+FOLD 17/20 | AUC=0.945760890 | trees=1279 | seconds=111.45
+FOLD 18/20 | features
+FOLD 18/20 | AUC=0.948329485 | trees=823 | seconds=91.89
+FOLD 19/20 | features
+FOLD 19/20 | AUC=0.945712731 | trees=741 | seconds=88.10
+FOLD 20/20 | features
+FOLD 20/20 | AUC=0.945691579 | trees=727 | seconds=86.70
+CV POOLED_OOF_AUC=0.946336496835
+Saved submissions/v40_raw/v40_heuljax_k20_s505_OOF.parquet
+Saved submissions/v40_raw/v40_heuljax_k20_s505_TEST.parquet
+Saved submissions/v40_raw/sub_505.csv
+v40_heuljax_k20_s505 OOF 0.946336  folds 0.947471 0.943212 0.949851 0.945257 0.948785 0.947400 0.942518 0.947624 0.946688 0.948072 0.944860 0.945339 0.946543 0.946322 0.945244 0.946291 0.945761 0.948329 0.945713 0.945692
+=== exit 04:39:45
+=== N_FOLDS=20 v40_heuljax.py 42 start 04:39:45
+DEVICE=cpu | CUDA unavailable
+v40_heuljax_k20_s42 | CV | cpu | folds=20
+TRAIN=668,665 TEST=286,571 FEATURES=173
+FOLD 1/20 | features
+FOLD 1/20 | AUC=0.945931716 | trees=1412 | seconds=126.77
+FOLD 2/20 | features
+FOLD 2/20 | AUC=0.944724043 | trees=2023 | seconds=144.56
+FOLD 3/20 | features
+FOLD 3/20 | AUC=0.944028341 | trees=1583 | seconds=125.78
+FOLD 4/20 | features
+FOLD 4/20 | AUC=0.946889484 | trees=450 | seconds=73.07
+FOLD 5/20 | features
+FOLD 5/20 | AUC=0.944163988 | trees=602 | seconds=87.89
+FOLD 6/20 | features
+FOLD 6/20 | AUC=0.947060437 | trees=789 | seconds=88.28
+FOLD 7/20 | features
+FOLD 7/20 | AUC=0.946298413 | trees=771 | seconds=86.03
+FOLD 8/20 | features
+FOLD 8/20 | AUC=0.946598231 | trees=1261 | seconds=112.05
+FOLD 9/20 | features
+FOLD 9/20 | AUC=0.947527204 | trees=1126 | seconds=109.68
+FOLD 10/20 | features
+FOLD 10/20 | AUC=0.946537792 | trees=506 | seconds=76.43
+FOLD 11/20 | features
+FOLD 11/20 | AUC=0.946982360 | trees=1317 | seconds=118.68
+FOLD 12/20 | features
+FOLD 12/20 | AUC=0.947828096 | trees=638 | seconds=80.84
+FOLD 13/20 | features
+FOLD 13/20 | AUC=0.946213543 | trees=889 | seconds=90.92
+FOLD 14/20 | features
+FOLD 14/20 | AUC=0.946179621 | trees=838 | seconds=89.74
+FOLD 15/20 | features
+FOLD 15/20 | AUC=0.948274324 | trees=485 | seconds=74.40
+FOLD 16/20 | features
+FOLD 16/20 | AUC=0.945880933 | trees=567 | seconds=78.67
+FOLD 17/20 | features
+FOLD 17/20 | AUC=0.945898004 | trees=1301 | seconds=118.86
+FOLD 18/20 | features
+FOLD 18/20 | AUC=0.948712389 | trees=1047 | seconds=98.44
+FOLD 19/20 | features
+FOLD 19/20 | AUC=0.946328180 | trees=1579 | seconds=123.68
+FOLD 20/20 | features
+FOLD 20/20 | AUC=0.944600895 | trees=875 | seconds=91.44
+CV POOLED_OOF_AUC=0.946324067088
+Saved submissions/v40_raw/v40_heuljax_k20_s42_OOF.parquet
+Saved submissions/v40_raw/v40_heuljax_k20_s42_TEST.parquet
+Saved submissions/v40_raw/sub_42.csv
+v40_heuljax_k20_s42 OOF 0.946324  folds 0.945932 0.944724 0.944028 0.946889 0.944164 0.947060 0.946298 0.946598 0.947527 0.946538 0.946982 0.947828 0.946214 0.946180 0.948274 0.945881 0.945898 0.948712 0.946328 0.944601
+=== exit 05:13:08
+=== v37_hybrid_modes.py agg 20 7 k_inc100 start 05:13:08
+v37_agg_initinc100_k20_s7: v27 ref OOF nan  features 79  (4s)
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 0: auc 0.947150  trees 1199  42s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 1: auc 0.946228  trees 1979  93s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 2: auc 0.946691  trees 1361  133s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 3: auc 0.945887  trees 1331  172s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 4: auc 0.946962  trees 1401  213s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 5: auc 0.945307  trees 1195  250s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 6: auc 0.945690  trees 1244  288s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 7: auc 0.944334  trees 1382  329s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 8: auc 0.948039  trees 1069  364s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 9: auc 0.945323  trees 1357  405s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 10: auc 0.948963  trees 840  437s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 11: auc 0.947639  trees 1530  480s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 12: auc 0.945250  trees 1027  515s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 13: auc 0.944925  trees 1412  556s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 14: auc 0.946133  trees 941  589s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 15: auc 0.947025  trees 1857  638s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 16: auc 0.945216  trees 2025  689s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 17: auc 0.946929  trees 1188  726s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 18: auc 0.947443  trees 1185  764s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 19: auc 0.945661  trees 1360  804s
+v37_agg_initinc100_k20_s7 OOF 0.946333  (fold-ranked 0.946340)  Δ vs v27 +nan  iters [1199, 1979, 1361, 1331, 1401, 1195, 1244, 1382, 1069, 1357, 840, 1530, 1027, 1412, 941, 1857, 2025, 1188, 1185, 1360]  804s
+=== exit 05:26:34
+=== v37_hybrid_modes.py agg 20 2026 k_inc100 start 05:26:34
+v37_agg_initinc100_k20_s2026: v27 ref OOF nan  features 79  (4s)
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 0: auc 0.946149  trees 1454  45s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 1: auc 0.945651  trees 1198  82s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 2: auc 0.946983  trees 1120  119s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 3: auc 0.944346  trees 2100  171s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 4: auc 0.946203  trees 883  203s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 5: auc 0.946188  trees 1240  242s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 6: auc 0.946108  trees 1855  291s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 7: auc 0.943885  trees 1213  329s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 8: auc 0.948782  trees 1415  371s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 9: auc 0.946135  trees 887  403s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 10: auc 0.949132  trees 987  436s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 11: auc 0.946710  trees 1203  474s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 12: auc 0.946520  trees 1204  512s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 13: auc 0.947790  trees 1171  549s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 14: auc 0.946635  trees 1820  596s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 15: auc 0.944937  trees 1666  643s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 16: auc 0.943940  trees 1376  683s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 17: auc 0.947370  trees 2123  736s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 18: auc 0.946353  trees 1342  777s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 19: auc 0.946929  trees 899  811s
+v37_agg_initinc100_k20_s2026 OOF 0.946334  (fold-ranked 0.946337)  Δ vs v27 +nan  iters [1454, 1198, 1120, 2100, 883, 1240, 1855, 1213, 1415, 887, 987, 1203, 1204, 1171, 1820, 1666, 1376, 2123, 1342, 899]  811s
+=== exit 05:40:07
+=== v34_init_score.py 20 101 k_inc100 start 05:40:07
+v34_init_inc100_k20_s101: v27 ref OOF nan  features 65  init from k_inc100_teauto
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 0: auc 0.943208  (init alone 0.702193)  trees 834  35s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 1: auc 0.947272  (init alone 0.700361)  trees 1391  73s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 2: auc 0.947252  (init alone 0.707847)  trees 1796  118s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 3: auc 0.947615  (init alone 0.700138)  trees 1528  158s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 4: auc 0.946183  (init alone 0.701941)  trees 1966  206s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 5: auc 0.946219  (init alone 0.704239)  trees 1232  242s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 6: auc 0.942732  (init alone 0.702459)  trees 879  272s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 7: auc 0.946757  (init alone 0.698116)  trees 1537  313s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 8: auc 0.945637  (init alone 0.702043)  trees 1089  347s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 9: auc 0.945238  (init alone 0.704434)  trees 994  379s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 10: auc 0.944994  (init alone 0.706700)  trees 1917  426s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 11: auc 0.947045  (init alone 0.706689)  trees 1079  460s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 12: auc 0.947735  (init alone 0.701536)  trees 1713  504s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 13: auc 0.948237  (init alone 0.704213)  trees 1390  543s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 14: auc 0.946688  (init alone 0.705685)  trees 1179  578s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 15: auc 0.947056  (init alone 0.702452)  trees 1236  614s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 16: auc 0.947038  (init alone 0.703984)  trees 2081  664s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 17: auc 0.945290  (init alone 0.707525)  trees 1105  699s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 18: auc 0.946030  (init alone 0.706660)  trees 1331  736s
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:341: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 19: auc 0.948354  (init alone 0.710523)  trees 1295  773s
+v34_init_inc100_k20_s101 OOF 0.946319  (fold-ranked 0.946329)  Δ vs v27 +nan  iters [834, 1391, 1796, 1528, 1966, 1232, 879, 1537, 1089, 994, 1917, 1079, 1713, 1390, 1179, 1236, 2081, 1105, 1331, 1295]  773s
+=== exit 05:53:02
+=== chain34 done

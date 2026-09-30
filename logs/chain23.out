@@ -1,0 +1,24 @@
+v33_viewD_k10_s101: base features 67 | TE keys 17 x ('auto', 20.0, 200.0) | windows 11  (5s)
+  fold 0: auc 0.945063  trees 1790  ncol 129  66s
+  fold 1: auc 0.947257  trees 1966  ncol 129  134s
+  fold 2: auc 0.945849  trees 1713  ncol 129  192s
+  fold 3: auc 0.944670  trees 1255  ncol 129  245s
+  fold 4: auc 0.945337  trees 1607  ncol 129  300s
+  fold 5: auc 0.945608  trees 1932  ncol 129  364s
+  fold 6: auc 0.947748  trees 1198  ncol 129  412s
+  fold 7: auc 0.946649  trees 1229  ncol 129  456s
+  fold 8: auc 0.945882  trees 1782  ncol 129  517s
+  fold 9: auc 0.946881  trees 1131  ncol 129  563s
+v33_viewD_k10_s101 OOF 0.946081  (fold-ranked 0.946094)  iters [1790, 1966, 1713, 1255, 1607, 1932, 1198, 1229, 1782, 1131]  564s
+v33_viewD_k10_s202: base features 67 | TE keys 17 x ('auto', 20.0, 200.0) | windows 11  (4s)
+  fold 0: auc 0.946005  trees 1876  ncol 129  70s
+  fold 1: auc 0.945266  trees 1459  ncol 129  124s
+  fold 2: auc 0.945731  trees 1258  ncol 129  180s
+  fold 3: auc 0.946589  trees 1611  ncol 129  233s
+  fold 4: auc 0.945959  trees 1236  ncol 129  279s
+  fold 5: auc 0.947172  trees 2564  ncol 129  347s
+  fold 6: auc 0.946421  trees 1422  ncol 129  398s
+  fold 7: auc 0.945366  trees 1599  ncol 129  453s
+  fold 8: auc 0.946355  trees 1244  ncol 129  505s
+  fold 9: auc 0.946155  trees 1260  ncol 129  553s
+v33_viewD_k10_s202 OOF 0.946091  (fold-ranked 0.946102)  iters [1876, 1459, 1258, 1611, 1236, 2564, 1422, 1599, 1244, 1260]  553s

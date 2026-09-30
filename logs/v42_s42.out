@@ -1,0 +1,21 @@
+v42_hjlr_k10_s42 | CV | device=cpu
+Train: (668665, 15) | test: (286571, 14)
+Features: 316 | label-derived=163 | label-free=153
+/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/v42_hjlr.py:338: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  loss = float(opt.step(closure))
+FOLD 1/10 | AUC=0.945460784 | seconds=40.9
+FOLD 2/10 | AUC=0.945603740 | seconds=41.0
+FOLD 3/10 | AUC=0.945783909 | seconds=40.5
+FOLD 4/10 | AUC=0.946415494 | seconds=40.9
+FOLD 5/10 | AUC=0.947211695 | seconds=40.8
+FOLD 6/10 | AUC=0.947347520 | seconds=38.7
+FOLD 7/10 | AUC=0.946238632 | seconds=41.1
+FOLD 8/10 | AUC=0.947234397 | seconds=43.2
+FOLD 9/10 | AUC=0.947349582 | seconds=39.4
+FOLD 10/10 | AUC=0.945352440 | seconds=41.0
+POOLED_OOF_AUC=0.946400408424
+Saved: submissions/v42_raw/v42_hjlr_k10_s42_OOF.parquet
+Saved: submissions/v42_raw/v42_hjlr_k10_s42_TEST.parquet
+Saved: submissions/v42_raw/sub_v42_hjlr_k10_s42.csv
+v42_hjlr_k10_s42 OOF 0.946400  folds 0.945461 0.945604 0.945784 0.946415 0.947212 0.947348 0.946239 0.947234 0.947350 0.945352

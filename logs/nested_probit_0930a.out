@@ -1,0 +1,6 @@
+v37 groups (submitted) in-sample 0.946732   nested halves 0.946593 / 0.946872  mean 0.946732
+   weights: {'hj_k20': 0.2, 'pub_hjlr': 0.12, 'init100_tok_k20': 0.4, 'v42_hjlr_k20': 0.28}
+v37 + init100_tokx_k20 in-sample 0.946749   nested halves 0.946600 / 0.946896  mean 0.946748
+   weights: {'hj_k20': 0.219, 'pub_hjlr': 0.156, 'v42_hjlr_k20': 0.219, 'init100_tokx_k20': 0.406}
+v37, tokx for tok in-sample 0.946750   nested halves 0.946603 / 0.946897  mean 0.946750
+   weights: {'hj_k20': 0.217, 'pub_hjlr': 0.13, 'v42_hjlr_k20': 0.217, 'init100_tokx_k20': 0.435}

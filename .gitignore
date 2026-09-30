@@ -21,6 +21,7 @@ submissions/
 
 # Transient per-run console captures — everything is appended to runs.log
 *.out
+!logs/*.out
 
 # --- Cleanup coverage (see CLEANUP.md) ---
 # Secrets: never commit (kept by the CLEANUP.md commands on purpose)

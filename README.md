@@ -1,43 +1,76 @@
-# Kaggle Playground S6E9 — Predicting EV Purchases
+# Kaggle Playground S6E9: Predicting EV Purchases
 
-Binary classification, ROC-AUC, 2026-09-01 → 09-30. **The record is the vault note**
-`Citadel/Active/Kaggle S6E9 — Predicting EV Purchases.md` (run log, standing, traps, next step); this file is the map of the repo.
+Binary classification scored on ROC-AUC. Kaggle Playground Series, Season 6, Episode 9, run 2026-09-01 → 2026-09-30.
+The data is synthetic: 668,665 training rows, 13 features, 17.5% positive. An LLM generated it from the 10k-row
+[EV adoption dataset](https://www.kaggle.com/datasets/itzzomkar/ev-adoption-behavior-and-range-anxiety).
 
-## Setup
-```
-uv sync --reinstall                                   # after any directory move, or console scripts point at the old path
-uv run kaggle competitions download -c playground-series-s6e9 -p data
-uv run kaggle datasets download itzzomkar/ev-adoption-behavior-and-range-anxiety -p data/orig --unzip
-python import_public.py                               # after fetching the public OOF files listed in its docstring into data/public/
-```
-Auth is a single token at `~/.kaggle/access_token` (CLI ≥ 2). Handle `lionelw509`, team `lionel W509`.
+**Result:** best public score **0.94674** (`blend_v38fr_probit_pp`, out-of-fold AUC 0.946750), about rank 105 of ~3,450 on the
+public leaderboard on the final morning (private results pending). The finals were v38 plus `blend_v33fr_probit_pp`, a hedge that uses no GPT-2-token models.
+
+The full lab notebook is [`docs/lab-notebook.md`](docs/lab-notebook.md): every run (including the ones that went
+nowhere), the traps, the forum intel and the leaderboard history. [Issue #1](../../issues/1) is the day-by-day log of the final push.
+
+## What worked, in order of impact
+
+1. **The generator's own quirks.** The data was written by an LLM, so a number's *GPT-2 BPE tokens*
+   explain per-value oddities that the original data cannot. Nested target rates keyed on an income's first,
+   first-two and last tokens, crossed with subsidy, home charging and city (`TOKENS=1 EXTRA=cross`), gave
+   **+0.0002** on the strongest single model. That was the largest honest gain of the month.
+2. **Boosting from a target-rate prior.** LightGBM started from the logit of a nested income//100 target rate
+   (`init_score`) on megayak's feature frame (triple target encoding over 15 keys, a digit/modulo ladder and
+   original-data means). This was our best non-token model.
+3. **Honest blending.** Rank each model inside its CV fold, blend in probit space, and search weights by coordinate
+   descent. A blend went to the board **only if a split-half nested weight fit beat the incumbent in both halves**.
+   That rule rejected the last three candidates on the final day.
+4. **Four deterministic boundary rules** (upper income cliff, income dead zone, commute ≥ 83, the 30k zero cell),
+   applied in rank space: +0.000005.
+
+Did not help: CatBoost, pseudo-labelling (it inflates OOF unless nested), stacking (a nested LR/LGBM stacker loses to the
+linear blend), residual target encoding, TabM, distillation and extra token models once one model carried the signal.
 
 ## Layout
-- `features.py` — shared pipeline for the v2–v26 line: `Base` (cats, counts, original lookup) + nested `TE(m)` + `run_cv`. Folds are `StratifiedKFold(5, shuffle=True, random_state=42)` everywhere; public notebooks use the same split, so OOFs are stack-compatible.
-- `v27_hybrid.py` — the current frame: megayak's recipe (Naji V3 triple TE over 15 keys incl. Smooth Keys, digit / modulo / quantisation ladder, flags, original means) on our split. `build()` and `fold_frames()` are imported by v28–v31. Args: folds, seed.
-- `v28_hybrid_plus.py` (our m=1 TE / clean pseudo on top), `v29_hybrid_cat.py`, `v30_hybrid_xgb.py`, `v31_hybrid_nn.py` — levers and other families on the hybrid frame. All measured flat or worse; see the note.
-- `v32_hybrid_variants.py MODE` — single-change variants of v27: `tecv`, `wobble`, `rank`, `linear`, `extra` (all dead, see runs 61–76); `additive` constrains every tree to one feature (`interaction_constraints`, `n_estimators=60000`) to match the generator's additive label rule, optional 4th arg a v34-style init key.
-- `v33_hybrid_views.py VIEW [folds] [seed] [lgb|xgb] [init key]` — megayak's feature views C / D (+ our E, F) on our pipeline: centred-window target rates, lift vs the original, coarser income ladders; optional XGBoost learner or an init-score start. View D bags to 0.946215.
-- `v34_init_score.py [folds] [seed] [key] [drop|xgb]` — the hybrid frame boosted from logit of a nested target rate as `init_score`. From `k_inc100` this is the strongest own model: five seeds 0.946395 as a group (run 87), versus 0.946379 for the eight-seed hybrid bag. `key` may be several `+`-joined keys (init logit = mean of the per-key logits); `xgb` (same slot as `drop`) swaps the learner for megayak's view-B XGBoost, fed the init logits as `base_margin`.
-- `refit_full.py <init100|hybrid> <seeds...>` — full-train fixed-iteration refit (n_trees = round(mean(best_iteration)) from the seed's own k10 json) for the test column only; no OOF by construction, feeds a blend's test-column hedge.
-- `v35_realmlp.py [folds] [seed] [epochs] [init key]` — yekenot's pure-PyTorch RealMLP on Apple MPS (notebook code verbatim, our fold loop). ~2 min per fold; five 10-fold seeds 0.946247 as a group. Re-pull the notebook before regenerating: it changes. Optional init key adds v34's fixed init margin to the network's logit (training loss and prediction) — SMOKE-verified but not yet measured on a real run; watch its OOF against the plain model before trusting it in a blend.
-- `nn_features.py` — v35's feature prep (`feature_engineering`, `NumericalPreprocessor`, the nested combo-key `TargetEncoder`) factored out so v36 can import it without importing v35 (v35 runs its whole pipeline at import time).
-- `v36_tabm.py [folds] [seed] [epochs]` — TabM (parameter-efficient ensembling) on Apple MPS, on v35's exact inputs — a second neural member decorrelated from the LightGBM family by architecture rather than by features.
-- `postprocess.py <name>` — the four deterministic boundary rules (upper income cliff, income dead zone, commute ≥ 83, 30k zero cell) applied in rank space to a submission; +0.000005 OOF, nested-checked (`pp_rules.py`).
-- `nested_check.py` — split-half nested weight fit for two group sets; the check that made blend_v20 the final candidate over v18 after the public board moved the other way.
-- `assemble.py <out>` — the blend. Each entry in `GROUPS` is a list of OOF names rank-averaged into one signal plus an optional test-column override; weights by coordinate search over the simplex + Nelder-Mead polish (plain Nelder-Mead stalls past ~10 groups). Writes `submissions/<out>.csv` and `oof_<out>.npy`.
-- `stack.py` — nested LR / LightGBM stackers over the group columns; loses to the linear blend.
-- `diag_public_oof.py` — AUC, Spearman and nested blend fits of the public OOF files against ours.
-- `blend.py` — the older two-to-five-model rank blend; `tune.py` + `tuning.db` — the 09-01 Optuna study (pre-TE frame, stale).
-- `run_chain*.sh` — sequential CPU queues (`runs.log`); `run_nn*.sh` — the GPU (MPS) queue for v35 and v36, run alongside (`runs_nn.log`). Refits are queued with `until grep -q "chainN done" runs.log; do sleep 30; done; python assemble.py blend_vX`.
-- `submissions/` (gitignored) — `oof_<name>.npy` + `<name>.csv` for every run; `pub_*` are the public sources. `leaderboard/` — dated board snapshots.
 
-## Rules of the repo
-- Every run gets a row in the note's run log, including the ones that went nowhere.
-- Nothing goes to the board without a leak-free OOF above the incumbent blend's. Refits and seed bags have no OOF and ride inside a blend.
-- When adding a `GROUPS` entry with a string replace, assert the anchor matched and re-parse the table (`ast`): a comment appended mid-line silently disabled three groups for two refits on 09-13 (run 87).
-- Pseudo-labels come only from a model that never saw the validation fold (`v22`, `v28 --pseudo`); un-nested TE and fold-averaged soft labels both inflate OOF by 0.0002–0.0003.
-- Git identity is the global `lionel509 <lionelweng@gmail.com>`; never override it.
+```
+models/     features.py (shared pipeline), nn_features.py, v2 … v42 model scripts, one per experiment
+blend/      assemble.py (GROUPS table), assemble_fr.py (fold-ranked / probit blend), nested_check*.py,
+            postprocess.py + pp_rules.py, stack.py, refit_*.py, es_optimism.py, blend.py (old)
+analysis/   diag_*.py (generator / residual / public-OOF diagnostics), import_*.py (public notebook OOFs), tune.py, baseline.py
+chains/     run_chain*.sh (sequential CPU queues), run_nn*.sh (MPS queue), run_v4*.sh, run_refit*.sh
+logs/       runs.log, runs_nn.log and every console capture (*.out), tune.log + tuning.db (Optuna, 09-01)
+tests/      pytest: token keys, output naming
+leaderboard/  dated public leaderboard snapshots, as downloaded from Kaggle
+docs/       lab-notebook.md
+```
 
-## Cleanup
-See [CLEANUP.md](CLEANUP.md) for what this repo leaves behind (`.venv`, `data/`, `submissions/`) and the commands to remove it.
+Key scripts:
+- `models/v34_init_score.py [folds] [seed] [key]`: the init-score LightGBM. With `TOKENS=1 EXTRA=cross` it is the best single model (20-fold OOF 0.94650–0.94654 per seed).
+- `models/v40_heuljax.py`: a port of heuljax's generator-aware XGBoost. `models/v42_hjlr.py` is our port of his GPT-2-token ridge LR.
+- `models/v35_realmlp.py` and `models/v36_tabm.py`: the neural members (Apple MPS).
+- `blend/assemble_fr.py <out>`: builds a blend from the `GROUPS` in `blend/assemble.py`. `EXCLUDE=g1,g2` drops groups and `PROBIT=1` blends in probit space.
+- `blend/nested_check_fr.py`: the split-half nested check. Edit `SETS` to compare group sets.
+
+## Reproduce
+
+Everything runs **from the repo root** (paths like `data/` and `submissions/` are relative to it).
+
+```
+uv sync
+uv run kaggle competitions download -c playground-series-s6e9 -p data && unzip -d data data/*.zip
+uv run kaggle datasets download itzzomkar/ev-adoption-behavior-and-range-anxiety -p data/orig --unzip
+TOKENS=1 EXTRA=cross .venv/bin/python models/v34_init_score.py 20 7 k_inc100      # ~25 min on 12 cores
+uv run --with pytest pytest -q tests
+```
+
+`data/` and `submissions/` are gitignored. Competition data cannot be redistributed, and the ~4.5 GB of OOF arrays are
+regenerated by the scripts. The public-notebook OOFs that `analysis/import_public.py` and `analysis/import_gp.py`
+read are listed in their docstrings. Reproducing v38 exactly needs every group in `blend/assemble.py` run at its
+listed seeds, which is several days of CPU.
+
+To tear down the local environment afterwards, see [CLEANUP.md](CLEANUP.md).
+
+## Rules the repo kept
+
+- Every run gets a row in the lab notebook, including the dead ones.
+- Nothing goes to the board without a leak-free OOF above the incumbent's. Refits and seed bags have no OOF and ride inside a blend.
+- Pseudo-labels come only from a model that never saw the validation fold. Un-nested target encoding and fold-averaged soft labels both inflate OOF by 0.0002–0.0003.
+- When adding a `GROUPS` entry by string replace, assert that the anchor matched and re-parse the table: a comment appended mid-line once silently disabled three groups.

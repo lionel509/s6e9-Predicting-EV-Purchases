@@ -1,0 +1,130 @@
+=== v35_realmlp.py 20 42 2 start 01:11:25
+PyTorch  version: 2.14.0
+Train shape: (668665, 15)
+Test shape : (286571, 14)
+Orig shape : (10000, 15)
+X      init shape: (668665, 13)
+X_test init shape: (286571, 13) 
+
+init len(cat_cols): 6
+init len(num_cols): 7 
+
+len(new_cat_cols): 18
+len(new_num_cols): 4 
+
+prep len(cat_cols): 24
+prep len(num_cols): 11 
+
+X      prep shape: (668665, 35)
+X_test prep shape: (286571, 35) 
+
+v35_realmlp_k20_s42: 668665 rows, 35 features, device mps
+  fold 0: auc 0.945579  344s
+  fold 1: auc 0.944513  721s
+  fold 2: auc 0.944067  1080s
+  fold 3: auc 0.946800  1437s
+  fold 4: auc 0.944212  1799s
+  fold 5: auc 0.946961  2138s
+  fold 6: auc 0.946370  2498s
+  fold 7: auc 0.946542  2820s
+  fold 8: auc 0.947219  3178s
+  fold 9: auc 0.946542  3530s
+  fold 10: auc 0.946648  3909s
+  fold 11: auc 0.947873  4289s
+  fold 12: auc 0.945643  4640s
+  fold 13: auc 0.946219  5017s
+  fold 14: auc 0.948235  5425s
+  fold 15: auc 0.945628  5855s
+  fold 16: auc 0.945903  6270s
+  fold 17: auc 0.948586  6629s
+  fold 18: auc 0.946153  6980s
+  fold 19: auc 0.944345  7342s
+v35_realmlp_k20_s42 OOF 0.946198  folds [0.94558, 0.94451, 0.94407, 0.9468, 0.94421, 0.94696, 0.94637, 0.94654, 0.94722, 0.94654, 0.94665, 0.94787, 0.94564, 0.94622, 0.94824, 0.94563, 0.9459, 0.94859, 0.94615, 0.94434]  7342s
+=== exit 03:13:57
+=== v35_realmlp.py 20 7 2 start 03:13:57
+PyTorch  version: 2.14.0
+Train shape: (668665, 15)
+Test shape : (286571, 14)
+Orig shape : (10000, 15)
+X      init shape: (668665, 13)
+X_test init shape: (286571, 13) 
+
+init len(cat_cols): 6
+init len(num_cols): 7 
+
+len(new_cat_cols): 18
+len(new_num_cols): 4 
+
+prep len(cat_cols): 24
+prep len(num_cols): 11 
+
+X      prep shape: (668665, 35)
+X_test prep shape: (286571, 35) 
+
+v35_realmlp_k20_s7: 668665 rows, 35 features, device mps
+  fold 0: auc 0.947031  354s
+  fold 1: auc 0.945967  699s
+  fold 2: auc 0.946682  1055s
+  fold 3: auc 0.945988  1412s
+  fold 4: auc 0.946856  1771s
+  fold 5: auc 0.945136  2132s
+  fold 6: auc 0.945663  2493s
+  fold 7: auc 0.944109  2860s
+  fold 8: auc 0.947936  3225s
+  fold 9: auc 0.945272  3585s
+  fold 10: auc 0.948697  3925s
+  fold 11: auc 0.947504  4284s
+  fold 12: auc 0.945031  4641s
+  fold 13: auc 0.944691  5000s
+  fold 14: auc 0.945878  5360s
+  fold 15: auc 0.946922  5718s
+  fold 16: auc 0.944615  6079s
+  fold 17: auc 0.946698  6438s
+  fold 18: auc 0.947474  6797s
+  fold 19: auc 0.945483  7157s
+v35_realmlp_k20_s7 OOF 0.946178  folds [0.94703, 0.94597, 0.94668, 0.94599, 0.94686, 0.94514, 0.94566, 0.94411, 0.94794, 0.94527, 0.9487, 0.9475, 0.94503, 0.94469, 0.94588, 0.94692, 0.94462, 0.9467, 0.94747, 0.94548]  7158s
+=== exit 05:13:22
+=== v35_realmlp.py 20 2026 2 start 05:13:22
+PyTorch  version: 2.14.0
+Train shape: (668665, 15)
+Test shape : (286571, 14)
+Orig shape : (10000, 15)
+X      init shape: (668665, 13)
+X_test init shape: (286571, 13) 
+
+init len(cat_cols): 6
+init len(num_cols): 7 
+
+len(new_cat_cols): 18
+len(new_num_cols): 4 
+
+prep len(cat_cols): 24
+prep len(num_cols): 11 
+
+X      prep shape: (668665, 35)
+X_test prep shape: (286571, 35) 
+
+v35_realmlp_k20_s2026: 668665 rows, 35 features, device mps
+  fold 0: auc 0.945967  350s
+  fold 1: auc 0.945256  700s
+  fold 2: auc 0.946769  1043s
+  fold 3: auc 0.944009  1394s
+  fold 4: auc 0.945991  1745s
+  fold 5: auc 0.946163  2094s
+  fold 6: auc 0.946017  2420s
+  fold 7: auc 0.943858  2716s
+  fold 8: auc 0.949000  3021s
+  fold 9: auc 0.945819  3381s
+  fold 10: auc 0.948941  3740s
+  fold 11: auc 0.946721  4097s
+  fold 12: auc 0.946047  4457s
+  fold 13: auc 0.947968  4812s
+  fold 14: auc 0.946211  5158s
+  fold 15: auc 0.944496  5518s
+  fold 16: auc 0.943893  5748s
+  fold 17: auc 0.947135  5933s
+  fold 18: auc 0.945917  6113s
+  fold 19: auc 0.946815  6293s
+v35_realmlp_k20_s2026 OOF 0.946145  folds [0.94597, 0.94526, 0.94677, 0.94401, 0.94599, 0.94616, 0.94602, 0.94386, 0.949, 0.94582, 0.94894, 0.94672, 0.94605, 0.94797, 0.94621, 0.9445, 0.94389, 0.94713, 0.94592, 0.94682]  6293s
+=== exit 06:58:21
+=== nn8 done

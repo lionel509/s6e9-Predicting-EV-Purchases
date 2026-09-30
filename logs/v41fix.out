@@ -1,0 +1,50 @@
+=== k20 fix1000 s7 start 02:25:37
+DEVICE=cpu | CUDA unavailable
+v40_heuljax_k20_s7_fix1000 | CV | cpu | folds=20
+TRAIN=668,665 TEST=286,571 FEATURES=173
+FOLD 1/20 | features
+FOLD 1/20 | AUC=0.947096277 | trees=1000 | seconds=100.95
+FOLD 2/20 | features
+FOLD 2/20 | AUC=0.945982098 | trees=1000 | seconds=82.36
+FOLD 3/20 | features
+FOLD 3/20 | AUC=0.946714957 | trees=1000 | seconds=66.78
+FOLD 4/20 | features
+FOLD 4/20 | AUC=0.946085126 | trees=1000 | seconds=80.95
+FOLD 5/20 | features
+FOLD 5/20 | AUC=0.946921626 | trees=1000 | seconds=82.95
+FOLD 6/20 | features
+FOLD 6/20 | AUC=0.945225041 | trees=1000 | seconds=82.49
+FOLD 7/20 | features
+FOLD 7/20 | AUC=0.945792462 | trees=1000 | seconds=105.10
+FOLD 8/20 | features
+FOLD 8/20 | AUC=0.944453804 | trees=1000 | seconds=103.85
+FOLD 9/20 | features
+FOLD 9/20 | AUC=0.947958305 | trees=1000 | seconds=123.21
+FOLD 10/20 | features
+FOLD 10/20 | AUC=0.945328821 | trees=1000 | seconds=125.28
+FOLD 11/20 | features
+FOLD 11/20 | AUC=0.948944170 | trees=1000 | seconds=124.86
+FOLD 12/20 | features
+FOLD 12/20 | AUC=0.947678733 | trees=1000 | seconds=169.41
+FOLD 13/20 | features
+FOLD 13/20 | AUC=0.945115749 | trees=1000 | seconds=182.47
+FOLD 14/20 | features
+FOLD 14/20 | AUC=0.944638903 | trees=1000 | seconds=108.58
+FOLD 15/20 | features
+FOLD 15/20 | AUC=0.946115619 | trees=1000 | seconds=134.37
+FOLD 16/20 | features
+FOLD 16/20 | AUC=0.947080032 | trees=1000 | seconds=124.20
+FOLD 17/20 | features
+FOLD 17/20 | AUC=0.945150018 | trees=1000 | seconds=62.45
+FOLD 18/20 | features
+FOLD 18/20 | AUC=0.946881750 | trees=1000 | seconds=62.20
+FOLD 19/20 | features
+FOLD 19/20 | AUC=0.947576717 | trees=1000 | seconds=67.73
+FOLD 20/20 | features
+FOLD 20/20 | AUC=0.945673313 | trees=1000 | seconds=65.72
+CV POOLED_OOF_AUC=0.946316422790
+Saved submissions/v40_raw/v40_heuljax_k20_s7_fix1000_OOF.parquet
+Saved submissions/v40_raw/v40_heuljax_k20_s7_fix1000_TEST.parquet
+Saved submissions/v40_raw/sub_7.csv
+v40_heuljax_k20_s7_fix1000 OOF 0.946316  folds 0.947096 0.945982 0.946715 0.946085 0.946922 0.945225 0.945792 0.944454 0.947958 0.945329 0.948944 0.947679 0.945116 0.944639 0.946116 0.947080 0.945150 0.946882 0.947577 0.945673
+=== exit 03:00:02

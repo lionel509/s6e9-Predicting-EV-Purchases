@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/v28_hybrid_plus.py", line 13, in <module>
+    from v27_hybrid import build, PARAMS, TARGET
+  File "/Users/lionelweng/Documents/Citadel/Active/Kaggle S6E9/v27_hybrid.py", line 18, in <module>
+    N = int(sys.argv[1]) if len(sys.argv) > 1 else 5; SEED = int(sys.argv[2]) if len(sys.argv) > 2 else 42
+        ^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '--m1'
+v27_hybrid_k10_s42: features 65 | TE keys 15 x 3 smoothings  (4s)
+  fold 0: auc 0.945245  trees 1387  50s
+  fold 1: auc 0.945361  trees 1184  92s
+  fold 2: auc 0.945694  trees 1402  132s
+  fold 3: auc 0.946304  trees 1924  197s
+  fold 4: auc 0.946929  trees 1645  252s
+  fold 5: auc 0.947308  trees 1163  289s
+  fold 6: auc 0.946088  trees 980  337s
+  fold 7: auc 0.946986  trees 1554  386s
+  fold 8: auc 0.947262  trees 1416  427s
+  fold 9: auc 0.945275  trees 1301  500s
+v27_hybrid_k10_s42 OOF 0.946240  (fold-ranked 0.946245)  iters [1387, 1184, 1402, 1924, 1645, 1163, 980, 1554, 1416, 1301]  500s
+v28_hybrid_k5_s42: v27 ref OOF 0.946153  m1 False  pseudo True  (7s)
+  fold 0: stage1 0.945205 (1731)  pseudo 0.945218 (2590)  180s
+  fold 1: stage1 0.945852 (1276)  pseudo 0.945879 (2617)  320s
+  fold 2: stage1 0.947066 (1525)  pseudo 0.947066 (2853)  435s
+  fold 3: stage1 0.946458 (1285)  pseudo 0.946465 (1971)  568s
+  fold 4: stage1 0.946204 (1550)  pseudo 0.946241 (2302)  672s
+v28_hybrid_k5_s42 OOF 0.946153  Δ vs v27 +0.000000  iters [1731, 1276, 1525, 1285, 1550]  672s
+v28_hybrid_pseudo_k5_s42 OOF 0.946169  Δ vs v27 +0.000016  Δ vs stage1 +0.000016  iters [2590, 2617, 2853, 1971, 2302]

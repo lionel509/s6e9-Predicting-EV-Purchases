@@ -1,0 +1,14 @@
+=== EXTRA=km start 22:09:10
+v34_init_inc100_tok_km_k10_s7: v27 ref OOF 0.946219  features 71  init from k_inc100_teauto
+  fold 0: auc 0.946778  (init alone 0.703219)  trees 1572  118s
+  fold 1: auc 0.946496  (init alone 0.704719)  trees 1439  248s
+  fold 2: auc 0.946264  (init alone 0.703312)  trees 1021  311s
+  fold 3: auc 0.945220  (init alone 0.704717)  trees 1571  408s
+  fold 4: auc 0.946686  (init alone 0.708358)  trees 1427  507s
+  fold 5: auc 0.948347  (init alone 0.704963)  trees 1464  614s
+  fold 6: auc 0.945217  (init alone 0.703570)  trees 1483  737s
+  fold 7: auc 0.946668  (init alone 0.699876)  trees 1203  845s
+  fold 8: auc 0.946040  (init alone 0.703137)  trees 1139  966s
+  fold 9: auc 0.946666  (init alone 0.703227)  trees 1168  1096s
+v34_init_inc100_tok_km_k10_s7 OOF 0.946430  (fold-ranked 0.946438)  Δ vs v27 +0.000211  iters [1572, 1439, 1021, 1571, 1427, 1464, 1483, 1203, 1139, 1168]  1096s
+=== EXTRA=km done 22:27:30

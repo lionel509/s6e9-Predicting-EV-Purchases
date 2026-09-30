@@ -1,0 +1,219 @@
+v38_init_inc100_pwide_k10_s42: v27 ref OOF 0.946240  features 65  init from k_inc100_teauto
+  lgb params (wide): {'n_estimators': 20000, 'learning_rate': 0.02, 'max_depth': 6, 'num_leaves': 64, 'min_child_samples': 20, 'subsample': 0.8, 'subsample_freq': 1, 'colsample_bytree': 0.3, 'reg_alpha': 0.071, 'reg_lambda': 2.0, 'max_bin': 1024, 'feature_pre_filter': False, 'n_jobs': -1, 'verbose': -1}
+  fold 0: auc 0.945194  (init alone 0.703530)  trees 947  48s
+  fold 1: auc 0.945414  (init alone 0.704482)  trees 987  93s
+  fold 2: auc 0.945722  (init alone 0.706076)  trees 895  136s
+  fold 3: auc 0.946269  (init alone 0.704224)  trees 1037  183s
+  fold 4: auc 0.946849  (init alone 0.704853)  trees 1033  229s
+  fold 5: auc 0.947238  (init alone 0.702098)  trees 952  274s
+  fold 6: auc 0.946131  (init alone 0.703661)  trees 649  311s
+  fold 7: auc 0.947037  (init alone 0.706663)  trees 1007  357s
+  fold 8: auc 0.947263  (init alone 0.706575)  trees 1173  407s
+  fold 9: auc 0.945331  (init alone 0.697954)  trees 1047  454s
+v38_init_inc100_pwide_k10_s42 OOF 0.946240  (fold-ranked 0.946245)  Δ vs v27 +0.000000  iters [947, 987, 895, 1037, 1033, 952, 649, 1007, 1173, 1047]  454s
+v38_init_inc100_pcol5_k10_s42: v27 ref OOF 0.946240  features 65  init from k_inc100_teauto
+  lgb params (col5): {'n_estimators': 20000, 'learning_rate': 0.02, 'max_depth': 5, 'num_leaves': 32, 'min_child_samples': 10, 'subsample': 0.8, 'subsample_freq': 1, 'colsample_bytree': 0.5, 'reg_alpha': 0.071, 'reg_lambda': 2.0, 'max_bin': 1024, 'feature_pre_filter': False, 'n_jobs': -1, 'verbose': -1}
+  fold 0: auc 0.945260  (init alone 0.703530)  trees 1406  52s
+  fold 1: auc 0.945378  (init alone 0.704482)  trees 1491  102s
+  fold 2: auc 0.945749  (init alone 0.706076)  trees 1268  148s
+  fold 3: auc 0.946308  (init alone 0.704224)  trees 1600  200s
+  fold 4: auc 0.946958  (init alone 0.704853)  trees 1623  253s
+  fold 5: auc 0.947306  (init alone 0.702098)  trees 1110  295s
+  fold 6: auc 0.946164  (init alone 0.703661)  trees 936  334s
+  fold 7: auc 0.947051  (init alone 0.706663)  trees 1465  384s
+  fold 8: auc 0.947240  (init alone 0.706575)  trees 1325  431s
+  fold 9: auc 0.945296  (init alone 0.697954)  trees 1003  471s
+v38_init_inc100_pcol5_k10_s42 OOF 0.946265  (fold-ranked 0.946271)  Δ vs v27 +0.000025  iters [1406, 1491, 1268, 1600, 1623, 1110, 936, 1465, 1325, 1003]  472s
+v37_mono_initinc100_k10_s42: v27 ref OOF 0.946240  features 65  (4s)
+  mono constraints: +1 60  -1 3  0 47  named flags up ['Environmental_Concern_Level', 'is_millionaire_cliff'] down ['is_30k_spike', 'is_dead_zone', 'is_env_hater']  missing []
+  fold 0: auc 0.944867  trees 1756  56s
+  mono constraints: +1 60  -1 3  0 47  named flags up ['Environmental_Concern_Level', 'is_millionaire_cliff'] down ['is_30k_spike', 'is_dead_zone', 'is_env_hater']  missing []
+  fold 1: auc 0.945002  trees 1731  107s
+  mono constraints: +1 60  -1 3  0 47  named flags up ['Environmental_Concern_Level', 'is_millionaire_cliff'] down ['is_30k_spike', 'is_dead_zone', 'is_env_hater']  missing []
+  fold 2: auc 0.945172  trees 2219  168s
+  mono constraints: +1 60  -1 3  0 47  named flags up ['Environmental_Concern_Level', 'is_millionaire_cliff'] down ['is_30k_spike', 'is_dead_zone', 'is_env_hater']  missing []
+  fold 3: auc 0.945736  trees 2493  234s
+  mono constraints: +1 60  -1 3  0 47  named flags up ['Environmental_Concern_Level', 'is_millionaire_cliff'] down ['is_30k_spike', 'is_dead_zone', 'is_env_hater']  missing []
+  fold 4: auc 0.946416  trees 2086  292s
+  mono constraints: +1 60  -1 3  0 47  named flags up ['Environmental_Concern_Level', 'is_millionaire_cliff'] down ['is_30k_spike', 'is_dead_zone', 'is_env_hater']  missing []
+  fold 5: auc 0.946700  trees 2131  352s
+  mono constraints: +1 60  -1 3  0 47  named flags up ['Environmental_Concern_Level', 'is_millionaire_cliff'] down ['is_30k_spike', 'is_dead_zone', 'is_env_hater']  missing []
+  fold 6: auc 0.945699  trees 1722  403s
+  mono constraints: +1 60  -1 3  0 47  named flags up ['Environmental_Concern_Level', 'is_millionaire_cliff'] down ['is_30k_spike', 'is_dead_zone', 'is_env_hater']  missing []
+  fold 7: auc 0.946576  trees 1774  456s
+  mono constraints: +1 60  -1 3  0 47  named flags up ['Environmental_Concern_Level', 'is_millionaire_cliff'] down ['is_30k_spike', 'is_dead_zone', 'is_env_hater']  missing []
+  fold 8: auc 0.946802  trees 2636  525s
+  mono constraints: +1 60  -1 3  0 47  named flags up ['Environmental_Concern_Level', 'is_millionaire_cliff'] down ['is_30k_spike', 'is_dead_zone', 'is_env_hater']  missing []
+  fold 9: auc 0.944705  trees 2171  585s
+v37_mono_initinc100_k10_s42 OOF 0.945765  (fold-ranked 0.945768)  Δ vs v27 -0.000475  iters [1756, 1731, 2219, 2493, 2086, 2131, 1722, 1774, 2636, 2171]  586s
+v37_agg_initinc100_k10_s42: v27 ref OOF 0.946240  features 79  (4s)
+  fold 0: auc 0.945365  trees 1247  46s
+  fold 1: auc 0.945453  trees 1306  89s
+  fold 2: auc 0.945760  trees 1417  133s
+  fold 3: auc 0.946302  trees 1265  176s
+  fold 4: auc 0.946970  trees 1799  228s
+  fold 5: auc 0.947270  trees 1349  272s
+  fold 6: auc 0.946124  trees 927  307s
+  fold 7: auc 0.947168  trees 1664  358s
+  fold 8: auc 0.947307  trees 1139  399s
+  fold 9: auc 0.945331  trees 1005  436s
+v37_agg_initinc100_k10_s42 OOF 0.946301  (fold-ranked 0.946305)  Δ vs v27 +0.000061  iters [1247, 1306, 1417, 1265, 1799, 1349, 927, 1664, 1139, 1005]  436s
+v38_init_inc100_pslow_k10_s42: v27 ref OOF 0.946240  features 65  init from k_inc100_teauto
+  lgb params (slow): {'n_estimators': 40000, 'learning_rate': 0.01, 'max_depth': 5, 'num_leaves': 32, 'min_child_samples': 10, 'subsample': 0.8, 'subsample_freq': 1, 'colsample_bytree': 0.3, 'reg_alpha': 0.071, 'reg_lambda': 2.0, 'max_bin': 1024, 'feature_pre_filter': False, 'n_jobs': -1, 'verbose': -1}
+  fold 0: auc 0.945275  (init alone 0.703530)  trees 2547  68s
+  fold 1: auc 0.945428  (init alone 0.704482)  trees 2475  130s
+  fold 2: auc 0.945744  (init alone 0.706076)  trees 2769  197s
+  fold 3: auc 0.946325  (init alone 0.704224)  trees 3005  269s
+  fold 4: auc 0.946950  (init alone 0.704853)  trees 3854  355s
+  fold 5: auc 0.947302  (init alone 0.702098)  trees 3006  425s
+  fold 6: auc 0.946166  (init alone 0.703661)  trees 2107  480s
+  fold 7: auc 0.947058  (init alone 0.706663)  trees 2815  549s
+  fold 8: auc 0.947280  (init alone 0.706575)  trees 2959  620s
+  fold 9: auc 0.945370  (init alone 0.697954)  trees 2658  685s
+v38_init_inc100_pslow_k10_s42 OOF 0.946286  (fold-ranked 0.946290)  Δ vs v27 +0.000046  iters [2547, 2475, 2769, 3005, 3854, 3006, 2107, 2815, 2959, 2658]  686s
+  hybrid      1 seed(s)  OOF 0.946153
+  hybrid10    8 seed(s)  OOF 0.946379
+  hybrid_pseudo 1 seed(s)  OOF 0.946169
+  hybrid_m1   1 seed(s)  OOF 0.946149
+  hybrid_m1_pseudo 1 seed(s)  OOF 0.946173
+  hybrid_cat  1 seed(s)  OOF 0.945967
+  hybrid_xgb  1 seed(s)  OOF 0.946125
+  hybrid_nn   1 seed(s)  OOF 0.945353
+  naji_pc     3 seed(s)  OOF 0.946085
+  naji_clean  3 seed(s)  OOF 0.946068
+  catboost    1 seed(s)  OOF 0.945544
+  nn          3 seed(s)  OOF 0.945476
+  pub_megayak10 1 seed(s)  OOF 0.946264
+  pub_naji_v3 1 seed(s)  OOF 0.946064
+  pub_sergey  1 seed(s)  OOF 0.945329
+  pub_realmlp 1 seed(s)  OOF 0.945871
+  pub_naji_01blend 1 seed(s)  OOF 0.946185
+  pub_mega_A  1 seed(s)  OOF 0.946264
+  pub_mega_B  1 seed(s)  OOF 0.946258
+  pub_mega_C  1 seed(s)  OOF 0.946223
+  pub_mega_D  1 seed(s)  OOF 0.946077
+  pub_realmlp2 1 seed(s)  OOF 0.946010
+  pub_naji_xgb 1 seed(s)  OOF 0.946243
+  pub_mega6_E 1 seed(s)  OOF 0.946230
+  pub_mega6_F 1 seed(s)  OOF 0.946134
+  pub_mega6_G 1 seed(s)  OOF 0.946182
+  pub_naji_v5 1 seed(s)  OOF 0.946170
+  pub_naji_v6 1 seed(s)  OOF 0.946068
+  viewC       1 seed(s)  OOF 0.946217
+  viewD       5 seed(s)  OOF 0.946215
+  viewE       1 seed(s)  OOF 0.946007
+  viewF       1 seed(s)  OOF 0.946052
+  viewD_xgb   1 seed(s)  OOF 0.946058
+  viewD_init50 3 seed(s)  OOF 0.946206
+  viewC_init100 1 seed(s)  OOF 0.946270
+  viewD_init500 1 seed(s)  OOF 0.946095
+  viewC_xgb   1 seed(s)  OOF 0.946224
+  init        5 seed(s)  OOF 0.946352
+  realmlp_own 1 seed(s)  OOF 0.946002
+  realmlp_e3  1 seed(s)  OOF 0.946018
+  realmlp_own10 7 seed(s)  OOF 0.946253
+  init_drop: no OOF files yet, skipped
+  init1000    1 seed(s)  OOF 0.946268
+  init100     8 seed(s)  OOF 0.946396
+  rank        1 seed(s)  OOF 0.945846
+  linear      1 seed(s)  OOF 0.945911
+  extra       1 seed(s)  OOF 0.946109
+  m1          1 seed(s)  OOF 0.945832
+  slow        1 seed(s)  OOF 0.945784
+  v6b         1 seed(s)  OOF 0.945746
+  xgb         1 seed(s)  OOF 0.945522
+  init100_k20 2 seed(s)  OOF 0.946376
+  additive    1 seed(s)  OOF 0.945920
+  additive_init100 1 seed(s)  OOF 0.945754
+  init100_xgb 1 seed(s)  OOF 0.946255
+  init_km: no OOF files yet, skipped
+  init_combo  1 seed(s)  OOF 0.946293
+  tabm: no OOF files yet, skipped
+  tabm5       1 seed(s)  OOF 0.945231
+  realmlp_k20: no OOF files yet, skipped
+  pub_legtarrr_v19 1 seed(s)  OOF 0.945961
+  init100_wide 1 seed(s)  OOF 0.946240
+  init100_col5 1 seed(s)  OOF 0.946265
+  init100_slow 1 seed(s)  OOF 0.946286
+  mono_init100 1 seed(s)  OOF 0.945765
+  agg_init100 1 seed(s)  OOF 0.946301
+  realmlp_init100: no OOF files yet, skipped
+  pass 0: 0.946499
+  pass 1: 0.946511
+  pass 2: 0.946514
+  pass 3: 0.946514
+blend OOF 0.946514  weights {'hybrid': np.float64(0.0), 'hybrid10': np.float64(0.0), 'hybrid_pseudo': np.float64(0.0), 'hybrid_m1': np.float64(0.0), 'hybrid_m1_pseudo': np.float64(0.0), 'hybrid_cat': np.float64(0.0), 'hybrid_xgb': np.float64(0.0), 'hybrid_nn': np.float64(0.0), 'naji_pc': np.float64(0.0), 'naji_clean': np.float64(0.0), 'catboost': np.float64(0.0), 'nn': np.float64(0.0), 'pub_megayak10': np.float64(0.0), 'pub_naji_v3': np.float64(0.0), 'pub_sergey': np.float64(0.0), 'pub_realmlp': np.float64(0.0), 'pub_naji_01blend': np.float64(0.105), 'pub_mega_A': np.float64(0.0), 'pub_mega_B': np.float64(0.0), 'pub_mega_C': np.float64(0.0), 'pub_mega_D': np.float64(0.0), 'pub_realmlp2': np.float64(0.0), 'pub_naji_xgb': np.float64(0.0), 'pub_mega6_E': np.float64(0.0), 'pub_mega6_F': np.float64(0.0), 'pub_mega6_G': np.float64(0.0), 'pub_naji_v5': np.float64(0.0), 'pub_naji_v6': np.float64(0.0), 'viewC': np.float64(0.0), 'viewD': np.float64(0.027), 'viewE': np.float64(0.0), 'viewF': np.float64(0.0), 'viewD_xgb': np.float64(0.0), 'viewD_init50': np.float64(0.159), 'viewC_init100': np.float64(0.0), 'viewD_init500': np.float64(0.0), 'viewC_xgb': np.float64(0.0), 'init': np.float64(0.093), 'realmlp_own': np.float64(0.0), 'realmlp_e3': np.float64(0.0), 'realmlp_own10': np.float64(0.204), 'init1000': np.float64(0.0), 'init100': np.float64(0.0), 'rank': np.float64(0.0), 'linear': np.float64(0.0), 'extra': np.float64(0.0), 'm1': np.float64(0.0), 'slow': np.float64(0.0), 'v6b': np.float64(0.0), 'xgb': np.float64(0.0), 'init100_k20': np.float64(0.165), 'additive': np.float64(0.0), 'additive_init100': np.float64(0.0), 'init100_xgb': np.float64(0.0), 'init_combo': np.float64(0.0), 'tabm5': np.float64(0.0), 'pub_legtarrr_v19': np.float64(0.098), 'init100_wide': np.float64(0.0), 'init100_col5': np.float64(0.0), 'init100_slow': np.float64(0.0), 'mono_init100': np.float64(0.0), 'agg_init100': np.float64(0.151)}  best group 0.946396
+wrote submissions/blend_v26.csv
+  hybrid      1 seed(s)  OOF 0.946157
+  hybrid10    8 seed(s)  OOF 0.946391
+  hybrid_pseudo 1 seed(s)  OOF 0.946174
+  hybrid_m1   1 seed(s)  OOF 0.946154
+  hybrid_m1_pseudo 1 seed(s)  OOF 0.946178
+  hybrid_cat  1 seed(s)  OOF 0.945967
+  hybrid_xgb  1 seed(s)  OOF 0.946125
+  hybrid_nn   1 seed(s)  OOF 0.945353
+  naji_pc     3 seed(s)  OOF 0.946085
+  naji_clean  3 seed(s)  OOF 0.946068
+  catboost    1 seed(s)  OOF 0.945544
+  nn          3 seed(s)  OOF 0.945476
+  pub_megayak10 1 seed(s)  OOF 0.946264
+  pub_naji_v3 1 seed(s)  OOF 0.946064
+  pub_sergey  1 seed(s)  OOF 0.945329
+  pub_realmlp 1 seed(s)  OOF 0.945871
+  pub_naji_01blend 1 seed(s)  OOF 0.946185
+  pub_mega_A  1 seed(s)  OOF 0.946264
+  pub_mega_B  1 seed(s)  OOF 0.946258
+  pub_mega_C  1 seed(s)  OOF 0.946223
+  pub_mega_D  1 seed(s)  OOF 0.946077
+  pub_realmlp2 1 seed(s)  OOF 0.946010
+  pub_naji_xgb 1 seed(s)  OOF 0.946243
+  pub_mega6_E 1 seed(s)  OOF 0.946230
+  pub_mega6_F 1 seed(s)  OOF 0.946134
+  pub_mega6_G 1 seed(s)  OOF 0.946182
+  pub_naji_v5 1 seed(s)  OOF 0.946170
+  pub_naji_v6 1 seed(s)  OOF 0.946068
+  viewC       1 seed(s)  OOF 0.946222
+  viewD       5 seed(s)  OOF 0.946227
+  viewE       1 seed(s)  OOF 0.946011
+  viewF       1 seed(s)  OOF 0.946060
+  viewD_xgb   1 seed(s)  OOF 0.946065
+  viewD_init50 3 seed(s)  OOF 0.946214
+  viewC_init100 1 seed(s)  OOF 0.946273
+  viewD_init500 1 seed(s)  OOF 0.946100
+  viewC_xgb   1 seed(s)  OOF 0.946229
+  init        5 seed(s)  OOF 0.946363
+  realmlp_own 1 seed(s)  OOF 0.946013
+  realmlp_e3  1 seed(s)  OOF 0.946024
+  realmlp_own10 7 seed(s)  OOF 0.946263
+  init_drop: no OOF files yet, skipped
+  init1000    1 seed(s)  OOF 0.946272
+  init100     8 seed(s)  OOF 0.946408
+  rank        1 seed(s)  OOF 0.945846
+  linear      1 seed(s)  OOF 0.945922
+  extra       1 seed(s)  OOF 0.946132
+  m1          1 seed(s)  OOF 0.945832
+  slow        1 seed(s)  OOF 0.945784
+  v6b         1 seed(s)  OOF 0.945746
+  xgb         1 seed(s)  OOF 0.945522
+  init100_k20 2 seed(s)  OOF 0.946388
+  additive    1 seed(s)  OOF 0.945921
+  additive_init100 1 seed(s)  OOF 0.945755
+  init100_xgb 1 seed(s)  OOF 0.946260
+  init_km: no OOF files yet, skipped
+  init_combo  1 seed(s)  OOF 0.946299
+  tabm: no OOF files yet, skipped
+  tabm5       1 seed(s)  OOF 0.945356
+  realmlp_k20: no OOF files yet, skipped
+  pub_legtarrr_v19 1 seed(s)  OOF 0.945961
+  init100_wide 1 seed(s)  OOF 0.946245
+  init100_col5 1 seed(s)  OOF 0.946271
+  init100_slow 1 seed(s)  OOF 0.946290
+  mono_init100 1 seed(s)  OOF 0.945768
+  agg_init100 1 seed(s)  OOF 0.946305
+  realmlp_init100: no OOF files yet, skipped
+  pass 0: 0.946507
+  pass 1: 0.946519
+  pass 2: 0.946521
+  pass 3: 0.946522
+blend OOF 0.946522  weights {'hybrid': np.float64(0.0), 'hybrid10': np.float64(0.0), 'hybrid_pseudo': np.float64(0.0), 'hybrid_m1': np.float64(0.0), 'hybrid_m1_pseudo': np.float64(0.0), 'hybrid_cat': np.float64(0.0), 'hybrid_xgb': np.float64(0.0), 'hybrid_nn': np.float64(0.0), 'naji_pc': np.float64(0.0), 'naji_clean': np.float64(0.0), 'catboost': np.float64(0.0), 'nn': np.float64(0.0), 'pub_megayak10': np.float64(0.0), 'pub_naji_v3': np.float64(0.0), 'pub_sergey': np.float64(0.0), 'pub_realmlp': np.float64(0.0), 'pub_naji_01blend': np.float64(0.099), 'pub_mega_A': np.float64(0.0), 'pub_mega_B': np.float64(0.0), 'pub_mega_C': np.float64(0.0), 'pub_mega_D': np.float64(0.0), 'pub_realmlp2': np.float64(0.0), 'pub_naji_xgb': np.float64(0.0), 'pub_mega6_E': np.float64(0.0), 'pub_mega6_F': np.float64(0.0), 'pub_mega6_G': np.float64(0.0), 'pub_naji_v5': np.float64(0.0), 'pub_naji_v6': np.float64(0.0), 'viewC': np.float64(0.0), 'viewD': np.float64(0.05), 'viewE': np.float64(0.0), 'viewF': np.float64(0.0), 'viewD_xgb': np.float64(0.0), 'viewD_init50': np.float64(0.133), 'viewC_init100': np.float64(0.0), 'viewD_init500': np.float64(0.0), 'viewC_xgb': np.float64(0.0), 'init': np.float64(0.1), 'realmlp_own': np.float64(0.0), 'realmlp_e3': np.float64(0.0), 'realmlp_own10': np.float64(0.198), 'init1000': np.float64(0.0), 'init100': np.float64(0.0), 'rank': np.float64(0.0), 'linear': np.float64(0.0), 'extra': np.float64(0.0), 'm1': np.float64(0.0), 'slow': np.float64(0.0), 'v6b': np.float64(0.0), 'xgb': np.float64(0.0), 'init100_k20': np.float64(0.167), 'additive': np.float64(0.0), 'additive_init100': np.float64(0.0), 'init100_xgb': np.float64(0.0), 'init_combo': np.float64(0.0), 'tabm5': np.float64(0.0), 'pub_legtarrr_v19': np.float64(0.091), 'init100_wide': np.float64(0.0), 'init100_col5': np.float64(0.0), 'init100_slow': np.float64(0.0), 'mono_init100': np.float64(0.0), 'agg_init100': np.float64(0.162)}  best group 0.946408
+wrote submissions/blend_v26fr.csv

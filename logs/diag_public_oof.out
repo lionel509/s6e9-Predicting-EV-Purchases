@@ -1,0 +1,20 @@
+source           OOF AUC  ρ vs blend_v2  ρ vs megayak
+ours_blend_v2   0.946101        1.00000       0.99652
+ours_v22pc      0.945915        0.99931       0.99585
+ours_cat        0.945544        0.99631       0.99277
+ours_nn         0.945440        0.99619       0.99274
+megayak10       0.946264        0.99652       1.00000
+naji_v3         0.946064        0.99579       0.99765
+sergey_focal    0.945329        0.99538       0.99392
+naji_01blend    0.946185        0.99793       0.99670
+realmlp         0.945871        0.99589       0.99474
+
+blend fits (in-sample OOF / nested OOF):
+  0.946335 / 0.946333  ours_blend_v2=0.36  megayak10=0.64
+  0.946235 / 0.946234  ours_blend_v2=0.54  naji_v3=0.46
+  0.946339 / 0.946336  ours_blend_v2=0.33  megayak10=0.57  naji_v3=0.10
+  0.946343 / 0.946341  ours_blend_v2=0.29  megayak10=0.56  naji_v3=0.09  sergey_focal=0.06
+  0.946354 / 0.946351  ours_blend_v2=0.25  megayak10=0.52  naji_v3=0.05  sergey_focal=0.04  realmlp=0.13
+  0.946338 / 0.946332  ours_v22pc=0.08  ours_cat=0.01  ours_nn=0.01  megayak10=0.59  naji_v3=0.09  sergey_focal=0.06  realmlp=0.17
+  0.946333 / 0.946330  megayak10=0.61  naji_v3=0.12  sergey_focal=0.08  realmlp=0.19
+  0.946369 / 0.946367  megayak10=0.54  naji_01blend=0.36  realmlp=0.11
