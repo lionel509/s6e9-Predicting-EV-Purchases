@@ -48,6 +48,13 @@ def build(train, test, orig):
         import tiktoken; enc = tiktoken.get_encoding("gpt2"); u, inv = np.unique(inc, return_inverse=True); tk = [enc.encode(" " + str(v)) for v in u]
         K["k_tok1"] = np.array([str(t[0]) for t in tk])[inv]; K["k_tok2"] = np.array(["_".join(map(str, t[:2])) for t in tk])[inv]
         K["k_toklast"] = np.array([f"{len(t)}_{t[-1]}" for t in tk])[inv]
+        EXTRA = os.environ.get("EXTRA")   # 2026-09-29 night, issue #1: km = exact commute + its tokens; cross = income tok1 x context
+        if EXTRA == "km":
+            K["k_km_exact"] = km.astype(str); u, inv = np.unique(df.Daily_Commute_km.to_numpy(float), return_inverse=True)
+            tk = [enc.encode(" " + f"{v:g}") for v in u]
+            K["k_kmtok1"] = np.array([str(t[0]) for t in tk])[inv]; K["k_kmtoklast"] = np.array([f"{len(t)}_{t[-1]}" for t in tk])[inv]
+        elif EXTRA == "cross":
+            for c in ("Subsidy_Available", "Home_Charging_Possible", "City_Type"): K[f"k_x_tok1_{c}"] = K["k_tok1"] + "|" + df[c].astype(str).to_numpy()
     for c in K.columns: df[f"{c}_fe"] = K[c].map(K[c].value_counts(normalize=True)).astype("float32").values
     for c in CATS: df[c] = df[c].astype("category")
     cut = lambda x: (x.iloc[:n].reset_index(drop=True), x.iloc[n:].reset_index(drop=True))
