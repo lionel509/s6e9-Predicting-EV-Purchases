@@ -42,7 +42,8 @@ K = int(os.getenv('N_FOLDS', '10'))                    # 20: more rows per fold 
 REFIT = int(os.getenv('REFIT', '0'))                  # >0: one fit on all train rows for REFIT rounds, test column only (issue #1)
 HOLDOUT = os.getenv('HOLDOUT') == '1'                 # fold 0 of a 10-fold split stands in for test, to check REFIT against the fold average (issue #1)
 DISTILL = int(os.getenv('DISTILL', '0'))              # >0: refit on own in-sample soft labels, train rows only (broccoli beef, issue #1)
-EXP_NAME = f'v40_heuljax_k{K}_s{sys.argv[1]}' + (f'_fix{FIXED_ROUNDS}' if FIXED_ROUNDS else '') + (f'_d{DISTILL}' if DISTILL else '') + ('_ho' if HOLDOUT else '')
+XTOK = os.getenv('XTOK') == '1'   # 2026-09-30, issue #1: GPT-2 income token keys (+ x subsidy/home/city) as MSTE keys
+EXP_NAME = f'v40_heuljax_k{K}_s{sys.argv[1]}' + (f'_fix{FIXED_ROUNDS}' if FIXED_ROUNDS else '') + (f'_d{DISTILL}' if DISTILL else '') + ('_ho' if HOLDOUT else '') + ('_xtok' if XTOK else '')
 MODEL_NAME = EXP_NAME
 if SMOKE_TEST:
     OOF_DIR /= '_smoke'
@@ -163,12 +164,12 @@ CHANNELS = ['GXP_D3_R100', 'GXP_D3_R100_A20', 'GXP_D3_R100_A50']
 CHANNELS += [f'MIX_W{w}_POST100' for w in MIX_WIDTHS]
 COMPOSITION_COLS = [f'CSHIFT_{c}' for c in CHANNELS] + [f'CCORR_{c}' for c in CHANNELS]
 COORD_COLS = ['GAM_GATE_COORD', 'GAM_INCOME_COORD', 'GAM_COMMUTE_COORD', 'GAM_OTHER_COORD']
-MSTE_KEYS = ['INC10', 'INC100', 'INC1K', 'CMTINT']
+MSTE_KEYS = ['INC10', 'INC100', 'INC1K', 'CMTINT'] + (['TOK1', 'TOKLAST', 'TOK1xSUB', 'TOK1xHOME', 'TOK1xCITY'] if XTOK else [])
 MSTE_COLS = [c for key in MSTE_KEYS
              for c in ([f'MSTE_{key}_A{a:g}' for a in MSTE_ALPHAS] + [f'MSTE_{key}_LOGN'])]
 FEATURE_COLS = (RAW_COLS + SOURCE_COLS + BASE_FOLD_COLS + GXP_COLS + LAT_COLS + DIGIT_COLS
                 + WORRY_COLS + UNCERTAINTY_COLS + MIX_COLS + COMPOSITION_COLS + COORD_COLS + MSTE_COLS)
-assert len(FEATURE_COLS) == len(set(FEATURE_COLS)) == 173
+assert len(FEATURE_COLS) == len(set(FEATURE_COLS)) == 173 + (35 if XTOK else 0)
 assert not {TARGET, ID_COL, 'Buyer_ID'}.intersection(FEATURE_COLS)
 COL = {name: i for i, name in enumerate(FEATURE_COLS)}
 FEATURE_TYPES = ['c' if c in CAT_COLS + DIGIT_COLS else 'q' for c in FEATURE_COLS]
@@ -460,8 +461,23 @@ def worry_key(raw):
 
 def mste_keys(raw):
     income, commute = raw['Annual_Income_USD'], raw['Daily_Commute_km']
-    return dict(INC10=np.floor(income/10), INC100=np.floor(income/100),
+    keys = dict(INC10=np.floor(income/10), INC100=np.floor(income/100),
                 INC1K=np.floor(income/1000), CMTINT=np.floor(commute))
+    if XTOK:
+        t1, tl = income_tokens(income)
+        keys.update(TOK1=t1, TOKLAST=tl, TOK1xSUB=t1*4+raw['Subsidy_Available'], TOK1xHOME=t1*4+raw['Home_Charging_Possible'],
+                    TOK1xCITY=t1*4+raw['City_Type'])
+    return keys
+
+_TOK_CACHE = {}
+def income_tokens(income):
+    """First GPT-2 token id and (length, last id) of ' <int income>', as float codes; missing income -> -1."""
+    if not _TOK_CACHE:
+        import tiktoken; _TOK_CACHE['enc'] = tiktoken.get_encoding('gpt2')
+    ok = np.isfinite(income); u, inv = np.unique(np.where(ok, income, 0).astype(np.int64), return_inverse=True)
+    tk = [_TOK_CACHE.get(v) or _TOK_CACHE.setdefault(v, _TOK_CACHE['enc'].encode(' ' + str(v))) for v in u.tolist()]
+    t1 = np.array([t[0] for t in tk], np.float64)[inv]; tl = np.array([len(t)*60000 + t[-1] for t in tk], np.float64)[inv]
+    return np.where(ok, t1, -1.0), np.where(ok, tl, -1.0)
 
 class SourceIncome:
     def __init__(self, source):
