@@ -49,3 +49,19 @@ def test_v34_name_carries_extra():
     assert ns["name"] == "v34_init_inc100_tok_km_k10_s7"
     os.environ.pop("EXTRA"); exec(line, ns)
     assert ns["name"] == "v34_init_inc100_tok_k10_s7"
+
+
+def test_extra_cross2_adds_more_crosses():
+    K, _ = keys({"TOKENS": "1", "EXTRA": "cross2"})
+    for c in ("Subsidy_Available", "Home_Charging_Possible", "City_Type", "Range_Anxiety_Level", "Environmental_Concern_Level", "Current_Car_Type"):
+        assert f"k_x_tok1_{c}" in K.columns
+    for c in ("Subsidy_Available", "Home_Charging_Possible", "City_Type"):
+        assert K[f"k_x_toklast_{c}"].iloc[0] == K["k_toklast"].iloc[0] + "|" + ROWS[0][COLS.index(c)]
+
+
+def test_extra_cross3_adds_tok2_crosses():
+    K, _ = keys({"TOKENS": "1", "EXTRA": "cross3"})
+    for c in ("Subsidy_Available", "Home_Charging_Possible", "City_Type"):
+        assert f"k_x_tok1_{c}" in K.columns
+        assert K[f"k_x_tok2_{c}"].iloc[2] == K["k_tok2"].iloc[2] + "|" + ROWS[2][COLS.index(c)]
+    assert "k_x_toklast_City_Type" not in K.columns

@@ -53,8 +53,12 @@ def build(train, test, orig):
             K["k_km_exact"] = km.astype(str); u, inv = np.unique(df.Daily_Commute_km.to_numpy(float), return_inverse=True)
             tk = [enc.encode(" " + f"{v:g}") for v in u]
             K["k_kmtok1"] = np.array([str(t[0]) for t in tk])[inv]; K["k_kmtoklast"] = np.array([f"{len(t)}_{t[-1]}" for t in tk])[inv]
-        elif EXTRA == "cross":
-            for c in ("Subsidy_Available", "Home_Charging_Possible", "City_Type"): K[f"k_x_tok1_{c}"] = K["k_tok1"] + "|" + df[c].astype(str).to_numpy()
+        elif EXTRA in ("cross", "cross2", "cross3"):
+            ctx = ("Subsidy_Available", "Home_Charging_Possible", "City_Type")
+            crosses = [("tok1", ctx)] + {"cross": [], "cross3": [("tok2", ctx)],
+                                         "cross2": [("tok1", ("Range_Anxiety_Level", "Environmental_Concern_Level", "Current_Car_Type")), ("toklast", ctx)]}[EXTRA]
+            for t, cols in crosses:
+                for c in cols: K[f"k_x_{t}_{c}"] = K[f"k_{t}"] + "|" + df[c].astype(str).to_numpy()
     for c in K.columns: df[f"{c}_fe"] = K[c].map(K[c].value_counts(normalize=True)).astype("float32").values
     for c in CATS: df[c] = df[c].astype("category")
     cut = lambda x: (x.iloc[:n].reset_index(drop=True), x.iloc[n:].reset_index(drop=True))
