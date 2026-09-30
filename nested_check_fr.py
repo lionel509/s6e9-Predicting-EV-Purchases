@@ -54,7 +54,9 @@ _SETS_09_29h = {"v36 groups (submitted)": V36, "v36 + v42_hjlr_k20": V36 + ["v42
 V37 = [g for g in V36 if g != "pub_hjlr2"] + ["v42_hjlr_k20"]
 _SETS_09_30a = {"v37 groups (submitted)": V37, "v37 + init100_tokx_k20": V37 + ["init100_tokx_k20"], "v37, tokx for tok": [g for g in V37 if g != "init100_tok_k20"] + ["init100_tokx_k20"]}   # 2026-09-30 ~00:15, issue #1
 V38 = [g for g in V37 if g != "init100_tok_k20"] + ["init100_tokx_k20"]
-SETS = {"v38 groups (submitted)": V38, "v38 + hj_xtok_k20": V38 + ["hj_xtok_k20"], "v38, hj_xtok for hj_k20": [g for g in V38 if g != "hj_k20"] + ["hj_xtok_k20"]}   # 2026-09-30 ~01:45, issue #1
+_SETS_09_30b = {"v38 groups (submitted)": V38, "v38 + hj_xtok_k20": V38 + ["hj_xtok_k20"], "v38, hj_xtok for hj_k20": [g for g in V38 if g != "hj_k20"] + ["hj_xtok_k20"]}   # 2026-09-30 ~01:45, issue #1
+GP = ["pub_gp_glm", "pub_gp_rlgb", "pub_gp_rxgb"]
+SETS = {"v38 groups (submitted)": V38, "v38 + gp residual boosters": V38 + GP[1:], "v38 + gp all three": V38 + GP}   # 2026-09-30 ~11:10 EDT, issue #1
 _SETS_09_27 = {"v23 groups": V23, "v26fr groups": V26, "v26fr groups minus legtarrr v19": [g for g in V26 if g != "pub_legtarrr_v19"]}   # 2026-09-27
 def fit_weights(M, yy):
     n = M.shape[1]; auc = lambda w: roc_auc_score(yy, M @ (w / w.sum())); w = np.ones(n) / n; best = auc(w)
