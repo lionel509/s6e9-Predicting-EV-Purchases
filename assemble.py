@@ -47,7 +47,8 @@ GROUPS = {
   "agg_init100_k20r": (["v37_agg_initinc100_k20_s%s" % s for s in (42, 7, 2026)], [("refit_v37_agg_initinc100_k20_s%s_m1.4" % s, 1) for s in (42, 7, 2026)] + [("v37_agg_initinc100_k20_s%s" % s, 1) for s in (42, 7, 2026)]),   # same OOF as agg_init100_k20; test = 50/50 full-train refit (rank, 1.4x trees) + 20-fold rank average, holdout +0.00002-0.00004 (refit_lgb.py, issue #1)
   "init100_tok": (["v34_init_inc100_tok_k10_s%s" % s for s in (7, 2026, 101, 42)], None), "init100_tok_k20": (["v34_init_inc100_tok_k20_s%s" % s for s in (7, 2026, 101, 42)], None),   # init100 + GPT-2 income token keys (TOKENS=1, issue #1)
   "agg_init100_tok_k20": (["v37_agg_initinc100_tok_k20_s%s" % s for s in (7, 2026, 42)], None),   # agg + GPT-2 income token keys (TOKENS=1, issue #1)
-  "init100_tokx_k20": (["v34_init_inc100_tok_cross_k20_s%s" % s for s in (7, 2026, 101, 42)], None),   # + income tok1 x subsidy/home/city keys (EXTRA=cross, issue #1)
+  "init100_tokx_k20": (["v34_init_inc100_tok_cross_k20_s%s" % s for s in (7, 2026, 101, 42)], None),
+  "init100_tokx6_k20": (["v34_init_inc100_tok_cross_k20_s%s" % s for s in (7, 2026, 101, 42, 303, 404)], None),   # 2026-09-30 last-hour: + seeds 303/404 (issue #1)   # + income tok1 x subsidy/home/city keys (EXTRA=cross, issue #1)
   "hj_xtok_k20": (["v40_heuljax_k20_s%s_xtok" % s for s in (7, 2026, 101, 42)], None),   # heuljax XGB + GPT-2 token MSTE keys (XTOK=1, issue #1)
   "pub_gp_glm": (["pub_gp_glm"], None), "pub_gp_rlgb": (["pub_gp_residual_lgbm"], None), "pub_gp_rxgb": (["pub_gp_residual_xgb"], None),   # goodpjw2008 lr-margin-gbdt: ridge GLM + GBDTs boosted from its logit, 5-fold s42 (2026-09-30, issue #1)
   "v42_hjlr_k20": (["v42_hjlr_k20_s%s" % s for s in (7, 2026, 101, 202)], None), "v42_hjlr_k30": (["v42_hjlr_k30_s%s" % s for s in (7, 2026, 101, 202)], None),   # own seeds of heuljax's GPT-2-token LR (issue #1)
