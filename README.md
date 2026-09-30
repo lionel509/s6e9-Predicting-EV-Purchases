@@ -38,3 +38,6 @@ Auth is a single token at `~/.kaggle/access_token` (CLI ≥ 2). Handle `lionelw5
 - When adding a `GROUPS` entry with a string replace, assert the anchor matched and re-parse the table (`ast`): a comment appended mid-line silently disabled three groups for two refits on 09-13 (run 87).
 - Pseudo-labels come only from a model that never saw the validation fold (`v22`, `v28 --pseudo`); un-nested TE and fold-averaged soft labels both inflate OOF by 0.0002–0.0003.
 - Git identity is the global `lionel509 <lionelweng@gmail.com>`; never override it.
+
+## Cleanup
+See [CLEANUP.md](CLEANUP.md) for what this repo leaves behind (`.venv`, `data/`, `submissions/`) and the commands to remove it.

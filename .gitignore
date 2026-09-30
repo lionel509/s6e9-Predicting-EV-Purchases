@@ -21,3 +21,30 @@ submissions/
 
 # Transient per-run console captures — everything is appended to runs.log
 *.out
+
+# --- Cleanup coverage (see CLEANUP.md) ---
+# Secrets: never commit (kept by the CLEANUP.md commands on purpose)
+.env
+.env.*
+*.key
+kaggle.json
+access_token
+
+# Virtualenv variants and tool caches
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Untracked numeric outputs / competition data written outside data/ or submissions/
+/*.npy
+/*.parquet
+/*.csv
+/*.pkl
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
