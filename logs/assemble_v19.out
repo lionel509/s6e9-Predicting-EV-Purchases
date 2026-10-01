@@ -1,0 +1,46 @@
+  hybrid      1 seed(s)  OOF 0.946153
+  hybrid10    8 seed(s)  OOF 0.946379
+  hybrid_pseudo 1 seed(s)  OOF 0.946169
+  hybrid_m1   1 seed(s)  OOF 0.946149
+  hybrid_m1_pseudo 1 seed(s)  OOF 0.946173
+  hybrid_cat  1 seed(s)  OOF 0.945967
+  hybrid_xgb  1 seed(s)  OOF 0.946125
+  hybrid_nn   1 seed(s)  OOF 0.945353
+  naji_pc     3 seed(s)  OOF 0.946085
+  naji_clean  3 seed(s)  OOF 0.946068
+  catboost    1 seed(s)  OOF 0.945544
+  nn          3 seed(s)  OOF 0.945476
+  pub_megayak10 1 seed(s)  OOF 0.946264
+  pub_naji_v3 1 seed(s)  OOF 0.946064
+  pub_sergey  1 seed(s)  OOF 0.945329
+  pub_realmlp 1 seed(s)  OOF 0.945871
+  pub_naji_01blend 1 seed(s)  OOF 0.946185
+  pub_mega_A  1 seed(s)  OOF 0.946264
+  pub_mega_B  1 seed(s)  OOF 0.946258
+  pub_mega_C  1 seed(s)  OOF 0.946223
+  pub_mega_D  1 seed(s)  OOF 0.946077
+  pub_realmlp2 1 seed(s)  OOF 0.946010
+  pub_naji_xgb 1 seed(s)  OOF 0.946243
+  viewC       1 seed(s)  OOF 0.946217
+  viewD       5 seed(s)  OOF 0.946215
+  viewE       1 seed(s)  OOF 0.946007
+  viewF       1 seed(s)  OOF 0.946052
+  viewD_xgb   1 seed(s)  OOF 0.946058
+  viewC_xgb   1 seed(s)  OOF 0.946224
+  init        5 seed(s)  OOF 0.946352
+  realmlp_own 1 seed(s)  OOF 0.946002
+  realmlp_e3  1 seed(s)  OOF 0.946018
+  realmlp_own10 5 seed(s)  OOF 0.946247
+  rank        1 seed(s)  OOF 0.945846
+  linear      1 seed(s)  OOF 0.945911
+  extra       1 seed(s)  OOF 0.946109
+  m1          1 seed(s)  OOF 0.945832
+  slow        1 seed(s)  OOF 0.945784
+  v6b         1 seed(s)  OOF 0.945746
+  xgb         1 seed(s)  OOF 0.945522
+  pass 0: 0.946468
+  pass 1: 0.946477
+  pass 2: 0.946479
+  pass 3: 0.946479
+blend OOF 0.946479  weights {'hybrid': np.float64(0.0), 'hybrid10': np.float64(0.122), 'hybrid_pseudo': np.float64(0.0), 'hybrid_m1': np.float64(0.0), 'hybrid_m1_pseudo': np.float64(0.0), 'hybrid_cat': np.float64(0.0), 'hybrid_xgb': np.float64(0.0), 'hybrid_nn': np.float64(0.0), 'naji_pc': np.float64(0.0), 'naji_clean': np.float64(0.0), 'catboost': np.float64(0.0), 'nn': np.float64(0.0), 'pub_megayak10': np.float64(0.0), 'pub_naji_v3': np.float64(0.0), 'pub_sergey': np.float64(0.0), 'pub_realmlp': np.float64(0.0), 'pub_naji_01blend': np.float64(0.149), 'pub_mega_A': np.float64(0.0), 'pub_mega_B': np.float64(0.009), 'pub_mega_C': np.float64(0.0), 'pub_mega_D': np.float64(0.0), 'pub_realmlp2': np.float64(0.0), 'pub_naji_xgb': np.float64(0.071), 'viewC': np.float64(0.0), 'viewD': np.float64(0.189), 'viewE': np.float64(0.0), 'viewF': np.float64(0.0), 'viewD_xgb': np.float64(0.0), 'viewC_xgb': np.float64(0.01), 'init': np.float64(0.235), 'realmlp_own': np.float64(0.0), 'realmlp_e3': np.float64(0.0), 'realmlp_own10': np.float64(0.213), 'rank': np.float64(0.0), 'linear': np.float64(0.0), 'extra': np.float64(0.0), 'm1': np.float64(0.0), 'slow': np.float64(0.0), 'v6b': np.float64(0.0), 'xgb': np.float64(0.0)}  best group 0.946379
+wrote submissions/blend_v19.csv

@@ -1,0 +1,23 @@
+v32_tecv_cv10_k5_s42: v27 ref OOF 0.946153  features 65  (4s)
+  fold 0: auc 0.945158  trees 1206  46s
+  fold 1: auc 0.945861  trees 1379  92s
+  fold 2: auc 0.946990  trees 1927  147s
+  fold 3: auc 0.946443  trees 1430  192s
+  fold 4: auc 0.946182  trees 1225  261s
+v32_tecv_cv10_k5_s42 OOF 0.946121  (fold-ranked 0.946127)  Δ vs v27 -0.000032  iters [1206, 1379, 1927, 1430, 1225]  261s
+  wobble band: 0.342 of rows, buy rate inside 0.443 outside 0.035, weight 2.0
+v32_wobble_a2_k5_s42: v27 ref OOF 0.946153  features 65  (5s)
+  fold 0: auc 0.945155  trees 1229  62s
+  fold 1: auc 0.945845  trees 1317  105s
+  fold 2: auc 0.947041  trees 1491  151s
+  fold 3: auc 0.946463  trees 1273  193s
+  fold 4: auc 0.946203  trees 1497  241s
+v32_wobble_a2_k5_s42 OOF 0.946138  (fold-ranked 0.946141)  Δ vs v27 -0.000015  iters [1229, 1317, 1491, 1273, 1497]  241s
+v32_rank_p8_k5_s42: v27 ref OOF 0.946153  features 65  (4s)
+v32_linear_l0_k5_s42: v27 ref OOF 0.946153  features 65  (4s)
+  fold 0: auc 0.945021  trees 486  37s
+  fold 1: auc 0.945639  trees 517  73s
+  fold 2: auc 0.946564  trees 327  102s
+  fold 3: auc 0.946449  trees 842  147s
+  fold 4: auc 0.945937  trees 500  183s
+v32_linear_l0_k5_s42 OOF 0.945911  (fold-ranked 0.945922)  Δ vs v27 -0.000242  iters [486, 517, 327, 842, 500]  184s

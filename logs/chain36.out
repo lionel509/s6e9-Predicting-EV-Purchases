@@ -1,0 +1,17 @@
+=== tok k20 s7 start 18:56:11
+v34_init_inc100_tok_k20_s7: v27 ref OOF nan  features 68  init from k_inc100_teauto
+v34_init_inc100_tok_k20_s7 OOF 0.946512  (fold-ranked 0.946518)  Δ vs v27 +nan  iters [1763, 1989, 1728, 1302, 1277, 1246, 1490, 1140, 1513, 1574, 1491, 1399, 1029, 1216, 1344, 1269, 1638, 1383, 1577, 1338]  976s
+=== exit 19:12:31
+=== tok k20 s2026 start 19:12:31
+v34_init_inc100_tok_k20_s2026: v27 ref OOF nan  features 68  init from k_inc100_teauto
+v34_init_inc100_tok_k20_s2026 OOF 0.946511  (fold-ranked 0.946515)  Δ vs v27 +nan  iters [1257, 1509, 1254, 1919, 1163, 1282, 1638, 1248, 1407, 1280, 1250, 1717, 1247, 1492, 1490, 2462, 1416, 1882, 1443, 886]  1042s
+=== exit 19:29:56
+=== tok k20 s101 start 19:29:56
+v34_init_inc100_tok_k20_s101: v27 ref OOF nan  features 68  init from k_inc100_teauto
+v34_init_inc100_tok_k20_s101 OOF 0.946510  (fold-ranked 0.946522)  Δ vs v27 +nan  iters [1022, 2231, 1661, 1170, 1353, 1429, 1620, 1965, 1060, 1109, 1727, 1378, 1459, 956, 1167, 1226, 2311, 1164, 1583, 1233]  951s
+=== exit 19:45:49
+=== tok k20 s42 start 19:45:49
+v34_init_inc100_tok_k20_s42: v27 ref OOF nan  features 68  init from k_inc100_teauto
+v34_init_inc100_tok_k20_s42 OOF 0.946501  (fold-ranked 0.946509)  Δ vs v27 +nan  iters [1575, 1412, 1440, 979, 1300, 1438, 1435, 1042, 1555, 1508, 1266, 1653, 811, 1330, 1478, 1564, 1905, 1245, 1032, 1713]  886s
+=== exit 20:00:37
+=== chain36 done

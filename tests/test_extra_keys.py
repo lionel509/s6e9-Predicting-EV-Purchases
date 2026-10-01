@@ -3,7 +3,7 @@ with EXTRA unset, build's keys are unchanged, so every earlier run reproduces.""
 import os, re, sys
 from pathlib import Path
 import numpy as np, pandas as pd
-sys.path.insert(0, str(Path(__file__).parent.parent))
+sys.path.insert(0, str(Path(__file__).parent.parent / "models"))
 
 ROWS = [(66, 92887.0, 23.4, 2, 3, 7, 1.0, "Male", "Suburban", "Sedan", "Yes", "No", "Low", "No"),
         (38, 30000.0, 5.0, 1, 2, 2, 4.0, "Female", "Rural", "SUV", "No", "Yes", "High", "Yes"),
@@ -42,7 +42,7 @@ def test_extra_cross_adds_token_context_keys():
 
 
 def test_v34_name_carries_extra():
-    src = (Path(__file__).parent.parent / "v34_init_score.py").read_text()
+    src = (Path(__file__).parent.parent / "models/v34_init_score.py").read_text()
     line = next(l for l in src.splitlines() if l.startswith("name = "))
     ns = dict(os=os, KEY="k_inc100", DROP=False, XGB=False, N=10, SEED=7, SMOKE=False)
     os.environ.update({"TOKENS": "1", "EXTRA": "km"}); exec(line, ns)

@@ -1,0 +1,36 @@
+v27_hybrid_k10_s303: features 65 | TE keys 15 x 3 smoothings  (4s)
+  fold 0: auc 0.944420  trees 1285  41s
+  fold 1: auc 0.946871  trees 1543  81s
+  fold 2: auc 0.946203  trees 1505  121s
+  fold 3: auc 0.947076  trees 1535  160s
+  fold 4: auc 0.945321  trees 950  193s
+  fold 5: auc 0.946287  trees 1399  233s
+  fold 6: auc 0.947865  trees 1383  273s
+  fold 7: auc 0.946249  trees 1452  312s
+  fold 8: auc 0.947137  trees 1918  362s
+  fold 9: auc 0.944917  trees 1410  400s
+v27_hybrid_k10_s303 OOF 0.946225  (fold-ranked 0.946234)  iters [1285, 1543, 1505, 1535, 950, 1399, 1383, 1452, 1918, 1410]  400s
+v27_hybrid_k10_s404: features 65 | TE keys 15 x 3 smoothings  (4s)
+  fold 0: auc 0.946054  trees 1643  46s
+  fold 1: auc 0.946373  trees 2009  93s
+  fold 2: auc 0.946348  trees 1254  129s
+  fold 3: auc 0.944707  trees 1567  170s
+  fold 4: auc 0.947120  trees 1357  209s
+  fold 5: auc 0.945992  trees 1914  258s
+  fold 6: auc 0.946369  trees 1328  297s
+  fold 7: auc 0.946056  trees 1314  335s
+  fold 8: auc 0.946447  trees 1677  380s
+  fold 9: auc 0.946613  trees 1364  420s
+v27_hybrid_k10_s404 OOF 0.946203  (fold-ranked 0.946208)  iters [1643, 2009, 1254, 1567, 1357, 1914, 1328, 1314, 1677, 1364]  420s
+v27_hybrid_k10_s505: features 65 | TE keys 15 x 3 smoothings  (3s)
+  fold 0: auc 0.945298  trees 1479  43s
+  fold 1: auc 0.947546  trees 1414  81s
+  fold 2: auc 0.947854  trees 1278  117s
+  fold 3: auc 0.944932  trees 1499  159s
+  fold 4: auc 0.947102  trees 1206  194s
+  fold 5: auc 0.944839  trees 1600  235s
+  fold 6: auc 0.946406  trees 1581  277s
+  fold 7: auc 0.945670  trees 1698  320s
+  fold 8: auc 0.946964  trees 1233  355s
+  fold 9: auc 0.945595  trees 1178  390s
+v27_hybrid_k10_s505 OOF 0.946207  (fold-ranked 0.946221)  iters [1479, 1414, 1278, 1499, 1206, 1600, 1581, 1698, 1233, 1178]  390s

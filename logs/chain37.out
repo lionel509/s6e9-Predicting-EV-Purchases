@@ -1,0 +1,13 @@
+=== agg tok k20 s7 start 20:00:54
+v37_agg_initinc100_tok_k20_s7: v27 ref OOF nan  features 82  (4s)
+v37_agg_initinc100_tok_k20_s7 OOF 0.946521  (fold-ranked 0.946526)  Δ vs v27 +nan  iters [1262, 2365, 1305, 1561, 1208, 916, 1537, 1368, 1065, 1464, 1589, 1479, 930, 1426, 1531, 2194, 1103, 1281, 1680, 1791]  940s
+=== exit 20:16:36
+=== agg tok k20 s2026 start 20:16:36
+v37_agg_initinc100_tok_k20_s2026: v27 ref OOF nan  features 82  (5s)
+v37_agg_initinc100_tok_k20_s2026 OOF 0.946535  (fold-ranked 0.946537)  Δ vs v27 +nan  iters [1282, 1722, 1107, 1326, 1310, 2036, 1652, 1247, 1780, 1201, 1183, 1499, 1242, 1524, 2112, 946, 1432, 1286, 1384, 870]  929s
+=== exit 20:32:06
+=== agg tok k20 s42 start 20:32:06
+v37_agg_initinc100_tok_k20_s42: v27 ref OOF nan  features 82  (4s)
+v37_agg_initinc100_tok_k20_s42 OOF 0.946490  (fold-ranked 0.946497)  Δ vs v27 +nan  iters [1851, 1509, 1016, 1293, 1319, 1122, 1134, 958, 1907, 1653, 1788, 1332, 752, 1257, 1956, 854, 1745, 1441, 1394, 1208]  895s
+=== exit 20:47:04
+=== chain37 done

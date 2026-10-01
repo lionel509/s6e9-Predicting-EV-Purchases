@@ -1,7 +1,7 @@
 [project]
 name = "s6e9-ev-purchases"
 version = "0.1.0"
-description = "Add your description here"
+description = "Kaggle Playground S6E9: Predicting EV Purchases (ROC-AUC)"
 readme = "README.md"
 authors = [
     { name = "lionel509", email = "lionelweng@gmail.com" }

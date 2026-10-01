@@ -1,0 +1,76 @@
+  hybrid      1 seed(s)  OOF 0.946157
+  hybrid10    8 seed(s)  OOF 0.946391
+  hybrid_pseudo 1 seed(s)  OOF 0.946174
+  hybrid_m1   1 seed(s)  OOF 0.946154
+  hybrid_m1_pseudo 1 seed(s)  OOF 0.946178
+  hybrid_cat  1 seed(s)  OOF 0.945967
+  hybrid_xgb  1 seed(s)  OOF 0.946125
+  hybrid_nn   1 seed(s)  OOF 0.945353
+  naji_pc     3 seed(s)  OOF 0.946085
+  naji_clean  3 seed(s)  OOF 0.946068
+  catboost    1 seed(s)  OOF 0.945544
+  nn          3 seed(s)  OOF 0.945476
+  pub_megayak10 1 seed(s)  OOF 0.946264
+  pub_naji_v3 1 seed(s)  OOF 0.946064
+  pub_sergey  1 seed(s)  OOF 0.945329
+  pub_realmlp 1 seed(s)  OOF 0.945871
+  pub_naji_01blend 1 seed(s)  OOF 0.946185
+  pub_mega_A  1 seed(s)  OOF 0.946264
+  pub_mega_B  1 seed(s)  OOF 0.946258
+  pub_mega_C  1 seed(s)  OOF 0.946223
+  pub_mega_D  1 seed(s)  OOF 0.946077
+  pub_realmlp2 1 seed(s)  OOF 0.946010
+  pub_naji_xgb 1 seed(s)  OOF 0.946243
+  pub_mega6_E 1 seed(s)  OOF 0.946230
+  pub_mega6_F 1 seed(s)  OOF 0.946134
+  pub_mega6_G 1 seed(s)  OOF 0.946182
+  pub_naji_v5 1 seed(s)  OOF 0.946170
+  pub_naji_v6 1 seed(s)  OOF 0.946068
+  viewC       1 seed(s)  OOF 0.946222
+  viewD       5 seed(s)  OOF 0.946227
+  viewE       1 seed(s)  OOF 0.946011
+  viewF       1 seed(s)  OOF 0.946060
+  viewD_xgb   1 seed(s)  OOF 0.946065
+  viewD_init50 3 seed(s)  OOF 0.946214
+  viewC_init100 1 seed(s)  OOF 0.946273
+  viewD_init500 1 seed(s)  OOF 0.946100
+  viewC_xgb   1 seed(s)  OOF 0.946229
+  init        5 seed(s)  OOF 0.946363
+  realmlp_own 1 seed(s)  OOF 0.946013
+  realmlp_e3  1 seed(s)  OOF 0.946024
+  realmlp_own10 7 seed(s)  OOF 0.946263
+  init_drop: no OOF files yet, skipped
+  init1000    1 seed(s)  OOF 0.946272
+  init100     8 seed(s)  OOF 0.946408
+  rank        1 seed(s)  OOF 0.945846
+  linear      1 seed(s)  OOF 0.945922
+  extra       1 seed(s)  OOF 0.946132
+  m1          1 seed(s)  OOF 0.945832
+  slow        1 seed(s)  OOF 0.945784
+  v6b         1 seed(s)  OOF 0.945746
+  xgb         1 seed(s)  OOF 0.945522
+  init100_k20 3 seed(s)  OOF 0.946406
+  additive    1 seed(s)  OOF 0.945921
+  additive_init100 1 seed(s)  OOF 0.945755
+  init100_xgb 1 seed(s)  OOF 0.946260
+  init_km: no OOF files yet, skipped
+  init_combo  1 seed(s)  OOF 0.946299
+  tabm: no OOF files yet, skipped
+  tabm5       1 seed(s)  OOF 0.945356
+  realmlp_k20: no OOF files yet, skipped
+  stack_tn    1 seed(s)  OOF 0.946272
+  stack_tn_initlr 1 seed(s)  OOF 0.946288
+  init100_wide 1 seed(s)  OOF 0.946245
+  init100_col5 1 seed(s)  OOF 0.946271
+  init100_slow 1 seed(s)  OOF 0.946290
+  mono_init100 1 seed(s)  OOF 0.945768
+  agg_init100 3 seed(s)  OOF 0.946394
+  agg_init100_k20 1 seed(s)  OOF 0.946327
+  hj_xgb      8 seed(s)  OOF 0.946433
+  realmlp_init100 3 seed(s)  OOF 0.945826
+  pass 0: 0.946534
+  pass 1: 0.946542
+  pass 2: 0.946543
+  pass 3: 0.946544
+blend OOF 0.946544  weights {'hybrid': np.float64(0.0), 'hybrid10': np.float64(0.0), 'hybrid_pseudo': np.float64(0.0), 'hybrid_m1': np.float64(0.0), 'hybrid_m1_pseudo': np.float64(0.0), 'hybrid_cat': np.float64(0.0), 'hybrid_xgb': np.float64(0.0), 'hybrid_nn': np.float64(0.0), 'naji_pc': np.float64(0.0), 'naji_clean': np.float64(0.0), 'catboost': np.float64(0.0), 'nn': np.float64(0.0), 'pub_megayak10': np.float64(0.0), 'pub_naji_v3': np.float64(0.0), 'pub_sergey': np.float64(0.0), 'pub_realmlp': np.float64(0.0), 'pub_naji_01blend': np.float64(0.066), 'pub_mega_A': np.float64(0.0), 'pub_mega_B': np.float64(0.0), 'pub_mega_C': np.float64(0.0), 'pub_mega_D': np.float64(0.0), 'pub_realmlp2': np.float64(0.0), 'pub_naji_xgb': np.float64(0.0), 'pub_mega6_E': np.float64(0.0), 'pub_mega6_F': np.float64(0.0), 'pub_mega6_G': np.float64(0.0), 'pub_naji_v5': np.float64(0.0), 'pub_naji_v6': np.float64(0.0), 'viewC': np.float64(0.0), 'viewD': np.float64(0.0), 'viewE': np.float64(0.0), 'viewF': np.float64(0.0), 'viewD_xgb': np.float64(0.0), 'viewD_init50': np.float64(0.124), 'viewC_init100': np.float64(0.0), 'viewD_init500': np.float64(0.0), 'viewC_xgb': np.float64(0.0), 'init': np.float64(0.053), 'realmlp_own': np.float64(0.0), 'realmlp_e3': np.float64(0.0), 'realmlp_own10': np.float64(0.086), 'init1000': np.float64(0.0), 'init100': np.float64(0.0), 'rank': np.float64(0.0), 'linear': np.float64(0.0), 'extra': np.float64(0.0), 'm1': np.float64(0.0), 'slow': np.float64(0.0), 'v6b': np.float64(0.0), 'xgb': np.float64(0.0), 'init100_k20': np.float64(0.122), 'additive': np.float64(0.0), 'additive_init100': np.float64(0.0), 'init100_xgb': np.float64(0.0), 'init_combo': np.float64(0.0), 'tabm5': np.float64(0.0), 'stack_tn': np.float64(0.044), 'stack_tn_initlr': np.float64(0.0), 'init100_wide': np.float64(0.0), 'init100_col5': np.float64(0.0), 'init100_slow': np.float64(0.0), 'mono_init100': np.float64(0.0), 'agg_init100': np.float64(0.15), 'agg_init100_k20': np.float64(0.03), 'hj_xgb': np.float64(0.325), 'realmlp_init100': np.float64(0.0)}  best group 0.946433
+wrote submissions/blend_v30fr_nov19.csv

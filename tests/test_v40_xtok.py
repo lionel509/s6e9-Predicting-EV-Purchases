@@ -4,7 +4,7 @@ import os, re, sys
 from pathlib import Path
 import numpy as np
 
-SRC = (Path(__file__).parent.parent / "v40_heuljax.py").read_text()
+SRC = (Path(__file__).parent.parent / "models/v40_heuljax.py").read_text()
 
 
 def chunk(start, end_pat):

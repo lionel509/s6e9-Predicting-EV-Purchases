@@ -1,0 +1,201 @@
+=== N_FOLDS=20 v40_heuljax.py 7 start 23:31:45
+DEVICE=cpu | CUDA unavailable
+v40_heuljax_k20_s7 | CV | cpu | folds=20
+TRAIN=668,665 TEST=286,571 FEATURES=173
+FOLD 1/20 | features
+FOLD 1/20 | AUC=0.947103691 | trees=1036 | seconds=134.14
+FOLD 2/20 | features
+FOLD 2/20 | AUC=0.946040887 | trees=2484 | seconds=222.53
+FOLD 3/20 | features
+FOLD 3/20 | AUC=0.946752356 | trees=727 | seconds=119.28
+FOLD 4/20 | features
+FOLD 4/20 | AUC=0.946089417 | trees=1045 | seconds=143.25
+FOLD 5/20 | features
+FOLD 5/20 | AUC=0.946923029 | trees=957 | seconds=126.82
+FOLD 6/20 | features
+FOLD 6/20 | AUC=0.945245715 | trees=470 | seconds=92.06
+FOLD 7/20 | features
+FOLD 7/20 | AUC=0.945807665 | trees=1902 | seconds=140.06
+FOLD 8/20 | features
+FOLD 8/20 | AUC=0.944457463 | trees=1014 | seconds=98.41
+FOLD 9/20 | features
+FOLD 9/20 | AUC=0.948008090 | trees=651 | seconds=80.47
+FOLD 10/20 | features
+FOLD 10/20 | AUC=0.945349622 | trees=667 | seconds=81.78
+FOLD 11/20 | features
+FOLD 11/20 | AUC=0.948950566 | trees=912 | seconds=92.32
+FOLD 12/20 | features
+FOLD 12/20 | AUC=0.947679695 | trees=1009 | seconds=112.44
+FOLD 13/20 | features
+FOLD 13/20 | AUC=0.945128807 | trees=1100 | seconds=101.83
+FOLD 14/20 | features
+FOLD 14/20 | AUC=0.944652421 | trees=786 | seconds=93.32
+FOLD 15/20 | features
+FOLD 15/20 | AUC=0.946133640 | trees=1209 | seconds=111.49
+FOLD 16/20 | features
+FOLD 16/20 | AUC=0.947124195 | trees=1708 | seconds=140.47
+FOLD 17/20 | features
+FOLD 17/20 | AUC=0.945169922 | trees=1155 | seconds=101.40
+FOLD 18/20 | features
+FOLD 18/20 | AUC=0.946885784 | trees=1134 | seconds=99.48
+FOLD 19/20 | features
+FOLD 19/20 | AUC=0.947579283 | trees=1001 | seconds=106.54
+FOLD 20/20 | features
+FOLD 20/20 | AUC=0.945686806 | trees=798 | seconds=91.88
+CV POOLED_OOF_AUC=0.946332999635
+Saved submissions/v40_raw/v40_heuljax_k20_s7_OOF.parquet
+Saved submissions/v40_raw/v40_heuljax_k20_s7_TEST.parquet
+Saved submissions/v40_raw/sub_7.csv
+v40_heuljax_k20_s7 OOF 0.946333  folds 0.947104 0.946041 0.946752 0.946089 0.946923 0.945246 0.945808 0.944457 0.948008 0.945350 0.948951 0.947680 0.945129 0.944652 0.946134 0.947124 0.945170 0.946886 0.947579 0.945687
+=== exit 00:10:02
+=== N_FOLDS=20 v40_heuljax.py 2026 start 00:10:02
+DEVICE=cpu | CUDA unavailable
+v40_heuljax_k20_s2026 | CV | cpu | folds=20
+TRAIN=668,665 TEST=286,571 FEATURES=173
+FOLD 1/20 | features
+FOLD 1/20 | AUC=0.946220177 | trees=982 | seconds=109.50
+FOLD 2/20 | features
+FOLD 2/20 | AUC=0.945601166 | trees=986 | seconds=112.15
+FOLD 3/20 | features
+FOLD 3/20 | AUC=0.947029280 | trees=1930 | seconds=189.41
+FOLD 4/20 | features
+FOLD 4/20 | AUC=0.944251146 | trees=1178 | seconds=103.15
+FOLD 5/20 | features
+FOLD 5/20 | AUC=0.946105209 | trees=543 | seconds=78.19
+FOLD 6/20 | features
+FOLD 6/20 | AUC=0.946457543 | trees=801 | seconds=88.22
+FOLD 7/20 | features
+FOLD 7/20 | AUC=0.946329191 | trees=982 | seconds=96.69
+FOLD 8/20 | features
+FOLD 8/20 | AUC=0.944093951 | trees=675 | seconds=81.98
+FOLD 9/20 | features
+FOLD 9/20 | AUC=0.948801011 | trees=1222 | seconds=108.42
+FOLD 10/20 | features
+FOLD 10/20 | AUC=0.946143245 | trees=985 | seconds=93.31
+FOLD 11/20 | features
+FOLD 11/20 | AUC=0.949119141 | trees=563 | seconds=74.55
+FOLD 12/20 | features
+FOLD 12/20 | AUC=0.946788023 | trees=1465 | seconds=116.09
+FOLD 13/20 | features
+FOLD 13/20 | AUC=0.946253286 | trees=847 | seconds=87.49
+FOLD 14/20 | features
+FOLD 14/20 | AUC=0.947837573 | trees=530 | seconds=74.50
+FOLD 15/20 | features
+FOLD 15/20 | AUC=0.946518729 | trees=1303 | seconds=106.45
+FOLD 16/20 | features
+FOLD 16/20 | AUC=0.945056806 | trees=956 | seconds=97.73
+FOLD 17/20 | features
+FOLD 17/20 | AUC=0.943873120 | trees=1357 | seconds=111.55
+FOLD 18/20 | features
+FOLD 18/20 | AUC=0.947247269 | trees=549 | seconds=76.47
+FOLD 19/20 | features
+FOLD 19/20 | AUC=0.946255011 | trees=1060 | seconds=102.95
+FOLD 20/20 | features
+FOLD 20/20 | AUC=0.947027100 | trees=801 | seconds=93.39
+CV POOLED_OOF_AUC=0.946345506032
+Saved submissions/v40_raw/v40_heuljax_k20_s2026_OOF.parquet
+Saved submissions/v40_raw/v40_heuljax_k20_s2026_TEST.parquet
+Saved submissions/v40_raw/sub_2026.csv
+v40_heuljax_k20_s2026 OOF 0.946346  folds 0.946220 0.945601 0.947029 0.944251 0.946105 0.946458 0.946329 0.944094 0.948801 0.946143 0.949119 0.946788 0.946253 0.947838 0.946519 0.945057 0.943873 0.947247 0.946255 0.947027
+=== exit 01:07:07
+=== N_FOLDS=20 v40_heuljax.py 101 start 01:07:07
+DEVICE=cpu | CUDA unavailable
+v40_heuljax_k20_s101 | CV | cpu | folds=20
+TRAIN=668,665 TEST=286,571 FEATURES=173
+FOLD 1/20 | features
+FOLD 1/20 | AUC=0.943131357 | trees=691 | seconds=86.73
+FOLD 2/20 | features
+FOLD 2/20 | AUC=0.947386244 | trees=897 | seconds=95.42
+FOLD 3/20 | features
+FOLD 3/20 | AUC=0.947318580 | trees=1703 | seconds=138.80
+FOLD 4/20 | features
+FOLD 4/20 | AUC=0.947760299 | trees=957 | seconds=158.31
+FOLD 5/20 | features
+FOLD 5/20 | AUC=0.946150676 | trees=1410 | seconds=196.65
+FOLD 6/20 | features
+FOLD 6/20 | AUC=0.946143246 | trees=577 | seconds=104.68
+FOLD 7/20 | features
+FOLD 7/20 | AUC=0.943010119 | trees=900 | seconds=113.87
+FOLD 8/20 | features
+FOLD 8/20 | AUC=0.946786173 | trees=1026 | seconds=143.09
+FOLD 9/20 | features
+FOLD 9/20 | AUC=0.945606506 | trees=1403 | seconds=149.95
+FOLD 10/20 | features
+FOLD 10/20 | AUC=0.945242507 | trees=949 | seconds=136.30
+FOLD 11/20 | features
+FOLD 11/20 | AUC=0.945096248 | trees=1036 | seconds=136.14
+FOLD 12/20 | features
+FOLD 12/20 | AUC=0.946854382 | trees=720 | seconds=107.11
+FOLD 13/20 | features
+FOLD 13/20 | AUC=0.947759657 | trees=482 | seconds=97.04
+FOLD 14/20 | features
+FOLD 14/20 | AUC=0.948058689 | trees=1069 | seconds=102.95
+FOLD 15/20 | features
+FOLD 15/20 | AUC=0.946727956 | trees=892 | seconds=91.88
+FOLD 16/20 | features
+FOLD 16/20 | AUC=0.947193648 | trees=1410 | seconds=126.94
+FOLD 17/20 | features
+FOLD 17/20 | AUC=0.946925521 | trees=703 | seconds=86.07
+FOLD 18/20 | features
+FOLD 18/20 | AUC=0.945323636 | trees=774 | seconds=88.89
+FOLD 19/20 | features
+FOLD 19/20 | AUC=0.946146512 | trees=1157 | seconds=107.54
+FOLD 20/20 | features
+FOLD 20/20 | AUC=0.948573757 | trees=1206 | seconds=106.08
+CV POOLED_OOF_AUC=0.946348085697
+Saved submissions/v40_raw/v40_heuljax_k20_s101_OOF.parquet
+Saved submissions/v40_raw/v40_heuljax_k20_s101_TEST.parquet
+Saved submissions/v40_raw/sub_101.csv
+v40_heuljax_k20_s101 OOF 0.946348  folds 0.943131 0.947386 0.947319 0.947760 0.946151 0.946143 0.943010 0.946786 0.945607 0.945243 0.945096 0.946854 0.947760 0.948059 0.946728 0.947194 0.946926 0.945324 0.946147 0.948574
+=== exit 01:46:49
+=== N_FOLDS=20 v40_heuljax.py 202 start 01:46:49
+DEVICE=cpu | CUDA unavailable
+v40_heuljax_k20_s202 | CV | cpu | folds=20
+TRAIN=668,665 TEST=286,571 FEATURES=173
+FOLD 1/20 | features
+FOLD 1/20 | AUC=0.945442174 | trees=594 | seconds=81.40
+FOLD 2/20 | features
+FOLD 2/20 | AUC=0.947418554 | trees=744 | seconds=86.43
+FOLD 3/20 | features
+FOLD 3/20 | AUC=0.945827345 | trees=1120 | seconds=110.87
+FOLD 4/20 | features
+FOLD 4/20 | AUC=0.945134684 | trees=774 | seconds=87.22
+FOLD 5/20 | features
+FOLD 5/20 | AUC=0.944687246 | trees=1324 | seconds=115.53
+FOLD 6/20 | features
+FOLD 6/20 | AUC=0.947464910 | trees=1535 | seconds=121.40
+FOLD 7/20 | features
+FOLD 7/20 | AUC=0.947025117 | trees=1367 | seconds=116.11
+FOLD 8/20 | features
+FOLD 8/20 | AUC=0.946615125 | trees=1298 | seconds=125.11
+FOLD 9/20 | features
+FOLD 9/20 | AUC=0.945462081 | trees=489 | seconds=95.35
+FOLD 10/20 | features
+FOLD 10/20 | AUC=0.946905856 | trees=654 | seconds=107.88
+FOLD 11/20 | features
+FOLD 11/20 | AUC=0.945956696 | trees=1066 | seconds=132.16
+FOLD 12/20 | features
+FOLD 12/20 | AUC=0.949046075 | trees=786 | seconds=105.16
+FOLD 13/20 | features
+FOLD 13/20 | AUC=0.947161362 | trees=1046 | seconds=115.01
+FOLD 14/20 | features
+FOLD 14/20 | AUC=0.946055131 | trees=792 | seconds=114.47
+FOLD 15/20 | features
+FOLD 15/20 | AUC=0.945470761 | trees=715 | seconds=109.14
+FOLD 16/20 | features
+FOLD 16/20 | AUC=0.945721373 | trees=1147 | seconds=131.01
+FOLD 17/20 | features
+FOLD 17/20 | AUC=0.947155925 | trees=931 | seconds=120.54
+FOLD 18/20 | features
+FOLD 18/20 | AUC=0.945861854 | trees=1080 | seconds=125.82
+FOLD 19/20 | features
+FOLD 19/20 | AUC=0.946388206 | trees=1278 | seconds=132.50
+FOLD 20/20 | features
+FOLD 20/20 | AUC=0.946189238 | trees=1431 | seconds=142.97
+CV POOLED_OOF_AUC=0.946338622805
+Saved submissions/v40_raw/v40_heuljax_k20_s202_OOF.parquet
+Saved submissions/v40_raw/v40_heuljax_k20_s202_TEST.parquet
+Saved submissions/v40_raw/sub_202.csv
+v40_heuljax_k20_s202 OOF 0.946339  folds 0.945442 0.947419 0.945827 0.945135 0.944687 0.947465 0.947025 0.946615 0.945462 0.946906 0.945957 0.949046 0.947161 0.946055 0.945471 0.945721 0.947156 0.945862 0.946388 0.946189
+=== exit 02:24:53
+=== v41 done

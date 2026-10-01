@@ -1,0 +1,21 @@
+=== HOLDOUT REFIT=900 s7 start 06:00:07
+DEVICE=cpu | CUDA unavailable
+v40_heuljax_k10_s7_ho | CV | cpu | folds=10
+TRAIN=601,798 TEST=66,867 FEATURES=173
+v40_heuljax_refit_r900_s7_ho written  rows 66867  HOLDOUT AUC 0.946591
+=== HOLDOUT REFIT=1000 s7 start 06:01:03
+DEVICE=cpu | CUDA unavailable
+v40_heuljax_k10_s7_ho | CV | cpu | folds=10
+TRAIN=601,798 TEST=66,867 FEATURES=173
+v40_heuljax_refit_r1000_s7_ho written  rows 66867  HOLDOUT AUC 0.946599
+=== HOLDOUT REFIT=1200 s7 start 06:02:03
+DEVICE=cpu | CUDA unavailable
+v40_heuljax_k10_s7_ho | CV | cpu | folds=10
+TRAIN=601,798 TEST=66,867 FEATURES=173
+v40_heuljax_refit_r1200_s7_ho written  rows 66867  HOLDOUT AUC 0.946607
+=== HOLDOUT N_FOLDS=20 s7 start 06:03:11
+CV POOLED_OOF_AUC=0.946183448403
+Saved submissions/v40_raw/v40_heuljax_k20_s7_ho_OOF.parquet
+v40_heuljax_k20_s7_ho HOLDOUT AUC of the fold average 0.946616
+v40_heuljax_k20_s7_ho OOF 0.946183  folds 0.946179 0.947154 0.948700 0.947900 0.946748 0.945439 0.945194 0.945579 0.947564 0.945344 0.945420 0.945842 0.946632 0.946762 0.946475 0.947149 0.944913 0.945248 0.943737 0.945805
+=== refit_ho done 06:31:22

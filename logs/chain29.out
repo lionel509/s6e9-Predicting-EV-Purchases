@@ -1,0 +1,12 @@
+v33_viewC_initinc100_k10_s42: base features 57 | TE keys 15 x (2.0, 30.0, 300.0) | windows 11  (4s)
+  fold 0: auc 0.945293  trees 1260  ncol 113  43s
+  fold 1: auc 0.945440  trees 1158  ncol 113  81s
+  fold 2: auc 0.945754  trees 1428  ncol 113  124s
+  fold 3: auc 0.946261  trees 1024  ncol 113  160s
+  fold 4: auc 0.946823  trees 1324  ncol 113  201s
+  fold 5: auc 0.947287  trees 1367  ncol 113  243s
+  fold 6: auc 0.946166  trees 884  ncol 113  277s
+  fold 7: auc 0.947094  trees 1357  ncol 113  318s
+  fold 8: auc 0.947245  trees 1755  ncol 113  366s
+  fold 9: auc 0.945368  trees 1104  ncol 113  402s
+v33_viewC_initinc100_k10_s42 OOF 0.946270  (fold-ranked 0.946273)  iters [1260, 1158, 1428, 1024, 1324, 1367, 884, 1357, 1755, 1104]  402s

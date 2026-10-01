@@ -1,0 +1,62 @@
+PyTorch  version: 2.14.0
+Train shape: (668665, 15)
+Test shape : (286571, 14)
+Orig shape : (10000, 15)
+X      init shape: (668665, 13)
+X_test init shape: (286571, 13) 
+
+init len(cat_cols): 6
+init len(num_cols): 7 
+
+len(new_cat_cols): 18
+len(new_num_cols): 4 
+
+prep len(cat_cols): 24
+prep len(num_cols): 11 
+
+X      prep shape: (668665, 35)
+X_test prep shape: (286571, 35) 
+
+v35_realmlp_k10_s101: 668665 rows, 35 features, device mps
+  fold 0: auc 0.945135  134s
+  fold 1: auc 0.947289  286s
+  fold 2: auc 0.945871  444s
+  fold 3: auc 0.944779  574s
+  fold 4: auc 0.945169  703s
+  fold 5: auc 0.945816  834s
+  fold 6: auc 0.947760  970s
+  fold 7: auc 0.946740  1112s
+  fold 8: auc 0.945873  1239s
+  fold 9: auc 0.947190  1366s
+v35_realmlp_k10_s101 OOF 0.946154  folds [0.94514, 0.94729, 0.94587, 0.94478, 0.94517, 0.94582, 0.94776, 0.94674, 0.94587, 0.94719]  1367s
+PyTorch  version: 2.14.0
+Train shape: (668665, 15)
+Test shape : (286571, 14)
+Orig shape : (10000, 15)
+X      init shape: (668665, 13)
+X_test init shape: (286571, 13) 
+
+init len(cat_cols): 6
+init len(num_cols): 7 
+
+len(new_cat_cols): 18
+len(new_num_cols): 4 
+
+prep len(cat_cols): 24
+prep len(num_cols): 11 
+
+X      prep shape: (668665, 35)
+X_test prep shape: (286571, 35) 
+
+v35_realmlp_k10_s202: 668665 rows, 35 features, device mps
+  fold 0: auc 0.946378  125s
+  fold 1: auc 0.945207  249s
+  fold 2: auc 0.945866  367s
+  fold 3: auc 0.946701  497s
+  fold 4: auc 0.946109  629s
+  fold 5: auc 0.947115  758s
+  fold 6: auc 0.946209  883s
+  fold 7: auc 0.945380  1009s
+  fold 8: auc 0.946356  1135s
+  fold 9: auc 0.946205  1259s
+v35_realmlp_k10_s202 OOF 0.946139  folds [0.94638, 0.94521, 0.94587, 0.9467, 0.94611, 0.94712, 0.94621, 0.94538, 0.94636, 0.9462]  1259s

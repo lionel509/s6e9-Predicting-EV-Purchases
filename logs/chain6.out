@@ -1,0 +1,12 @@
+v27_hybrid_k5_s42: features 65 | TE keys 15 x 3 smoothings  (4s)
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 0: auc 0.945205  trees 1731  51s
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 1: auc 0.945852  trees 1276  93s
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 2: auc 0.947066  trees 1523  142s
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 3: auc 0.946458  trees 1285  182s
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 4: auc 0.946204  trees 1550  227s
+v27_hybrid_k5_s42 OOF 0.946153  (fold-ranked 0.946157)  iters [1731, 1276, 1523, 1285, 1550]  227s

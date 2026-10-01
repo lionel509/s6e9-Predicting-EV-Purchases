@@ -1,0 +1,4 @@
+v34 groups  in-sample 0.946681   nested halves 0.946531 / 0.946814  mean 0.946672
+   weights: {'viewD': 0.043, 'viewD_init50': 0.022, 'init': 0.043, 'init100_k20': 0.109, 'agg_init100_k20': 0.109, 'hj_k20': 0.283, 'pub_hjlr2': 0.37, 'pub_hjlr': 0.022}
+v35 = v34 + init100_tok_k20 (4 seeds) in-sample 0.946726   nested halves 0.946583 / 0.946864  mean 0.946724
+   weights: {'hj_k20': 0.233, 'pub_hjlr2': 0.233, 'pub_hjlr': 0.1, 'init100_tok_k20': 0.433}

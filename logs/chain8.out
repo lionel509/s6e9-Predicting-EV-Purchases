@@ -1,0 +1,8 @@
+v28_hybrid_m1_k5_s42: v27 ref OOF 0.946153  m1 True  pseudo True  (5s)
+  fold 0: stage1 0.945180 (1416)  pseudo 0.945196 (2877)  123s
+  fold 1: stage1 0.945830 (1417)  pseudo 0.945839 (3327)  291s
+  fold 2: stage1 0.947044 (1533)  pseudo 0.947100 (2344)  446s
+  fold 3: stage1 0.946476 (1180)  pseudo 0.946490 (2384)  575s
+  fold 4: stage1 0.946239 (1352)  pseudo 0.946264 (2342)  691s
+v28_hybrid_m1_k5_s42 OOF 0.946149  Δ vs v27 -0.000004  iters [1416, 1417, 1533, 1180, 1352]  691s
+v28_hybrid_pseudo_m1_k5_s42 OOF 0.946173  Δ vs v27 +0.000020  Δ vs stage1 +0.000023  iters [2877, 3327, 2344, 2384, 2342]

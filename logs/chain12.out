@@ -1,0 +1,2 @@
+v29_hybrid_cat_s42_k10_lr0.03_od400: v27 ref OOF 0.946153  features 68
+  fold 0: auc 0.945091  iters 507  151s

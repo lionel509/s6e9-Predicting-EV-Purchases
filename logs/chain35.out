@@ -1,0 +1,24 @@
+=== N_FOLDS=30 v40_heuljax.py 2026 start 08:27:21
+FOLD 1/30 | AUC=0.945352729 | trees=548 | seconds=75.98
+FOLD 2/30 | AUC=0.947269738 | trees=606 | seconds=77.98
+FOLD 3/30 | AUC=0.944960892 | trees=779 | seconds=87.00
+FOLD 4/30 | AUC=0.945588536 | trees=863 | seconds=91.94
+FOLD 5/30 | AUC=0.945692284 | trees=1038 | seconds=100.42
+FOLD 6/30 | AUC=0.945669596 | trees=1219 | seconds=108.60
+FOLD 7/30 | AUC=0.946741324 | trees=796 | seconds=88.59
+FOLD 8/30 | AUC=0.945320154 | trees=1307 | seconds=115.78
+FOLD 9/30 | AUC=0.946779054 | trees=850 | seconds=91.66
+FOLD 10/30 | AUC=0.947213798 | trees=779 | seconds=87.66
+FOLD 11/30 | AUC=0.943360687 | trees=476 | seconds=74.34
+FOLD 12/30 | AUC=0.944940293 | trees=1058 | seconds=102.43
+FOLD 13/30 | AUC=0.948300740 | trees=2009 | seconds=144.58
+FOLD 14/30 | AUC=0.948369126 | trees=1227 | seconds=120.72
+FOLD 15/30 | AUC=0.945443165 | trees=1380 | seconds=125.62
+FOLD 16/30 | AUC=0.949387220 | trees=886 | seconds=101.98
+FOLD 17/30 | AUC=0.946761816 | trees=569 | seconds=83.92
+FOLD 18/30 | AUC=0.947846300 | trees=849 | seconds=112.12
+FOLD 19/30 | AUC=0.946234543 | trees=1118 | seconds=148.16
+FOLD 20/30 | AUC=0.947274958 | trees=638 | seconds=109.71
+FOLD 21/30 | AUC=0.947695439 | trees=872 | seconds=122.33
+FOLD 22/30 | AUC=0.947084287 | trees=2038 | seconds=194.08
+FOLD 23/30 | AUC=0.946823890 | trees=957 | seconds=138.36

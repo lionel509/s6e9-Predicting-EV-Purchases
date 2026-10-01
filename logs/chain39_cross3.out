@@ -1,0 +1,14 @@
+=== EXTRA=cross3 start 00:51:23
+v34_init_inc100_tok_cross3_k10_s7: v27 ref OOF 0.946219  features 74  init from k_inc100_teauto
+  fold 0: auc 0.946759  (init alone 0.703219)  trees 1584  84s
+  fold 1: auc 0.946501  (init alone 0.704719)  trees 1354  155s
+  fold 2: auc 0.946317  (init alone 0.703312)  trees 1170  269s
+  fold 3: auc 0.945212  (init alone 0.704717)  trees 1654  386s
+  fold 4: auc 0.946644  (init alone 0.708358)  trees 1323  507s
+  fold 5: auc 0.948391  (init alone 0.704963)  trees 1628  633s
+  fold 6: auc 0.945297  (init alone 0.703570)  trees 1188  762s
+  fold 7: auc 0.946535  (init alone 0.699876)  trees 1099  873s
+  fold 8: auc 0.946113  (init alone 0.703137)  trees 1176  980s
+  fold 9: auc 0.946655  (init alone 0.703227)  trees 1070  1085s
+v34_init_inc100_tok_cross3_k10_s7 OOF 0.946434  (fold-ranked 0.946442)  Δ vs v27 +0.000215  iters [1584, 1354, 1170, 1654, 1323, 1628, 1188, 1099, 1176, 1070]  1085s
+=== EXTRA=cross3 done 01:09:31

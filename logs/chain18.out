@@ -1,0 +1,12 @@
+v32_extra_k10_s42: v27 ref OOF 0.946240  features 65  (4s)
+  fold 0: auc 0.945126  trees 2311  67s
+  fold 1: auc 0.945305  trees 2337  128s
+  fold 2: auc 0.945523  trees 1973  184s
+  fold 3: auc 0.946151  trees 2649  252s
+  fold 4: auc 0.946800  trees 2818  323s
+  fold 5: auc 0.947148  trees 2521  385s
+  fold 6: auc 0.945935  trees 1879  438s
+  fold 7: auc 0.946973  trees 2118  497s
+  fold 8: auc 0.947171  trees 2635  566s
+  fold 9: auc 0.945184  trees 2230  625s
+v32_extra_k10_s42 OOF 0.946109  (fold-ranked 0.946132)  Δ vs v27 -0.000131  iters [2311, 2337, 1973, 2649, 2818, 2521, 1879, 2118, 2635, 2230]  626s
