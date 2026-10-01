@@ -4,8 +4,9 @@ Binary classification scored on ROC-AUC. Kaggle Playground Series, Season 6, Epi
 The data is synthetic: 668,665 training rows, 13 features, 17.5% positive. An LLM generated it from the 10k-row
 [EV adoption dataset](https://www.kaggle.com/datasets/itzzomkar/ev-adoption-behavior-and-range-anxiety).
 
-**Result:** best public score **0.94674** (`blend_v38fr_probit_pp`, out-of-fold AUC 0.946750), about rank 105 of ~3,450 on the
-public leaderboard on the final morning (private results pending). The finals were v38 plus `blend_v33fr_probit_pp`, a hedge that uses no GPT-2-token models.
+**Result: private rank 138 / 3,575 (top 3.9%), private score 0.94569** with `blend_v38fr_probit_pp`
+(public 0.94674, public rank 164, so the private split moved it up 26 places; out-of-fold AUC 0.946750). Every blend in the
+v27 → v38 chain scored higher on private than the one before it, in the same order as the out-of-fold AUC.
 
 The full lab notebook is [`docs/lab-notebook.md`](docs/lab-notebook.md): every run (including the ones that went
 nowhere), the traps, the forum intel and the leaderboard history. [Issue #1](../../issues/1) is the day-by-day log of the final push.
